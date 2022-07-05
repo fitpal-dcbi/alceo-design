@@ -2,13 +2,17 @@
   "name": "alceo-design",
   "version": "1.0.0",
   "description": "Alceo Design System, from Sirka.io",
-  "main": "index.js",
   "repository": "https://github.com/fitpal-dcbi/alceo-design.git",
   "author": "Sirka",
   "license": "Apache-2.0",
   "private": false,
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "devDependencies": {
     "@babel/core": "^7.18.6",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -19,13 +23,23 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.14",
     "babel-loader": "^8.2.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "postcss": "^8.4.14",
+    "react": "^17.2.0",
+    "react-dom": "^17.2.0",
+    "rollup": "^2.75.7",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.32.1",
     "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "react": "^17.2.0",
+    "react-dom": "^17.2.0"
   },
   "dependencies": {},
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "rollup -c"
   }
 }
