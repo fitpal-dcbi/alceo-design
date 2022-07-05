@@ -1,11 +1,22 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
-import Button, { ButtonProps } from "./Button";
+import Button from "./Button";
+import { ButtonProps } from "./type";
 
 export default {
   title: "Components/Button",
   component: Button,
+  argTypes: {
+    theme: {
+      options: ["primary", "secondary"],
+      control: { type: "radio" },
+    },
+    size: {
+      options: ["full", "half", "default"],
+      control: { type: "radio" },
+    },
+  },
 } as Meta;
 
 // Create a master template for mapping args to render the Button component
