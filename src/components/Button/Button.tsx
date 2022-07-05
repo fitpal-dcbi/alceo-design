@@ -1,5 +1,7 @@
 import React, { FC, MouseEventHandler } from "react";
 
+import { StyledButton } from "./style";
+
 export type ButtonTheme = "primary" | "secondary";
 
 interface BaseButtonProps {
@@ -16,7 +18,7 @@ export type ButtonProps = BaseButtonProps & HTMLButtonProps;
 
 const Button: FC<ButtonProps> = (props) => {
   const { children, theme = "primary" } = props;
-  return <button>{children}</button>;
+  return <StyledButton>{children}</StyledButton>;
 };
 
 export default Button;
