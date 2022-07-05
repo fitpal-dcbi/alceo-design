@@ -9,6 +9,9 @@
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@rollup/plugin-commonjs": "^22.0.1",
