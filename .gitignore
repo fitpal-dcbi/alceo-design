@@ -1,2 +1,6 @@
 /node_modules
 /lib
+
+/playground/.parcel-cache
+/playground/dist
+/playground/node_modules
