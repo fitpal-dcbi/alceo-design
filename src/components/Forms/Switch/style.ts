@@ -71,7 +71,7 @@ export const StyledSwitch = styled.input<
   cursor: ${(props) =>
     props.readOnly || props.disabled ? "not-allowed" : "pointer"};
 
-  &:checked + ${StyledSwitchBox} {
+  :checked + ${StyledSwitchBox} {
     background: #ff6112;
 
     .SwitchCircle {

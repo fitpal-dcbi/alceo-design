@@ -20,13 +20,25 @@ export default {
       options: [true, false],
       control: { type: "boolean" },
     },
+    defaultChecked: {
+      options: [true, false],
+      control: { type: "boolean" },
+    },
+    name: {
+      control: { type: "text" },
+    },
+    id: {
+      control: { type: "text" },
+    },
   },
 } as Meta;
 
-export const SwitchInputExample: Story<BaseSwitchProps> = ({
+export const Switch: Story<BaseSwitchProps> = ({
   type,
   readOnly,
   disabled,
+  defaultChecked,
+  name,
 }) => {
   const handleChange = (value: boolean) => {
     console.log("wahib switch value", value);
@@ -38,6 +50,8 @@ export const SwitchInputExample: Story<BaseSwitchProps> = ({
       readOnly={readOnly}
       disabled={disabled}
       onChange={(value) => handleChange(value)}
+      defaultChecked={defaultChecked}
+      name={name}
     />
   );
 };
