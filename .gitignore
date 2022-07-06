@@ -2,3 +2,9 @@
 /lib
 
 .DS_Store
+
+/playground/.parcel-cache
+/playground/dist
+/playground/node_modules
+/playground/.DS_Store
+
