@@ -1,12 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Button } from "../lib";
+import { Icon } from "../lib";
 
 const App = () => {
   return (
     <div>
-      <Button>tes</Button>
+      <Icon />
     </div>
   );
 };

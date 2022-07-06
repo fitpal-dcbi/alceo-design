@@ -19,5 +19,6 @@
     "jsx": "react"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "lib", "playground"]
+  "exclude": ["node_modules", "lib", "playground"],
+  "files": ["declarations.d.ts"]
 }

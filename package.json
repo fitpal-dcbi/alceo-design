@@ -9,6 +9,9 @@
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@rollup/plugin-commonjs": "^22.0.1",
@@ -21,11 +24,13 @@
     "@storybook/manager-webpack4": "^6.5.9",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/rollup": "^5.5.0",
+    "@svgr/webpack": "^5.5.0",
     "@types/react": "^18.0.14",
     "babel-loader": "^8.2.5",
     "postcss": "^8.4.14",
-    "react": "^17.2.0",
-    "react-dom": "^17.2.0",
+    "react": "17.2.0",
+    "react-dom": "17.2.0",
     "rollup": "^2.75.7",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -44,6 +49,11 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepare": "yarn build"
+  },
+  "resolutions": {
+    "react": "17.2.0",
+    "react-dom": "17.2.0"
   }
 }
