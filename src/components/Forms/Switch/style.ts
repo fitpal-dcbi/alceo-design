@@ -4,11 +4,16 @@ import { BaseSwitchProps } from "./type";
 const lockImg = require("./icon-lock.svg") as string;
 const lockImgActive = require("./icon-lock-active.svg") as string;
 
-export const StyledSwitchWrapper = styled.div`
+export const StyledSwitchWrapper = styled.div<
+  Pick<BaseSwitchProps, "readOnly">
+>`
   position: relative;
+  cursor: ${(props) => (props.readOnly ? "not-allowed" : "pointer")};
 `;
 
-export const StyledSwitchBox = styled.label`
+export const StyledSwitchBox = styled.label<
+  Pick<BaseSwitchProps, "readOnly" | "disabled">
+>`
   position: absolute;
   top: 0;
   left: 0;
@@ -16,7 +21,10 @@ export const StyledSwitchBox = styled.label`
   height: 1.5rem;
   border-radius: 1.25rem;
   background: #bac7d5;
-  cursor: pointer;
+
+  cursor: ${(props) =>
+    props.readOnly || props.disabled ? "not-allowed" : "pointer"};
+  opacity: ${(props) => (props.readOnly || props.disabled ? "0.6" : "1")};
   transition: all 0.3s ease-out;
 
   .SwitchCircle {
@@ -51,13 +59,17 @@ export const StyledSwitchBox = styled.label`
   }
 `;
 
-export const StyledSwitch = styled.input`
+export const StyledSwitch = styled.input<
+  Pick<BaseSwitchProps, "readOnly" | "disabled">
+>`
   opacity: 0;
   z-index: 1;
   border-radius: 1.25rem;
   width: 3.125rem;
   height: 1.5rem;
   transition: 0.3s;
+  cursor: ${(props) =>
+    props.readOnly || props.disabled ? "not-allowed" : "pointer"};
 
   &:checked + ${StyledSwitchBox} {
     background: #ff6112;
