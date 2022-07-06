@@ -1,12 +1,12 @@
 import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import { Story } from "@storybook/react";
-import Button from "./Button";
-import { ButtonProps } from "./type";
+import ButtonLink from "./ButtonLink";
+import { ButtonLinkProps } from "../Button/type";
 
 export default {
   title: "Components/Button",
-  component: Button,
+  component: ButtonLink,
   argTypes: {
     theme: {
       options: ["primary", "secondary"],
@@ -54,12 +54,18 @@ export default {
         category: 'State',
       },
     },
-    style: {                             
-      control: { type: "object" },
+    href: {
+      control: {type: 'text'},
       table: {
-        category: 'Appearance',
-      },
-    }
+        category: 'Link',
+      }
+    },
+    target: {
+      control: {type: 'text'},
+      table: {
+        category: 'Link',
+      }
+    },
   }
 } as Meta;
 
@@ -67,11 +73,11 @@ export default {
 //   console.log('amel value', value)
 // }
 // Create a master template for mapping args to render the Button component
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonLinkProps> = (args) => <ButtonLink {...args} />;
 
 // Reuse that template for creating different stories
-export const Default = Template.bind({});
-Default.args = { 
+export const Link = Template.bind({});
+Link.args = { 
   children: "Click me", 
   theme: "primary", 
   size: "md", 
@@ -79,26 +85,8 @@ Default.args = {
   fullWidth: false,
   disabled: false,
   type:"button",
-  style:{},
+  href: "https://www.sirka.io/",
+  target: "_blank",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = { ...Default.args, theme: "secondary"};
 
-export const Outline = Template.bind({});
-Outline.args = { ...Default.args, weight: "outline"};
-
-export const Disable = Template.bind({});
-Disable.args = { ...Default.args, disabled: true};
-
-export const Large = Template.bind({});
-Large.args = { ...Default.args, size: "lg"};
-
-export const Normal = Template.bind({});
-Normal.args = { ...Default.args, size: "md"};
-
-export const Small = Template.bind({});
-Small.args = { ...Default.args, size: "sm"};
-
-export const FullWidth = Template.bind({});
-FullWidth.args = { ...Default.args, fullWidth: true};
