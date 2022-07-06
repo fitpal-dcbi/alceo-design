@@ -59,18 +59,22 @@ export const StyledSwitch = styled.input`
   height: 1.5rem;
   transition: 0.3s;
 
-  &:checked + ${StyledSwitchBox} .SwitchCircle {
-    background: #ffffff;
-    margin-left: 1.45rem;
-    transition: all 0.3s ease-out;
-  }
-
-  &:checked + ${StyledSwitchBox} .SwitchNode {
+  &:checked + ${StyledSwitchBox} {
     background: #ff6112;
-  }
 
-  &:checked + ${StyledSwitchBox} .WithIconSwitchNode {
-    background-image: url(${lockImgActive});
-    transition: all 0.3s ease-out;
+    .SwitchCircle {
+      background: #ffffff;
+      margin-left: 1.45rem;
+      transition: all 0.3s ease-out;
+    }
+
+    .WithIconSwitchNode {
+      background-image: url(${lockImgActive});
+      transition: all 0.3s ease-out;
+    }
+
+    .SwitchNode {
+      background: #ff6112;
+    }
   }
 `;

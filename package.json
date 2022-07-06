@@ -39,7 +39,8 @@
     "styled-components": "^5.3.5"
   },
   "dependencies": {
-    "@types/styled-components": "^5.1.25"
+    "@types/styled-components": "^5.1.25",
+    "react-hook-form": "^7.33.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
