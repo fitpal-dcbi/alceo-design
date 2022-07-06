@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Meta, Story } from "@storybook/react";
 
@@ -28,9 +28,6 @@ export default {
     name: {
       control: { type: "text" },
     },
-    id: {
-      control: { type: "text" },
-    },
     rules: {
       control: { type: "object" },
     },
@@ -43,31 +40,37 @@ export const ContorlledSwitch: Story<ControlledSwitchProps> = ({
   disabled,
   defaultChecked,
   name,
-  id,
   rules,
 }) => {
   const methods = useForm();
   const { handleSubmit, control } = methods;
 
+  const [switchValue, setSwitchValue] = useState({ value: false });
+
   const onSubmit = (data: any) => {
-    console.log("Wahib controlledSwitchValue", data);
+    setSwitchValue(data);
   };
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <ControlledSwitchComponent
-          type={type}
-          readOnly={readOnly}
-          disabled={disabled}
-          defaultChecked={defaultChecked}
-          name={name}
-          id={id}
-          rules={rules}
-          control={control}
-        />
-        <button type="submit">Submit</button>
-      </form>
-    </FormProvider>
+    <div>
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <ControlledSwitchComponent
+            type={type}
+            readOnly={readOnly}
+            disabled={disabled}
+            defaultChecked={defaultChecked}
+            name={name}
+            rules={rules}
+            control={control}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </FormProvider>
+
+      <div>
+        <p>Toggle switch : {Object.values(switchValue).toString()}</p>
+      </div>
+    </div>
   );
 };

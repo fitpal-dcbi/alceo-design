@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Meta, Story } from "@storybook/react";
 
 import { Switch as SwitchComponent } from "./index";
@@ -27,9 +27,6 @@ export default {
     name: {
       control: { type: "text" },
     },
-    id: {
-      control: { type: "text" },
-    },
   },
 } as Meta;
 
@@ -40,18 +37,20 @@ export const Switch: Story<BaseSwitchProps> = ({
   defaultChecked,
   name,
 }) => {
-  const handleChange = (value: boolean) => {
-    console.log("wahib switch value", value);
-  };
+  const [switchValue, setSwitchValue] = useState(false);
 
   return (
-    <SwitchComponent
-      type={type}
-      readOnly={readOnly}
-      disabled={disabled}
-      onChange={(value) => handleChange(value)}
-      defaultChecked={defaultChecked}
-      name={name}
-    />
+    <div>
+      <SwitchComponent
+        type={type}
+        readOnly={readOnly}
+        disabled={disabled}
+        onChange={(value) => setSwitchValue(value)}
+        defaultChecked={defaultChecked}
+        name={name}
+      />
+
+      <p>Toggle switch : {switchValue.toString()}</p>
+    </div>
   );
 };
