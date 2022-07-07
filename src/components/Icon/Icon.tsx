@@ -1,11 +1,13 @@
 import React, { FC } from "react";
-import Arrow from "../../assets/arrow.svg";
+import { ReactComponent as Arrow } from "../../assets/arrow.svg";
+import { StyledIcon } from "./style";
 
 // MS: To be deleted later
 const Icon: FC = (props) => {
   return (
     <div>
       <Arrow />
+      <StyledIcon />
     </div>
   );
 };
