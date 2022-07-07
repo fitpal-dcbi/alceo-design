@@ -1,8 +1,9 @@
 import React from "react";
-import { Meta } from "@storybook/react/types-6-0";
-import { Story } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import ButtonLink from "./ButtonLink";
-import { ButtonLinkProps } from "../Button/type";
+import { ButtonIconProps, ButtonLinkProps } from "../type";
+import ButtonIconLink from "./ButtonIconLink";
+import CheckWhite from "../../../assets/check_icon.svg";
 
 export default {
   title: "Components/Button",
@@ -74,19 +75,26 @@ export default {
 // }
 // Create a master template for mapping args to render the Button component
 const Template: Story<ButtonLinkProps> = (args) => <ButtonLink {...args} />;
+const TemplateIcon: Story<ButtonIconProps> = (args) => <ButtonIconLink {...args} />;
 
 // Reuse that template for creating different stories
-export const Link = Template.bind({});
-Link.args = { 
+export const LinkPrimary = Template.bind({});
+LinkPrimary.args = { 
   children: "Click me", 
   theme: "primary", 
   size: "md", 
-  weight: "solid", 
+  weight: "inline", 
   fullWidth: false,
   disabled: false,
   type:"button",
   href: "https://www.sirka.io/",
   target: "_blank",
 };
+
+export const LinkSecondary = Template.bind({});
+LinkSecondary.args = { ...LinkPrimary.args, theme: 'secondary' };
+
+export const LinkIcon = TemplateIcon.bind({});
+LinkIcon.args = { ...LinkPrimary.args, suffix: <CheckWhite/>};
 
 

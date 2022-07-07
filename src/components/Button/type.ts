@@ -11,12 +11,16 @@ interface BaseButtonProps {
   size?: ButtonSize;
   disabled?: boolean;
   fullWidth?: boolean;
-  style?: any;
 };
 
 interface BaseButtonLinkProps {
   href?: string;
   target?: string;
+  suffix?: any;
+};
+
+interface BaseButtonIconProps {
+  suffix?: any;
 }
 
 type HTMLButtonProps = {
@@ -26,3 +30,4 @@ type HTMLButtonProps = {
 
 export type ButtonProps = BaseButtonProps & HTMLButtonProps;
 export type ButtonLinkProps = ButtonProps & BaseButtonLinkProps;
+export type ButtonIconProps = ButtonProps & BaseButtonIconProps;

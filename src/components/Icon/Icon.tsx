@@ -6,7 +6,6 @@ const Icon: FC = (props) => {
   return (
     <div>
       <Arrow />
-      test
     </div>
   );
 };

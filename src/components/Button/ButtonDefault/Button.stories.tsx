@@ -1,7 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 import Button from "./Button";
-import { ButtonProps } from "./type";
+import { ButtonIconProps, ButtonProps } from "../type";
+import ButtonIcon from "./ButtonIcon";
+import CheckWhite from "../../../assets/check_icon.svg";
 
 export default {
   title: "Components/Button",
@@ -53,12 +55,12 @@ export default {
         category: 'State',
       },
     },
-    style: {                             
-      control: { type: "object" },
-      table: {
-        category: 'Appearance',
-      },
-    }
+    // style: {                             
+    //   control: { type: "object" },
+    //   table: {
+    //     category: 'Appearance',
+    //   },
+    // }
   }
 } as Meta;
 
@@ -67,10 +69,12 @@ export default {
 // }
 // Create a master template for mapping args to render the Button component
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const TemplateIcon: Story<ButtonIconProps> = (args) => <ButtonIcon {...args} />;
+
 
 // Reuse that template for creating different stories
-export const Default = Template.bind({});
-Default.args = { 
+export const Primary = Template.bind({});
+Primary.args = { 
   children: "Click me", 
   theme: "primary", 
   size: "md", 
@@ -78,26 +82,15 @@ Default.args = {
   fullWidth: false,
   disabled: false,
   type:"button",
-  style:{},
+  // style:{},
 };
 
+export const PrimaryIcon = TemplateIcon.bind({});
+PrimaryIcon.args = { ...Primary.args, suffix: <CheckWhite/>, size:'sm'};
+
 export const Secondary = Template.bind({});
-Secondary.args = { ...Default.args, theme: "secondary"};
+Secondary.args = { ...Primary.args, theme: "secondary"};
 
-export const Outline = Template.bind({});
-Outline.args = { ...Default.args, weight: "outline"};
 
-export const Disable = Template.bind({});
-Disable.args = { ...Default.args, disabled: true};
-
-export const Large = Template.bind({});
-Large.args = { ...Default.args, size: "lg"};
-
-export const Normal = Template.bind({});
-Normal.args = { ...Default.args, size: "md"};
-
-export const Small = Template.bind({});
-Small.args = { ...Default.args, size: "sm"};
-
-export const FullWidth = Template.bind({});
-FullWidth.args = { ...Default.args, fullWidth: true};
+export const SecondaryIcon = TemplateIcon.bind({});
+SecondaryIcon.args = { ...Primary.args, suffix: <CheckWhite/>, theme: "secondary", size:'sm'};

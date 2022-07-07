@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import { ButtonSize, ButtonTheme, ButtonWeight } from "./type";
 
-const mapButtonSize = {
-  sm: "0.5rem 0.75rem",
-  md: "0.75rem 1rem",
-  lg: "0.9375rem 1.5rem",
+
+type StyledButtonIconProps = {
+  theme: ButtonTheme;
+  weight: ButtonWeight;
+  size: ButtonSize;
+  disabled: boolean;
+  fullWidth: boolean;
 };
 
-const mapButtonFontSize = {
-  sm: ".75rem",
-  md: ".875rem",
+const mapButtonSize = {
+  sm: ".625rem",
+  md: ".75rem",
   lg: "1rem",
 };
 
@@ -23,24 +26,24 @@ const mapButtonColorDisabled = {
   secondary: "#B6DAD3",
 }
 
-type StyledButtonProps = {
-  theme: ButtonTheme;
-  weight: ButtonWeight;
-  size: ButtonSize;
-  disabled: boolean;
-  fullWidth: boolean;
-};
+const mapButtonWidth = {
+  sm: "2rem",
+  md: "2.75rem",
+  lg: "3.25rem"
+}
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
   background: ${(props) => props.weight === 'solid' ? mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor] : '#FFFFFF'};
   border: ${(props) => props.weight === 'outline' ? `1px solid ${mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]}` : 'none'};
   color: ${(props) => props.weight === 'solid' ? '#FFFFFF' : mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]};
-  width: ${(props) => props.fullWidth ? '100%' : 'fit-content'};
+  width: ${(props) => props.weight === 'inline' ? 'fit-content' : mapButtonWidth[props.size]};
+  height: ${(props) => props.weight === 'inline' ? 'fit-content' : mapButtonWidth[props.size]};
   padding: ${(props) =>  props.weight === 'inline' ? '0' : mapButtonSize[props.size]};
-  font-size: ${(props) => mapButtonFontSize[props.size]};
   border-radius: 6.25rem;
-  font-weight: 500;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${(props) => !props.disabled &&
     `&:hover {
@@ -59,8 +62,10 @@ export const StyledButton = styled.button<StyledButtonProps>`
     border: none;
     cursor: not-allowed;
   }
-`;
 
-export const StyledHref = styled.a`
-  text-decoration: unset;
+  ${(props) =>  props.weight === 'inline' && 
+  `  path {
+      fill: #FF6112 !important;
+    }`
+  }
 `;

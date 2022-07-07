@@ -1,7 +1,7 @@
 import React from "react";
 import { FC } from "react";
-import { StyledButton } from "../Button/style";
-import { ButtonLinkProps } from "../Button/type";
+import { StyledButton, StyledHref } from "../style";
+import { ButtonLinkProps } from "../type";
 
 const ButtonLink: FC<ButtonLinkProps> = (props) => {
   const { 
@@ -11,10 +11,8 @@ const ButtonLink: FC<ButtonLinkProps> = (props) => {
     size= 'md', 
     disabled= false,
     fullWidth = false,
-    style={},
     href='https://www.sirka.io/',
     target='_blank',
-    onClick,
   } = props;
 
   return (
@@ -22,8 +20,7 @@ const ButtonLink: FC<ButtonLinkProps> = (props) => {
       <StyledButton 
         weight={weight} theme={theme} 
         size={size} fullWidth={fullWidth}
-        disabled={disabled} onClick={(val) => {if(val) onClick?.(val)}}
-        style={style}
+        disabled={disabled} 
       >
         {children}
       </StyledButton>
