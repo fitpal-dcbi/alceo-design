@@ -61,4 +61,4 @@ Default.args = {
 };
 
 export const Dots = TemplateLoadingDot.bind({});
-Dots.args = {...Default.args, children: 'Please wait, Card content is loading…'};
+Dots.args = {...Default.args, children: 'Please wait, Card content is loading…', width: '.8125rem'};

@@ -35,11 +35,11 @@ export const StyledLoading = styled.div<StyledLoadingProps>`
     margin-bottom: 1rem ;
     animation: rotate 2s linear infinite;
     z-index: 2;
-    width: ${(props:any) => props.width || '3.125rem'};
-    height: ${(props:any) => props.width || '3.125rem'};
+    width: ${(props) => props.width || '3.125rem'};
+    height: ${(props) => props.width || '3.125rem'};
     
     & .path {
-      color: ${(props:any) => props.colorCircle || '#BAC7D5'};
+      color: ${(props) => props.colorCircle || '#BAC7D5'};
       stroke: hsl(210, 70, 75);
       stroke-linecap: round;
       animation: dash 1.5s ease-in-out infinite;
@@ -76,18 +76,18 @@ export const StyledLoadingDots = styled.div<StyledLoadingProps>`
   .line-ellipsis {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     margin-right: .75rem;
   };
 
   .line-ellipsis div {
     position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
+    top: 2.0625rem;
+    width: ${(props) => props.width || '.8125rem'};
+    height: ${(props) => props.width || '.8125rem'};
     border-radius: 50%;
-    background: #BAC7D5;
+    background: ${(props) => props.colorCircle || '#BAC7D5'};
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   };
 
