@@ -32,7 +32,6 @@ const rollupConfig = {
     url(),
     svgr(),
     typescript({ useTsconfigDeclarationDir: true }),
-    svgr(),
   ],
 };
 

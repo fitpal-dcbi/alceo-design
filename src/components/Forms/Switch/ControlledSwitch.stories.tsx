@@ -34,7 +34,7 @@ export default {
   },
 } as Meta;
 
-export const ContorlledSwitch: Story<ControlledSwitchProps> = ({
+export const ControlledSwitch: Story<ControlledSwitchProps> = ({
   type,
   readOnly,
   disabled,

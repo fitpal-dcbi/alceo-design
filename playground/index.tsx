@@ -1,12 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Icon } from "../lib";
+import { Icon, Switch } from "../lib";
 
 const App = () => {
   return (
     <div>
-      <Icon />
+      <Switch />
     </div>
   );
 };
