@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { BaseSwitchProps } from "./type";
 import { StyledSwitchWrapper, StyledSwitch, StyledSwitchBox } from "./style";
 
-import LockIcon from "../../../assets/icon-lock.svg";
-import ActiveLockIcon from "../../../assets/icon-lock-active.svg";
+import { ReactComponent as LockIcon } from "../../../assets/icon-lock.svg";
+import { ReactComponent as ActiveLockIcon } from "../../../assets/icon-lock-active.svg";
 
 const Switch = React.forwardRef<HTMLInputElement, BaseSwitchProps>(
   (props, ref) => {

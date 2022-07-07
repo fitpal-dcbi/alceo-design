@@ -19,7 +19,7 @@ module.exports = {
     config.module.rules.push({
       test: /\.svg$/,
       enforce: "pre",
-      loader: require.resolve("@svgr/webpack"),
+      use: ["@svgr/webpack", "url-loader"],
     });
 
     return config;
