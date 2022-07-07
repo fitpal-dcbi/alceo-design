@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { BaseSwitchProps } from "./type";
 import { StyledSwitchWrapper, StyledSwitch, StyledSwitchBox } from "./style";
 
-const Switch = React.forwardRef<BaseSwitchProps, HTMLInputElement>(
+const Switch = React.forwardRef<HTMLInputElement, BaseSwitchProps>(
   (props, ref) => {
     const {
       defaultChecked = false,
