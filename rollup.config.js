@@ -2,6 +2,7 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
+import url from "@rollup/plugin-url";
 import svgr from "@svgr/rollup";
 
 // MS: Currently, we don't need to use postcss. But, if in the future we want to use things like: tailwind, etc. we might need this.
@@ -28,8 +29,9 @@ const rollupConfig = {
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    url(),
     svgr(),
+    typescript({ useTsconfigDeclarationDir: true }),
   ],
 };
 
