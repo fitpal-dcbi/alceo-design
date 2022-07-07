@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { BaseSwitchProps } from "./type";
 
-const lockImg = require("../../../assets/icon-lock.svg") as string;
-const lockImgActive = require("../../../assets/icon-lock-active.svg") as string;
-
 export const StyledSwitchWrapper = styled.div<
   Pick<BaseSwitchProps, "readOnly">
 >`
@@ -50,13 +47,6 @@ export const StyledSwitchBox = styled.label<
     height: 0.625rem;
     background: #bac7d5;
   }
-
-  .WithIconSwitchNode {
-    background-image: url(${lockImg});
-    width: 1rem;
-    height: 1rem;
-    transition: all 0.3s ease-out;
-  }
 `;
 
 export const StyledSwitch = styled.input<
@@ -79,12 +69,6 @@ export const StyledSwitch = styled.input<
       margin-left: 1.45rem;
       transition: all 0.3s ease-out;
     }
-
-    .WithIconSwitchNode {
-      background-image: url(${lockImgActive});
-      transition: all 0.3s ease-out;
-    }
-
     .SwitchNode {
       background: #ff6112;
     }

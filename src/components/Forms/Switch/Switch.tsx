@@ -1,6 +1,9 @@
-import React, { FC } from "react";
+import React, { useState } from "react";
 import { BaseSwitchProps } from "./type";
 import { StyledSwitchWrapper, StyledSwitch, StyledSwitchBox } from "./style";
+
+import LockIcon from "../../../assets/icon-lock.svg";
+import ActiveLockIcon from "../../../assets/icon-lock-active.svg";
 
 const Switch = React.forwardRef<HTMLInputElement, BaseSwitchProps>(
   (props, ref) => {
@@ -12,6 +15,9 @@ const Switch = React.forwardRef<HTMLInputElement, BaseSwitchProps>(
       readOnly = false,
       type = "default",
     } = props;
+
+    const [isChecked, setIsChecked] = useState<boolean>(false);
+
     return (
       <StyledSwitchWrapper>
         <StyledSwitch
@@ -23,16 +29,17 @@ const Switch = React.forwardRef<HTMLInputElement, BaseSwitchProps>(
           onChange={(value) => {
             if (readOnly) return;
             if (onChange !== undefined) onChange(value?.target?.checked);
+            setIsChecked(value?.target?.checked);
           }}
           ref={ref}
         />
         <StyledSwitchBox htmlFor="checkbox" disabled={readOnly || disabled}>
           <div className="SwitchCircle">
-            <div
-              className={
-                type === "default" ? "SwitchNode" : "WithIconSwitchNode"
-              }
-            />
+            {type === "default" ? (
+              <div className="SwitchNode" />
+            ) : (
+              WithIconSwitchNode(isChecked)
+            )}
           </div>
         </StyledSwitchBox>
       </StyledSwitchWrapper>
@@ -40,3 +47,8 @@ const Switch = React.forwardRef<HTMLInputElement, BaseSwitchProps>(
   }
 );
 export default Switch;
+
+// WA: Supporting Component
+const WithIconSwitchNode = (isChecked: boolean) => {
+  return isChecked ? <ActiveLockIcon /> : <LockIcon />;
+};
