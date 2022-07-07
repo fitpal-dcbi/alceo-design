@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { BaseSwitchProps } from "./type";
 
-const lockImg = require("./icon-lock.svg") as string;
-const lockImgActive = require("./icon-lock-active.svg") as string;
+const lockImg = require("../../../assets/icon-lock.svg") as string;
+const lockImgActive = require("../../../assets/icon-lock-active.svg") as string;
 
 export const StyledSwitchWrapper = styled.div<
   Pick<BaseSwitchProps, "readOnly">
