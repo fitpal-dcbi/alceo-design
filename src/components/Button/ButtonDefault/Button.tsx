@@ -2,15 +2,18 @@ import React, { FC } from "react";
 
 import { StyledButton } from "../style";
 import { ButtonProps } from "../type";
+import { Icons } from "../../Icon/index";
 
 const Button: FC<ButtonProps> = (props) => {
   const { 
     children, 
-    theme   = 'primary', 
-    weight = 'solid',
-    size    = 'md', 
+    theme= 'primary', 
+    weight= 'solid',
+    size= 'md', 
     disabled= false,
-    fullWidth = false,
+    fullWidth= false,
+    suffixDirection="none",
+    suffix="SquareOrange",
     onClick,
   } = props;
 
@@ -19,7 +22,8 @@ const Button: FC<ButtonProps> = (props) => {
     size={size} fullWidth={fullWidth}
     disabled={disabled} onClick={(val) => {if(val) onClick?.(val)}}
   >
-    {children}
+    {(suffixDirection === 'right' || suffixDirection === 'both') && <Icons type={suffix}/>} {children}
+    {(suffixDirection === 'left' || suffixDirection === 'both') && <Icons type={suffix}/>}
   </StyledButton>
 };
 

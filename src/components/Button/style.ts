@@ -13,6 +13,12 @@ const mapButtonFontSize = {
   lg: "1rem",
 };
 
+const mapButtonHeight = {
+  sm: "2rem",
+  md: "2.75rem",
+  lg: "3.25rem",
+};
+
 const mapButtonBgColor = {
   primary: "#FF6112",
   secondary: "#5CA898",
@@ -21,6 +27,12 @@ const mapButtonBgColor = {
 const mapButtonColorDisabled = {
   primary: "#FFC6A7",
   secondary: "#B6DAD3",
+}
+
+const mapMarginIcon ={
+  sm: ".625rem",
+  md: ".625rem",
+  lg: ".875rem"
 }
 
 type StyledButtonProps = {
@@ -37,10 +49,14 @@ export const StyledButton = styled.button<StyledButtonProps>`
   color: ${(props) => props.weight === 'solid' ? '#FFFFFF' : mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]};
   width: ${(props) => props.fullWidth ? '100%' : 'fit-content'};
   padding: ${(props) =>  props.weight === 'inline' ? '0' : mapButtonSize[props.size]};
+  height: ${(props) =>  mapButtonHeight[props.size]};;
   font-size: ${(props) => mapButtonFontSize[props.size]};
   border-radius: 6.25rem;
   font-weight: 500;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   ${(props) => !props.disabled &&
     `&:hover {
@@ -58,7 +74,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
     color: ${(props) => props.weight != 'inline' ? '#ffffff' : mapButtonColorDisabled[props.theme as keyof typeof mapButtonColorDisabled]};
     border: none;
     cursor: not-allowed;
-  }
+  };
+
+  /* > div:nth-child(1){
+    margin-right: ${(props) => mapMarginIcon[props.size]};
+  } */
 `;
 
 export const StyledHref = styled.a`

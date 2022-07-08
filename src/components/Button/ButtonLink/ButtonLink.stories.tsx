@@ -95,6 +95,6 @@ export const LinkSecondary = Template.bind({});
 LinkSecondary.args = { ...LinkPrimary.args, theme: 'secondary' };
 
 export const LinkIcon = TemplateIcon.bind({});
-LinkIcon.args = { ...LinkPrimary.args, suffix: <CheckWhite/>};
+LinkIcon.args = { ...LinkPrimary.args, suffix: 'SquareOrange'};
 
 

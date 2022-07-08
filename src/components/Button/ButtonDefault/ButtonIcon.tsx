@@ -3,6 +3,7 @@ import { FC } from "react";
 import { ButtonIconProps } from "../type";
 import { StyledButtonIcon } from "../style-icon";
 import CheckWhite from "../../../assets/check_icon.svg";
+import { Icons } from "../../Icon/index";
 
 const ButtonIcon: FC<ButtonIconProps> = (props) => {
   const { 
@@ -11,7 +12,7 @@ const ButtonIcon: FC<ButtonIconProps> = (props) => {
     size= 'md', 
     disabled= false,
     fullWidth = false,
-    suffix=<CheckWhite/>,
+    suffix="InfoIcon",
   } = props;
 
   return (
@@ -20,7 +21,7 @@ const ButtonIcon: FC<ButtonIconProps> = (props) => {
       size={size} fullWidth={fullWidth}
       disabled={disabled}
     >
-      {suffix}
+      <Icons type={suffix} size="100%"/>
     </StyledButtonIcon>
   );
 };

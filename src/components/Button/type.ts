@@ -3,6 +3,7 @@ import { MouseEventHandler } from "react";
 export type ButtonTheme = "primary" | "secondary";
 export type ButtonSize = "sm" | "md" | "lg";
 export type ButtonWeight = "solid" | "outline" | "inline";
+export type ButtonSuffixDirection = "none" | "right" | "left" | "both";
 
 interface BaseButtonProps {
   children?: React.ReactNode;
@@ -11,16 +12,17 @@ interface BaseButtonProps {
   size?: ButtonSize;
   disabled?: boolean;
   fullWidth?: boolean;
+  suffixDirection?: ButtonSuffixDirection;
 };
 
 interface BaseButtonLinkProps {
   href?: string;
   target?: string;
-  suffix?: any;
+  suffix?: string;
 };
 
 interface BaseButtonIconProps {
-  suffix?: any;
+  suffix?: string;
 }
 
 type HTMLButtonProps = {
@@ -28,6 +30,6 @@ type HTMLButtonProps = {
   type?: "button" | "submit" | "reset";
 } & BaseButtonProps;
 
-export type ButtonProps = BaseButtonProps & HTMLButtonProps;
+export type ButtonProps = BaseButtonProps & HTMLButtonProps & BaseButtonIconProps;
 export type ButtonLinkProps = ButtonProps & BaseButtonLinkProps;
 export type ButtonIconProps = ButtonProps & BaseButtonIconProps;

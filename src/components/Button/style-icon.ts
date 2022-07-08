@@ -33,12 +33,12 @@ const mapButtonWidth = {
 }
 
 export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
-  background: ${(props) => props.weight === 'solid' ? mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor] : '#FFFFFF'};
-  border: ${(props) => props.weight === 'outline' ? `1px solid ${mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]}` : 'none'};
-  color: ${(props) => props.weight === 'solid' ? '#FFFFFF' : mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]};
-  width: ${(props) => props.weight === 'inline' ? 'fit-content' : mapButtonWidth[props.size]};
-  height: ${(props) => props.weight === 'inline' ? 'fit-content' : mapButtonWidth[props.size]};
-  padding: ${(props) =>  props.weight === 'inline' ? '0' : mapButtonSize[props.size]};
+  background: ${(props) => props.weight === 'solid' ? mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor] : 'transparent'};
+  border: ${(props) => props.weight === 'outline' ? `1px solid ${mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]}` : 'transparent'};
+  color: ${(props) => props.weight === 'solid' ? 'transparent' : mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]};
+  width: ${(props) =>  mapButtonWidth[props.size]};
+  height: ${(props) =>  mapButtonWidth[props.size]};
+  padding: ${(props) =>  mapButtonSize[props.size]};
   border-radius: 6.25rem;
   cursor: pointer;
   display: flex;
