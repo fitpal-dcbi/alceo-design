@@ -27,3 +27,30 @@ export const StyledCard = styled.div`
     }
   }
 `;
+
+export const StyledCardEditable = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      filter: brightness(0.9) contrast(1.2);
+    }
+  }
+
+  span {
+    margin-left: .5938rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: #FF6112;
+  }
+`;

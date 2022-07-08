@@ -14,5 +14,4 @@ export interface BaseControlledInputProps {
 export interface CardDashboardProps {
   header?: string;
   body?: any;
-  editable?: boolean;
 }
