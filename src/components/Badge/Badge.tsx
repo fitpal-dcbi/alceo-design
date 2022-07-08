@@ -2,6 +2,7 @@ import React, { FC } from "react";
 
 import { BaseBadgeProps } from "./type";
 import { StyledBadge } from "./Style";
+import { ReactComponent as GlyphIcon } from "../../assets/icon-glyph.svg";
 
 const Badge: FC<BaseBadgeProps> = (props) => {
   const {
@@ -16,7 +17,9 @@ const Badge: FC<BaseBadgeProps> = (props) => {
   return (
     <StyledBadge variant={variant} inverted={inverted}>
       <div className="badgeWrapper">
+        <div className="prefixBadge">{prefix}</div>
         <p className="badgeLabel">{label}</p>
+        {suffix && <GlyphIcon className="suffixBadge" />}
       </div>
     </StyledBadge>
   );

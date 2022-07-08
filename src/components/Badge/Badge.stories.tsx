@@ -23,6 +23,9 @@ export default {
     label: {
       control: { type: "text" },
     },
+    prefix: {
+      control: { type: "text" },
+    },
   },
 } as Meta;
 
@@ -32,7 +35,7 @@ export const Badge: Story<BaseBadgeProps> = ({
   suffix,
   prefix,
   iconOnly,
-  label,
+  label = "label",
 }) => {
   return (
     <BadgeComponent

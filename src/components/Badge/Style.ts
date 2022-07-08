@@ -112,5 +112,29 @@ export const StyledBadge = styled.div<
           ]
         : mapBadgeFontColor[props.variant as keyof typeof mapBadgeFontColor]};
     line-height: 1rem;
+    margin-right: 0.375rem;
+  }
+
+  .prefixBadge {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.75rem;
+    margin-right: 0.375rem;
+    line-height: 1rem;
+  }
+
+  .suffixBadge {
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 50%;
+    background-color: ${(props) =>
+      props.inverted
+        ? mapInvertedBadgeIconBackgroundColor[
+            props.variant as keyof typeof mapInvertedBadgeIconBackgroundColor
+          ]
+        : mapBadgeIconBackgroundColor[
+            props.variant as keyof typeof mapBadgeIconBackgroundColor
+          ]};
   }
 `;
