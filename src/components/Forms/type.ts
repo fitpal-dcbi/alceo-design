@@ -9,4 +9,10 @@ export interface BaseControlledInputProps {
   >;
   defaultValue?: string | boolean | number;
   placeholder?: string;
+};
+
+export interface CardDashboardProps {
+  header?: string;
+  body?: any;
+  editable?: boolean;
 }
