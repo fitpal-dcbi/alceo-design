@@ -17,10 +17,7 @@
     "typescript": ">=3.0.0"
   },
   "scripts": {
-    "start": "parcel",
+    "start": "parcel --no-hmr",
     "build": "parcel build"
-  },
-  "dependencies": {
-    "styled-components": "^5.3.5"
   }
 }
