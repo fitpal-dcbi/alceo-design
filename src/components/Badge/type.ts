@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type BadgeVariant =
   | "light"
@@ -15,4 +15,5 @@ export interface BaseBadgeProps {
   prefix?: React.ReactNode;
   iconOnly?: boolean;
   label?: string | number;
+  children?: ReactNode;
 }

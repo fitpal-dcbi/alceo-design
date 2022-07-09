@@ -26,6 +26,9 @@ export default {
     prefix: {
       control: { type: "text" },
     },
+    children: {
+      control: { type: "text" },
+    },
   },
 } as Meta;
 
@@ -36,6 +39,7 @@ export const Badge: Story<BaseBadgeProps> = ({
   prefix,
   iconOnly,
   label = "label",
+  children,
 }) => {
   return (
     <BadgeComponent
@@ -45,6 +49,7 @@ export const Badge: Story<BaseBadgeProps> = ({
       prefix={prefix}
       iconOnly={iconOnly}
       label={label}
+      children={children}
     />
   );
 };

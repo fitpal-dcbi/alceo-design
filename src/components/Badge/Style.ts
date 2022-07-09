@@ -61,7 +61,7 @@ const mapInvertedBadgeFontColor = {
   info: "#FFFFFF",
   success: "#FFFFFF",
   warning: "#FFFFFF",
-  critical: "#970C0C",
+  critical: "#FFFFFF",
 };
 
 export const StyledBadge = styled.div<
