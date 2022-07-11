@@ -1,7 +1,6 @@
 import React, { FC, useState } from "react";
 import Radio from "@kiwicom/orbit-components/lib/Radio";
-import { StyledRadioWrapper } from "./style";
-import { BaseRadioProps } from "./type";
+import { BaseRadioProps, StyledRadioWrapper } from "./index";
 
 const RadioButton: FC<BaseRadioProps> = (props) => {
   const {
@@ -9,7 +8,8 @@ const RadioButton: FC<BaseRadioProps> = (props) => {
     disabled = false,
     children = '',
     id = '',
-    value
+    value, description = '',
+    hasError= false,
   } = props;
   
   const [checked, setChecked] = useState(false);
@@ -27,6 +27,8 @@ const RadioButton: FC<BaseRadioProps> = (props) => {
         value={value}
         disabled={disabled}
         checked={checked}
+        info={description}
+        hasError={hasError}
         onChange={(val) => {
           setChecked(!checked);
           onChange(val)

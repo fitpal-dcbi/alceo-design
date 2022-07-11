@@ -1,9 +1,10 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 
-import { BaseRadioProps, RadioProps } from "./type";
-import { StyledRadioWrapper } from "./style";
-import { Radio as RadioComponent } from "./index"
+import { BaseRadioProps, 
+  Radio as RadioComponent,
+  StyledRadioWrapper
+} from "./index"
 
 
 export default {
@@ -42,13 +43,24 @@ export default {
         category: 'Properties',
       },
     },
+    description: {
+      defaultValue: '',
+      control : { type: 'text'},
+    },
+    hasError: {
+      defaultValue: false,
+      control : { type: 'boolean'},
+      table: {
+        category: 'Properties',
+      },
+    },
   },
 } as Meta;
 
 export const RadioButton: Story<BaseRadioProps> = ({
   disabled, name,
   children, id,
-  value
+  value, description, hasError
 }) => {
 
   return (
@@ -59,6 +71,8 @@ export const RadioButton: Story<BaseRadioProps> = ({
          value={value}
          id={id}
          children={children}
+         description={description}
+         hasError={hasError}
       />
     </StyledRadioWrapper>
   )

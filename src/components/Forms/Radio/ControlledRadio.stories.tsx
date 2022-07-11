@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Meta, Story } from "@storybook/react";
 
-import { ControlledRadio as ControlledRadioComponent } from "./index";
-import { RadioProps } from "./type";
-import { StyledRadioButton } from "./style";
+import { ControlledRadio as ControlledRadioComponent,
+  RadioProps, 
+  StyledRadioButton 
+} from "./index";
 import {Button} from "../../Button/index";
 
 export default {
@@ -43,6 +44,17 @@ export default {
         category: 'Properties',
       },
     },
+    hasError: {
+      defaultValue: false,
+      control : { type: 'boolean'},
+      table: {
+        category: 'Properties',
+      },
+    },
+    description: {
+      defaultValue: '',
+      control : { type: 'text'},
+    },
     defaultValue: {
       table: {
         disable: true
@@ -79,6 +91,8 @@ export const ControlledRadio: Story<RadioProps> = ({
   children,
   id,
   value,
+  hasError,
+  description
 }) => {
   const method = useForm();
   const {handleSubmit, control} = method;
@@ -99,6 +113,8 @@ export const ControlledRadio: Story<RadioProps> = ({
             value={value}
             id={id}
             children={children}
+            hasError={hasError}
+            description={description}
           />
           <Button type="submit" size="sm">Submit</Button>
         </form>

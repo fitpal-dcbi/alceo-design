@@ -7,6 +7,8 @@ export interface BaseRadioProps {
   children?: string;
   id?: string;
   value?: string;
+  hasError?: boolean;
+  description?: string;
 };
 
 export type RadioProps = BaseRadioProps & BaseControlledInputProps;

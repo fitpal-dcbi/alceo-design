@@ -1,8 +1,7 @@
 import React, { FC, useState } from "react";
 import { useController } from "react-hook-form";
 import Radio from "@kiwicom/orbit-components/lib/Radio";
-import { RadioProps } from "./type";
-import { StyledRadioWrapper } from "./style";
+import { RadioProps, StyledRadioWrapper } from "./index";
 import { ConnectForm } from "../../../utils/index";
 
 const ControlledRadio : FC<RadioProps> = (props) => {
@@ -13,7 +12,8 @@ const ControlledRadio : FC<RadioProps> = (props) => {
     rules = {},
     children = '',
     id = '',
-    value
+    value,
+    hasError, description= '',
   } = props;
   const {
     field: { onChange: fieldOnChange, name: fieldName, ref },
@@ -41,7 +41,9 @@ const ControlledRadio : FC<RadioProps> = (props) => {
             }}   
             value={value} 
             disabled={disabled}
+            hasError={hasError}
             ref={ref}
+            info={description}
           />
         )}
       </ConnectForm>
