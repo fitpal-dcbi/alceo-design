@@ -4,7 +4,8 @@ import { Meta, Story } from "@storybook/react";
 
 import { ControlledRadio as ControlledRadioComponent } from "./index";
 import { RadioProps } from "./type";
-
+import { StyledRadioButton } from "./style";
+import {Button} from "../../Button/index";
 
 export default {
   title: "Components/Form/Radio",
@@ -81,12 +82,13 @@ export const ControlledRadio: Story<RadioProps> = ({
 }) => {
   const method = useForm();
   const {handleSubmit, control} = method;
+  const [itemChecked, setItemChecked] = useState<string>('')
 
   const onSubmit = (data: any) => {
-    console.log('amel data', data)
+    setItemChecked(data[name]);
   }
   return (
-    <div>
+    <StyledRadioButton>
       <FormProvider {...method}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <ControlledRadioComponent
@@ -98,11 +100,10 @@ export const ControlledRadio: Story<RadioProps> = ({
             id={id}
             children={children}
           />
-            {/* {children} */}
-          {/* </ControlledRadioComponent> */}
-          <button type="submit">Submit</button>
+          <Button type="submit" size="sm">Submit</Button>
         </form>
       </FormProvider>
-    </div>
+      <div className="labelRadioSelected">Item selected : {itemChecked}</div>
+    </StyledRadioButton>
   );
 };

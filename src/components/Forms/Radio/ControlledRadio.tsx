@@ -1,14 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useController } from "react-hook-form";
-import { Radio } from ".";
-import { ConnectForm } from "../../../utils/index";
+import Radio from "@kiwicom/orbit-components/lib/Radio";
 import { RadioProps } from "./type";
+import { StyledRadioWrapper } from "./style";
+import { ConnectForm } from "../../../utils/index";
 
 const ControlledRadio : FC<RadioProps> = (props) => {
   const {
     name = "",
     disabled = false,
-    onChange,
     control,
     rules = {},
     children = '',
@@ -23,24 +23,29 @@ const ControlledRadio : FC<RadioProps> = (props) => {
     rules,
   });
 
+  const [checked, setChecked] = useState(false);
+
   return (
-    <ConnectForm>
-      {() => (
-        <Radio
-          onChange={(val) => {
-            fieldOnChange(val);
-            if (typeof onChange === "function") onChange(val);
-          }}
-          name={fieldName}
-          disabled={disabled}
-          ref={ref}
-          control={control}
-          children={children}
-          id={id}
-          value={value}
-        />
-      )}
-    </ConnectForm>
+    <StyledRadioWrapper disabled={disabled}>
+      <ConnectForm>
+        {() => (
+          <Radio 
+            name={fieldName}
+            id={id}
+            label={children} 
+            checked={checked}
+            onChange={(val) => {
+              fieldOnChange(val);
+              if (typeof fieldOnChange === "function") fieldOnChange(val);
+              setChecked(!checked);
+            }}   
+            value={value} 
+            disabled={disabled}
+            ref={ref}
+          />
+        )}
+      </ConnectForm>
+    </StyledRadioWrapper>
   )
 };
 

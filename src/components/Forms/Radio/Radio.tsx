@@ -1,37 +1,40 @@
-import React, { useState } from "react";
-import { StyledRadio, StyledRadioWrapper } from "./style";
-import { RadioProps } from "./type";
+import React, { FC, useState } from "react";
+import Radio from "@kiwicom/orbit-components/lib/Radio";
+import { StyledRadioWrapper } from "./style";
+import { BaseRadioProps } from "./type";
 
-const Radio = React.forwardRef<HTMLInputElement,RadioProps>(
-  (props, ref) => {
-    const {
-      name = '',
-      disabled = false,
-      onChange,
-      children,
-      id, value
-    } = props;
+const RadioButton: FC<BaseRadioProps> = (props) => {
+  const {
+    name = "",
+    disabled = false,
+    children = '',
+    id = '',
+    value
+  } = props;
+  
+  const [checked, setChecked] = useState(false);
+  const [itemChecked, setItemChecked] = useState<string>('')
 
-    return (
-      <StyledRadioWrapper
+  const onChange = (val: any) => {
+    setItemChecked(val?.target?.value)
+  };
+  return (
+    <StyledRadioWrapper disabled={disabled}>
+      <Radio
+        name={name}
+        id={id}
+        label={children}
+        value={value}
         disabled={disabled}
-      >
-        <StyledRadio
-          type={"radio"}
-          id={id}
-          name={name}
-          value={value}
-          disabled={disabled}
-          ref={ref}
-          onChange={(val) => {
-            if (onChange !== undefined) onChange(val?.target?.value);
-            // setIsChecked(value?.target?.checked);
-          }}
-        />
-        <label htmlFor={id}>{children}</label>
-      </StyledRadioWrapper>
-    );
-  }
-);
+        checked={checked}
+        onChange={(val) => {
+          setChecked(!checked);
+          onChange(val)
+        }}
+      />
+      <div className="labelRadioSelected">Item Selected : {itemChecked}</div>
+    </StyledRadioWrapper>
+  )
+}
 
-export default Radio;
+export default RadioButton;
