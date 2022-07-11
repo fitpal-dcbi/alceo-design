@@ -1,8 +1,12 @@
 export interface BasePaginationProps {
   totalData: number;
   pageSize: number;
-  onPageChange: (currentPage: number | string) => void;
   currentPage: number;
+}
+
+export interface PaginationProps extends BasePaginationProps {
+  onPageChange: (currentPage: number | string) => void;
+  onPageSizeChange: (pageSize: number) => void;
 }
 
 export type BaseUsePaginationProps = {

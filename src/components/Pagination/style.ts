@@ -2,6 +2,53 @@ import styled from "styled-components";
 import { StyledPagiantionProps } from "./type";
 
 export const StyledPagination = styled.div`
+  .pageSizeController {
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 1.25rem;
+
+      .pageSizeText {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #000000;
+        margin-right: 1rem;
+      }
+
+      .numberInputWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.375rem 0.5rem;
+        background: #ffffff;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+
+        max-width: 3rem;
+        max-height: 2rem;
+      }
+
+      .numberInput {
+        max-width: 2.25rem;
+        max-height: 2rem;
+        border: none;
+
+        :focus {
+          outline: none;
+        }
+
+        ::-webkit-inner-spin-button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   .paginationContainer {
     display: flex;
     flex-direction: row;
