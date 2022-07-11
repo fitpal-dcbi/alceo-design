@@ -1,12 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Icon, Switch } from "../lib";
+import { Icon } from "../lib";
 
 const App = () => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
   return (
     <div>
-      <Switch />
+      <Icon />
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import React, { FC } from "react";
-import { StyledIconArrow } from "./style";
-import { IconsProps } from "./type";
+import { ReactComponent as Arrow } from "../../assets/arrow.svg";
 
-// MS: To be deleted later
-const Icon: FC<IconsProps> = (props) => {
-
+// MS: To be deleted later, shows the use case of svgr
+const Icon: FC = (props) => {
   return (
-    <StyledIconArrow {...props}/>
+    <div>
+      <Arrow className="tesClassName" />
+    </div>
   );
 };
 

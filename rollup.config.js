@@ -4,15 +4,12 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import url from "@rollup/plugin-url";
 import svgr from "@svgr/rollup";
-
-// MS: Currently, we don't need to use postcss. But, if in the future we want to use things like: tailwind, etc. we might need this.
-// import postcss from "rollup-plugin-postcss";
+import json from "@rollup/plugin-json";
 
 const packageJson = require("./package.json");
 
 const rollupConfig = {
   input: "src/index.ts",
-  external: ["styled-components"],
   output: [
     {
       file: packageJson.main,
@@ -28,10 +25,11 @@ const rollupConfig = {
   plugins: [
     peerDepsExternal(),
     resolve(),
+    json(),
     commonjs(),
+    typescript({ useTsconfigDeclarationDir: true }),
     url(),
     svgr(),
-    typescript({ useTsconfigDeclarationDir: true }),
   ],
 };
 
