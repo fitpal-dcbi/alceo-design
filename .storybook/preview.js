@@ -1,6 +1,6 @@
 import ProviderDecorator from "./providerDecorator";
 
-export const decorators = [(storyFn) => ProviderDecorator(storyFn)];
+export const decorators = [ProviderDecorator];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
