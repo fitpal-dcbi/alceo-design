@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 export interface BaseStepperProps {
-  onAddClick: () => void;
-  onRemoveClick: () => void;
+  onPlusClick: () => void;
+  onMinusClick: () => void;
   quantity?: number;
 }

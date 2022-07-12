@@ -6,16 +6,16 @@ import PlusIcon from "../../assets/icon-plus.svg";
 import MinusIcon from "../../assets/icon-minus.svg";
 
 const Stepper: FC<BaseStepperProps> = (props) => {
-  const { onAddClick, onRemoveClick, quantity } = props;
+  const { onPlusClick, onMinusClick, quantity } = props;
 
   return (
     <StyledStepper>
       <div className="StepperWrapper">
-        <button className="butttonWrapper" onClick={() => onRemoveClick()}>
+        <button className="butttonWrapper" onClick={() => onMinusClick()}>
           <img src={MinusIcon} className="iconWrapper" />
         </button>
         <h4 className="textWrapper">{quantity}</h4>
-        <button className="butttonWrapper" onClick={() => onAddClick()}>
+        <button className="butttonWrapper" onClick={() => onPlusClick()}>
           <img src={PlusIcon} className="iconWrapper" />
         </button>
       </div>

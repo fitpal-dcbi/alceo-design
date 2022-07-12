@@ -11,22 +11,17 @@ export default {
 
 export const Switch: Story = () => {
   const [quantity, setQuantity] = useState(0);
-  const onAddClick = () => {
-    setQuantity((prev) => prev + 1);
-  };
-  const onRemoveClick = () => {
-    if (quantity > 1) {
-      setQuantity((prev) => prev - 1);
-    } else {
-      setQuantity(0);
-    }
+  const onPlusClick = () => setQuantity((prev) => prev + 1);
+  const onMinusClick = () => {
+    if (quantity > 1) setQuantity((prev) => prev - 1);
+    else setQuantity(0);
   };
 
   return (
     <StepperComponent
       quantity={quantity}
-      onAddClick={onAddClick}
-      onRemoveClick={onRemoveClick}
+      onPlusClick={onPlusClick}
+      onMinusClick={onMinusClick}
     />
   );
 };
