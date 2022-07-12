@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { BaseCheckboxProps } from "./index";
-import { StyledCheckboxWrapper } from "./style";
+import Checkbox from "@kiwicom/orbit-components/lib/Checkbox";
+import { BaseCheckboxProps, StyledCheckboxContainer } from "./index";
 
 const CheckboxOption= React.forwardRef<HTMLInputElement, BaseCheckboxProps>(
   (props, ref) => {
@@ -12,35 +12,29 @@ const CheckboxOption= React.forwardRef<HTMLInputElement, BaseCheckboxProps>(
       label="Label",
       description="",
       hasError=false,
+      checked=false,
       onChange
     } = props;
 
-    const [isChecked, setIsChecked] = useState<boolean>(false);
+    const [isChecked, setIsChecked] = useState<boolean>(checked);
 
     return (
-      <StyledCheckboxWrapper disabled={disabled} hasError={hasError}>
-        <div className="container">
-          <input
-            type={"checkbox"}
-            name={name}
-            id={id}
-            value={value}
-            ref={ref}
-            disabled={disabled}
-            checked={isChecked}
-            onChange={(val) => {
-              if (onChange !== undefined) onChange(val?.target?.checked);
-              setIsChecked(val?.target?.checked);
-            }}
-          />
-          <span className="checkmark"></span>
-        </div>
-        
-        <div>
-          <label htmlFor={id}>{label}</label><br/>
-          <label htmlFor={id} className="label-info">{description}</label>
-        </div>
-      </StyledCheckboxWrapper>
+      <StyledCheckboxContainer disabled={disabled} hasError={hasError}>
+        <Checkbox
+          name={name}
+          disabled={disabled}
+          id={id}
+          label={label}
+          hasError={hasError}
+          info={description}
+          value={value}
+          checked={isChecked}
+          onChange={(val) => {
+            setIsChecked((val?.target as HTMLInputElement)?.checked);
+            if (onChange !== undefined) onChange((val?.target as HTMLInputElement)?.checked);
+          }}
+        />
+      </StyledCheckboxContainer>
     );
   }
 );

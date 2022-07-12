@@ -1,72 +1,49 @@
 import styled from "styled-components";
-import { BaseCheckboxProps } from ".";
+import { BaseCheckboxProps } from "./index";
 
-export const StyledCheckboxWrapper = styled.div<
+export const StyledCheckboxContainer = styled.div<
 Pick<BaseCheckboxProps, "disabled" | "hasError">>`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1rem;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 
-  input, label {
-    cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  }
-
-  input {
-    width: 1.25rem;
-    height: 1.25rem;
-    border: .0625rem solid #BAC7D5;
-    border-color: ${(props) => props.disabled ? '#DCDCDC' : props.hasError ? '#EE3633' : '#BAC7D5'};
-    box-shadow: ${(props) => props.disabled ? 'inset 0px 0px 20px 2px rgba(230, 230, 230, 1)' : props.hasError ? '0px 0px 0px 2px rgba(255, 227, 226, 1)' : 'none'};
-
+  .gjqXHB,
+  .cpCxwI .Checkbox__IconContainer-sc-1xqef2c-0,
+  .edWdNF,
+  .czPEzn:active .Checkbox__IconContainer-sc-1xqef2c-0 {
     border-radius: .8125rem;
-    appearance: unset;
-    margin-top: 0;
-
-    ${(props) => !props.disabled && (
-     ` &:hover {
-        border: 1px solid;
-        border-color: #5CA898;
-        box-shadow: 0px 0px 0px 2px rgba(220, 241, 237, 1);
-      }`
-    )}
+    border: 1px solid;
+    border-color: #BAC7D5;
   }
 
-  input[type=checkbox]:checked {
-    appearance: unset;
-    background: #5CA898;
-    font-style: normal;
-  } 
-  
-  label {
-    margin-left: .4375rem;
+  .czPEzn:hover .Checkbox__IconContainer-sc-1xqef2c-0,
+  .ifCgVL:hover .Checkbox__IconContainer-sc-1xqef2c-0
+  {
+    border-color: ${(props) => props.disabled ? 'none' : '#5CA898'};
+    box-shadow: ${(props) => props.disabled ? 'none' : '0px 0px 0px 2px rgba(220, 241, 237, 1)'};
   }
 
-  .label-info {
-    color: #555555;
-    font-size: .75rem;
+  .ifCgVL .Checkbox__IconContainer-sc-1xqef2c-0 {
+    border-color: #EE3633;
+    box-shadow: 0px 0px 0px 2px rgba(255, 227, 226, 1);
   }
 
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+  .edWdNF, 
+  .edWdNF:hover {
+    background: #E6E6E6;
+    border: 1px solid #DCDCDC;
   }
 
-  .container input:checked ~ .checkmark:after {
-    display: block;
+  .cpCxwI .Checkbox__IconContainer-sc-1xqef2c-0 {
+    background-color: #5CA898;
+    border-color: #5CA898;
   }
 
-  .container .checkmark:after {
-    left: 27px;
-    top: 20px;
-    width: 3px;
-    height: 8px;
-    border: solid #fff;
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+  .fAlffV:checked ~ .Checkbox__TextContainer-sc-1xqef2c-1 > .Checkbox__LabelText-sc-1xqef2c-3 {
+    font-weight: 400;
+  }
+`;
+
+export const StyledCheckboxWrapper = styled.div`
+  button { 
+    margin:1rem 0;
   }
 `;

@@ -1,13 +1,14 @@
 import { BaseControlledInputProps } from "../type";
 
 export interface BaseCheckboxProps {
-  name: string;
+  name?: string;
   disabled?: boolean;
-  id: string;
+  id?: string;
   value?: string;
   label?: string;
   description?: string;
-  hasError: boolean;
+  hasError?: boolean;
+  checked?: boolean;
   onChange?: (value: any) => void;
 };
 

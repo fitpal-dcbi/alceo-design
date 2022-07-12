@@ -3,7 +3,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { Meta, Story } from "@storybook/react";
 import { 
   ControlledCheckbox as ControlledCheckboxComponent,
-  CheckboxProps
+  CheckboxProps, StyledCheckboxWrapper
 } from "./index"
 import { Button } from "../../Button/index";
 
@@ -90,7 +90,7 @@ export const ControlledCheckbox: Story<CheckboxProps> = ({
   };
 
   return (
-    <div>
+    <StyledCheckboxWrapper>
       <FormProvider {...method}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <ControlledCheckboxComponent
@@ -107,6 +107,6 @@ export const ControlledCheckbox: Story<CheckboxProps> = ({
         </form>
       </FormProvider>
       <div className="label-checkout-selected">Item selected : {Object.values(itemSelected).toString()}</div>
-    </div>
+    </StyledCheckboxWrapper>
   )
 }

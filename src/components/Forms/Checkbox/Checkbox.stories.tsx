@@ -3,7 +3,6 @@ import { Meta, Story } from "@storybook/react";
 import { 
   CheckboxOption, 
   BaseCheckboxProps,
-  StyledCheckboxWrapper, 
 } from "./index";
 
 export default {
@@ -73,13 +72,18 @@ export default {
         disable: true
       }
     },
+    checked: {
+      table: {
+        disable: true
+      }
+    },
   },
 } as Meta;
 
 export const Checbox: Story<BaseCheckboxProps> = ({
-  name, disabled, id, value, label, hasError, description
+  name, disabled, id, value, label, hasError, description, checked
 }) => {
-  const [checkbox, setCheckbox] = useState(false);
+  const [checkbox, setCheckbox] = useState<boolean>(false);
 
   return (
     <div>
@@ -91,10 +95,11 @@ export const Checbox: Story<BaseCheckboxProps> = ({
         label={label}
         hasError={hasError}
         description={description}
+        checked={checked}
         onChange={(value) => setCheckbox(value)}
 
       />
-      <p>Item selected : {checkbox.toString()}</p>
+      <p>{name} selected : {checkbox.toString()}</p>
     </div>
   );
 };
