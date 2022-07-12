@@ -2,8 +2,8 @@ import React, { FC } from "react";
 
 import { BaseStepperProps } from "./type";
 import { StyledStepper } from "./style";
-import PlusIcon from "../../assets/icon-plus.svg";
-import MinusIcon from "../../assets/icon-minus.svg";
+import { ReactComponent as PlusIcon } from "../../assets/icon-plus.svg";
+import { ReactComponent as MinusIcon } from "../../assets/icon-minus.svg";
 
 const Stepper: FC<BaseStepperProps> = (props) => {
   const { onPlusClick, onMinusClick, quantity } = props;
@@ -12,11 +12,11 @@ const Stepper: FC<BaseStepperProps> = (props) => {
     <StyledStepper>
       <div className="StepperWrapper">
         <button className="butttonWrapper" onClick={() => onMinusClick()}>
-          <img src={MinusIcon} className="iconWrapper" />
+          <MinusIcon className="iconWrapper" />
         </button>
         <h4 className="textWrapper">{quantity}</h4>
         <button className="butttonWrapper" onClick={() => onPlusClick()}>
-          <img src={PlusIcon} className="iconWrapper" />
+          <PlusIcon className="iconWrapper" />
         </button>
       </div>
     </StyledStepper>
