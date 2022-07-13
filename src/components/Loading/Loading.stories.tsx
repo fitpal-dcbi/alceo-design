@@ -1,8 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { Loading } from ".";
-import { LoadingProps } from "./type";
-import LoadingDot from "./LoadingDots";
+import { 
+  Loading, 
+  LoadingDots, 
+  LoadingProps 
+} from "./index";
 
 export default {
   title: "Components/Loading",
@@ -48,7 +50,7 @@ export default {
 } as Meta;
 
 const Template: Story<LoadingProps> = (args) => <Loading {...args} />;
-const TemplateLoadingDot: Story<LoadingProps> = (args) => <LoadingDot {...args} />;
+const TemplateLoadingDot: Story<LoadingProps> = (args) => <LoadingDots {...args} />;
 
 export const Default = Template.bind({});
 Default.args = { 
@@ -62,3 +64,10 @@ Default.args = {
 
 export const Dots = TemplateLoadingDot.bind({});
 Dots.args = {...Default.args, children: 'Please wait, Card content is loading…', width: '.8125rem'};
+
+export const CirclePrimary  = Template.bind({});
+CirclePrimary.args = {...Default.args, colorCircle: '#ff6112', widthStroke: 5,
+  children: <p>Kata Riset :<br/>
+  Berat ideal bisa dicapai tidak hanya dari faktor makanan, tetapi juga faktor kebiasaan & psikologi.
+  </p>
+};

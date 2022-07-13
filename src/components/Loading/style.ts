@@ -31,6 +31,10 @@ export const StyledLoading = styled.div<StyledLoadingProps>`
   flex-direction: column;
   align-items: center;
 
+  p {
+    text-align: center;
+  }
+  
   .spinner {
     margin-bottom: 1rem ;
     animation: rotate 2s linear infinite;
