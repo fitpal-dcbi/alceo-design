@@ -28,7 +28,7 @@ export const StyledCard = styled.div`
   }
 `;
 
-export const StyledCardEditable = styled.div`
+export const StyledEditableCardHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

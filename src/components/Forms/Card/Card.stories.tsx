@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Meta, Story } from "@storybook/react";
-import { Card } from "./index";
-import EditCard from "./EditCard";
+import { 
+  Card, 
+  CardDashboardProps,
+  EditCard 
+} from "./index";
 import { Switch } from "../Switch/Switch.stories";
-import { CardDashboardProps } from "../type";
 
 export default {
   title: "Components/Form/Card",

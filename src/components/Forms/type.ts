@@ -11,7 +11,4 @@ export interface BaseControlledInputProps {
   placeholder?: string;
 };
 
-export interface CardDashboardProps {
-  header?: string;
-  body?: any;
-}
+

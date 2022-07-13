@@ -1,17 +1,16 @@
 import React from "react";
-import { StyledCardEditable } from "./style";
-import { Card } from ".";
-import { DisplayNameUtils } from "../../../utils";
+import { Card, StyledEditableCardHeader } from "./index";
+import { displayNameUtils } from "../../../utils";
 import { ReactComponent as PencilOrange } from "../../../assets/pencil-orange.svg";
 
 const EditCard = ({children, isEditing, setIsEditing} : {children: any, isEditing: boolean, setIsEditing: any}) => {
-  const header = DisplayNameUtils(children, "Header");
-  const body = DisplayNameUtils(children, "Body");
+  const header = displayNameUtils(children, "Header");
+  const body = displayNameUtils(children, "Body");
 
   return (
     <Card>
       <Card.Header>
-        <StyledCardEditable>
+        <StyledEditableCardHeader>
         <div>{header}</div>
 
           {isEditing && (
@@ -22,7 +21,7 @@ const EditCard = ({children, isEditing, setIsEditing} : {children: any, isEditin
               <span>Edit</span>
             </button>
           )}
-        </StyledCardEditable>
+        </StyledEditableCardHeader>
       </Card.Header>
       <Card.Body>{body}</Card.Body>
     </Card>

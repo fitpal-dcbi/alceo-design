@@ -1,10 +1,10 @@
 import React from "react";
-import { StyledCard } from "./style";
-import { DisplayNameUtils } from "../../../utils";
+import { StyledCard } from "./index";
+import { displayNameUtils } from "../../../utils";
 
 const Card = ({ children }: { children: any}) => {
-  const header = DisplayNameUtils(children, "Header");
-  const body = DisplayNameUtils(children, "Body");
+  const header = displayNameUtils(children, "Header");
+  const body = displayNameUtils(children, "Body");
 
   return (
     <StyledCard>

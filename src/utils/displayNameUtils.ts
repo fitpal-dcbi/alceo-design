@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const getChildrenOnDisplayName = (children: any, displayName: any) =>
   React.Children.map(children, (child) =>
