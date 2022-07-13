@@ -14,7 +14,9 @@ const Template: Story<ModalProps> = (args) => {
   return (
     <div>
       <button onClick={() => setIsOpen(true)}>Open</button>
-      {isOpen && <Modal onClose={() => setIsOpen(false)} {...args} />}
+      {isOpen && (
+        <Modal onClose={() => setIsOpen(false)} disableAnimation={false} />
+      )}
     </div>
   );
 };
