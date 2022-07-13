@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import React, { MouseEventHandler } from "react";
 
 export type ButtonTheme = "primary" | "secondary";
 export type ButtonSize = "sm" | "md" | "lg";
@@ -18,11 +18,11 @@ interface BaseButtonProps {
 interface BaseButtonLinkProps {
   href?: string;
   target?: string;
-  suffix?: string;
+  suffix?: React.ReactNode;
 };
 
 interface BaseButtonIconProps {
-  suffix?: string;
+  suffix?: React.ReactNode;
 }
 
 type HTMLButtonProps = {

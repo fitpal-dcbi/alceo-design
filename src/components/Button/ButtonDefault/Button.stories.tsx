@@ -1,8 +1,13 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import Button from "./Button";
-import { ButtonIconProps, ButtonProps } from "../type";
-import ButtonIcon from "./ButtonIcon";
+import {
+  Button, 
+  ButtonIconProps, 
+  ButtonIcon, 
+  ButtonProps
+} from "../index";
+import { ReactComponent as SquareOrange } from "../../../assets/square.svg";
+import { ReactComponent as SquareSecondary } from "../../../assets/square-secondary.svg";
 
 export default {
   title: "Components/Button",
@@ -62,10 +67,8 @@ export default {
       },
     },
     suffix: {
-      defaultValue:"SquareOrange",
-      control: { type: "text" },
       table: {
-        category: 'Appearance Icon - suffix',
+        disable: true
       },
     },
   }
@@ -87,17 +90,20 @@ Primary.args = {
   disabled: false,
   type:"button",
   suffixDirection: "none",
-  suffix: "SquareOrange"
+  suffix: <SquareOrange/>
 };
 
 export const PrimaryIcon = TemplateIcon.bind({});
 PrimaryIcon.args = { ...Primary.args, size:'sm'};
 
 export const Secondary = Template.bind({});
-Secondary.args = { ...Primary.args, theme: "secondary", suffix: "SquareSecondary"};
+Secondary.args = { ...Primary.args, theme: "secondary", suffix: <SquareSecondary/>};
 
 export const SecondaryIcon = TemplateIcon.bind({});
 SecondaryIcon.args = { ...Secondary.args, size:'sm'};
 
 export const PrimaryIconText = Template.bind({});
 PrimaryIconText.args = { ...Primary.args, suffixDirection: "right" };
+
+export const SecondaryIconText = Template.bind({});
+SecondaryIconText.args = { ...Secondary.args, suffixDirection: "right" };

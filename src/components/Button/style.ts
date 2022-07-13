@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonSize, ButtonTheme, ButtonWeight } from "./type";
+import { ButtonProps, ButtonSize, ButtonTheme, ButtonWeight } from "./index";
 
 const mapButtonSize = {
   sm: "0.5rem 0.75rem",
@@ -27,13 +27,20 @@ const mapButtonBgColor = {
 const mapButtonColorDisabled = {
   primary: "#FFC6A7",
   secondary: "#B6DAD3",
-}
+};
 
-const mapMarginIcon ={
-  sm: ".625rem",
-  md: ".625rem",
-  lg: ".875rem"
-}
+export const mapIconSize = {
+  sm: ".75rem",
+  md: "1.25rem",
+  lg: "1.25rem"
+};
+
+const mapMarginChildren = {
+  none: "0",
+  left: "0 .625rem 0 0",
+  right: "0 0 0 .625rem",
+  both: "0 .625rem"
+};
 
 type StyledButtonProps = {
   theme: ButtonTheme;
@@ -60,7 +67,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   ${(props) => !props.disabled &&
     `&:hover {
-      filter: brightness(0.9) contrast(1.2);
+      filter: ${(props: any) => props.weight != 'inline' ? 'brightness(0.9) contrast(1.2)' : 'none'};
       transform: scale(1.03);
       &:before {
         bottom: 3px;
@@ -76,11 +83,31 @@ export const StyledButton = styled.button<StyledButtonProps>`
     cursor: not-allowed;
   };
 
-  /* > div:nth-child(1){
-    margin-right: ${(props) => mapMarginIcon[props.size]};
-  } */
+  svg {
+    width: 100%;
+    height: 100%;
+    max-width: ${(props) => mapIconSize[props.size]};
+    max-height: ${(props) => mapIconSize[props.size]};
+  };
+  svg > rect {
+    width: 100%;
+    height: 100%;
+    x: 0;
+    y: 0;
+    ${(props: any) => props.weight != 'solid' && 
+      `
+        opacity: 20%;
+        fill: #FF6112;  
+      `  
+    };
+  };
 `;
 
 export const StyledHref = styled.a`
   text-decoration: unset;
+`;
+
+export const StyledChildrenButton = styled.div<Pick<ButtonProps, "suffixDirection">>`
+  margin: ${(props) => mapMarginChildren[props.suffixDirection ?? 'none']};
+  white-space: nowrap;
 `;

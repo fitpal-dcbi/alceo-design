@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonSize, ButtonTheme, ButtonWeight } from "./type";
+import { ButtonSize, ButtonTheme, ButtonWeight, mapIconSize,  } from "./index";
 
 
 type StyledButtonIconProps = {
@@ -61,11 +61,31 @@ export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
     color: ${(props) => props.weight != 'inline' ? '#ffffff' : mapButtonColorDisabled[props.theme as keyof typeof mapButtonColorDisabled]};
     border: none;
     cursor: not-allowed;
-  }
+  };
 
   ${(props) =>  props.weight === 'inline' && 
   `  path {
       fill: #FF6112 !important;
     }`
-  }
+  };
+
+svg {
+    width: 100%;
+    height: 100%;
+    max-width: ${(props) => mapIconSize[props.size]};
+    max-height: ${(props) => mapIconSize[props.size]};
+  };
+
+  svg > rect {
+    width: 100%;
+    height: 100%;
+    x: 0;
+    y: 0;
+    ${(props: any) => props.weight != 'solid' && 
+      `
+        opacity: 20%;
+        fill: #FF6112;  
+      `  
+    };
+  };
 `;

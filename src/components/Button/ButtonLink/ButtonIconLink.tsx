@@ -1,9 +1,5 @@
-import React from "react";
-import { FC } from "react";
-import { ButtonLinkProps } from "../type";
-import { StyledButtonIcon } from "../style-icon";
-import { StyledHref } from "../style";
-import { Icons } from "../../Icon/index";
+import React, { FC } from "react";
+import { ButtonLinkProps, StyledButtonIcon, StyledHref } from "../index";
 
 const ButtonIconLink: FC<ButtonLinkProps> = (props) => {
   const { 
@@ -14,7 +10,7 @@ const ButtonIconLink: FC<ButtonLinkProps> = (props) => {
     fullWidth = false,
     href='https://www.sirka.io/',
     target='_blank',
-    suffix="SquareOrange"
+    suffix
   } = props;
 
   return (
@@ -24,7 +20,7 @@ const ButtonIconLink: FC<ButtonLinkProps> = (props) => {
         size={size} fullWidth={fullWidth}
         disabled={disabled}
       >
-        <Icons type={suffix} size="100%"/>
+        {suffix}
       </StyledButtonIcon>
     </StyledHref>
   );

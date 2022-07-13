@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 
-import { StyledButton } from "../style";
-import { ButtonProps } from "../type";
-import { Icons } from "../../Icon/index";
+import { ButtonProps, StyledButton, StyledChildrenButton } from "../index";
 
 const Button: FC<ButtonProps> = (props) => {
   const { 
@@ -13,7 +11,7 @@ const Button: FC<ButtonProps> = (props) => {
     disabled= false,
     fullWidth= false,
     suffixDirection="none",
-    suffix="SquareOrange",
+    suffix,
     onClick,
   } = props;
 
@@ -22,8 +20,10 @@ const Button: FC<ButtonProps> = (props) => {
     size={size} fullWidth={fullWidth}
     disabled={disabled} onClick={(val) => {if(val) onClick?.(val)}}
   >
-    {(suffixDirection === 'right' || suffixDirection === 'both') && <Icons type={suffix}/>} {children}
-    {(suffixDirection === 'left' || suffixDirection === 'both') && <Icons type={suffix}/>}
+    {(suffixDirection === 'right' || suffixDirection === 'both') && suffix} 
+      <StyledChildrenButton suffixDirection={suffixDirection}>{children}</StyledChildrenButton>
+    {(suffixDirection === 'left' || suffixDirection === 'both') && suffix}
+    
   </StyledButton>
 };
 
