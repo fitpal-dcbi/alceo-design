@@ -67,7 +67,7 @@ const mapInvertedBadgeFontColor = {
 export const StyledBadge = styled.div<
   Pick<BaseBadgeProps, "variant" | "inverted">
 >`
-  .badgeWrapper {
+  .badge-wrapper {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -100,7 +100,7 @@ export const StyledBadge = styled.div<
           }`};
   }
 
-  .badgeLabel {
+  .badge-label {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 500;
@@ -115,7 +115,7 @@ export const StyledBadge = styled.div<
     margin-right: 0.375rem;
   }
 
-  .prefixBadge {
+  .prefix-badge {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 500;
@@ -124,11 +124,8 @@ export const StyledBadge = styled.div<
     line-height: 1rem;
   }
 
-  .suffixBadge {
-    width: 0.875rem;
-    height: 0.875rem;
-    border-radius: 50%;
-    background-color: ${(props) =>
+  svg > path {
+    fill: ${(props) =>
       props.inverted
         ? mapInvertedBadgeIconBackgroundColor[
             props.variant as keyof typeof mapInvertedBadgeIconBackgroundColor

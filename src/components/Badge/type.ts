@@ -11,9 +11,8 @@ type BadgeVariant =
 export interface BaseBadgeProps {
   variant?: BadgeVariant;
   inverted?: boolean;
-  suffix?: boolean;
+  hasInfoIcon?: boolean;
   prefix?: React.ReactNode;
   iconOnly?: boolean;
-  label?: string | number;
   children?: ReactNode;
 }

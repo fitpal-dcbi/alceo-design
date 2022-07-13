@@ -16,12 +16,9 @@ export default {
       options: [true, false],
       control: { type: "boolean" },
     },
-    suffix: {
+    hasInfoIcon: {
       options: [true, false],
       control: { type: "boolean" },
-    },
-    label: {
-      control: { type: "text" },
     },
     prefix: {
       control: { type: "text" },
@@ -35,20 +32,18 @@ export default {
 export const Badge: Story<BaseBadgeProps> = ({
   variant,
   inverted,
-  suffix,
+  hasInfoIcon,
   prefix,
   iconOnly,
-  label = "label",
-  children,
+  children = "label",
 }) => {
   return (
     <BadgeComponent
       variant={variant}
       inverted={inverted}
-      suffix={suffix}
+      hasInfoIcon={hasInfoIcon}
       prefix={prefix}
       iconOnly={iconOnly}
-      label={label}
       children={children}
     />
   );
