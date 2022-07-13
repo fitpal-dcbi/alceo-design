@@ -1,26 +1,13 @@
 import { MouseEventHandler } from "react";
 
 export type ButtonTheme = "primary" | "secondary";
-export type ButtonSize = "sm" | "md" | "lg";
-export type ButtonWeight = "solid" | "outline" | "inline";
+
+export type ButtonSize = "full" | "half" | "default";
 
 interface BaseButtonProps {
   children?: React.ReactNode;
-  weight?: ButtonWeight;
   theme?: ButtonTheme;
   size?: ButtonSize;
-  disabled?: boolean;
-  fullWidth?: boolean;
-};
-
-interface BaseButtonLinkProps {
-  href?: string;
-  target?: string;
-  suffix?: any;
-};
-
-interface BaseButtonIconProps {
-  suffix?: any;
 }
 
 type HTMLButtonProps = {
@@ -29,5 +16,3 @@ type HTMLButtonProps = {
 } & BaseButtonProps;
 
 export type ButtonProps = BaseButtonProps & HTMLButtonProps;
-export type ButtonLinkProps = ButtonProps & BaseButtonLinkProps;
-export type ButtonIconProps = ButtonProps & BaseButtonIconProps;
