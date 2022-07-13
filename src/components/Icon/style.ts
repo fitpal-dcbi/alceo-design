@@ -1,4 +1,4 @@
 import styled from "styled-components";
-import { IconsProps } from "./type";
+import ArrowUrl from "../../assets/arrow.svg";
 
 import ArrowLeft from "../../assets/arrow.svg";
