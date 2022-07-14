@@ -8,7 +8,11 @@ export default {
   component: AccordionComponent,
 } as Meta;
 
-export const Accordion: Story = () => {
+export const Accordion: Story<{
+  accordionData: Array<{ title: string; body: string }>;
+}> = (args) => {
+  const { accordionData } = args;
+
   return (
     <div style={{ maxWidth: "800px" }}>
       {accordionData.map(
@@ -55,3 +59,6 @@ const accordionData = [
       "Sirka adalah aplikasi diet yang memberi kamu akses ke ahli gizi khusus dan rencana nutrisi yang dipersonalisasi. Kami tergabung di Indonesia di bawah PT Sejuta Kawan Sehat.",
   },
 ];
+
+export const AccordionStory = Accordion.bind({});
+AccordionStory.args = { accordionData };

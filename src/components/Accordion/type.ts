@@ -14,3 +14,10 @@ export type StyledAccordionProps = {
 
 export type AccordionProps = BaseAccordionProps;
 export type AccordionSubComponentProps = BaseAccordionSubComponentProps;
+
+export type AccordionType = {
+  accordionData: {
+    title: string;
+    body: string;
+  }[];
+};
