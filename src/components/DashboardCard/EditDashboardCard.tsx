@@ -1,11 +1,11 @@
 import React from "react";
 import { DashboardCard, StyledEditableCardHeader } from "./index";
-import { displayNameUtils } from "../../utils";
+import { getChildrenOnDisplayName } from "../../utils";
 import { ReactComponent as PencilOrange } from "../../assets/pencil-orange.svg";
 
 const EditDashboardCard = ({children, isEditing, setIsEditing} : {children: any, isEditing: boolean, setIsEditing: any}) => {
-  const header = displayNameUtils(children, "Header");
-  const body = displayNameUtils(children, "Body");
+  const header = getChildrenOnDisplayName(children, "Header");
+  const body = getChildrenOnDisplayName(children, "Body");
 
   return (
     <DashboardCard>
