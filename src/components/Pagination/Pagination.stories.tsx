@@ -20,7 +20,7 @@ export default {
   },
 } as Meta;
 
-export const Switch: Story<BasePaginationProps> = (props) => {
+export const Pagination: Story<BasePaginationProps> = (props) => {
   const { currentPage = 1, pageSize = 10, totalData = 100 } = props;
 
   const [page, setPage] = useState<any>(currentPage);

@@ -35,13 +35,13 @@ const Pagination: FC<PaginationProps> = (props) => {
 
   return (
     <StyledPagination>
-      <div className="paginationContainer">
-        <div className="pageSizeController">
-          <p className="pageSizeText">Row per page</p>
-          <div className="numberInputWrapper">
+      <div className="pagination-container">
+        <div className="pageSize-controller">
+          <p className="page-size-text">Row per page</p>
+          <div className="number-input-wrapper">
             <input
-              type={"number"}
-              className="numberInput"
+              type="number"
+              className="number-input"
               min={1}
               defaultValue={pageSize}
               onChange={(event) =>
@@ -53,18 +53,16 @@ const Pagination: FC<PaginationProps> = (props) => {
 
         <div
           role="button"
-          className="arrowWrapper"
+          className="arrow-wrapper"
           onClick={() => onPrevious()}
         >
           <ChevronLeft />
         </div>
         {paginationRange?.map((pageNumber, index) => {
-          if (pageNumber === DOTS) {
+          if (typeof pageNumber !== "number") {
             return (
               <li className="list" key={index}>
-                <button onClick={() => onNext()} className="dotWrapper">
-                  ...
-                </button>
+                <button className="dot-wrapper">{DOTS}</button>
               </li>
             );
           }
@@ -81,8 +79,8 @@ const Pagination: FC<PaginationProps> = (props) => {
             </li>
           );
         })}
-        <div role="button" className="arrowWrapper" onClick={() => onNext()}>
-          <ChevronLeft className="arrowRight" />
+        <div role="button" className="arrow-wrapper" onClick={() => onNext()}>
+          <ChevronLeft className="arrow-right" />
         </div>
       </div>
     </StyledPagination>

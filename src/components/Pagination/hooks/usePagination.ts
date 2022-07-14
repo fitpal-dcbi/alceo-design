@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { BaseUsePaginationProps } from "../type";
+import { UsePaginationProps } from "../type";
 
 export const DOTS = "...";
 
@@ -9,7 +9,7 @@ export const range = (start: number, end: number) => {
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
-export const usePagination = (props: BaseUsePaginationProps) => {
+export const usePagination = (props: UsePaginationProps) => {
   const { totalPage, pageSize, siblingCount = 1, currentPage } = props;
   const paginationRange = useMemo(() => {
     // WA: Pages count is determined as siblingCount + firstPage + lastPage + currentPage + 2*DOTS

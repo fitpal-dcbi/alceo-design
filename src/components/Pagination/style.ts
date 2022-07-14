@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { StyledPagiantionProps } from "./type";
+import { StyledPaginationProps } from "./type";
 
 export const StyledPagination = styled.div`
-  .pageSizeController {
+  .page-size-controller {
     display: none;
     @media screen and (min-width: 768px) {
       display: flex;
@@ -10,7 +10,7 @@ export const StyledPagination = styled.div`
       align-items: center;
       margin-right: 1.25rem;
 
-      .pageSizeText {
+      .page-size-text {
         font-family: "Montserrat";
         font-style: normal;
         font-weight: 400;
@@ -20,7 +20,7 @@ export const StyledPagination = styled.div`
         margin-right: 1rem;
       }
 
-      .numberInputWrapper {
+      .number-input-wrapper {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -33,7 +33,7 @@ export const StyledPagination = styled.div`
         max-height: 2rem;
       }
 
-      .numberInput {
+      .number-input {
         max-width: 2.25rem;
         max-height: 2rem;
         border: none;
@@ -49,14 +49,14 @@ export const StyledPagination = styled.div`
     }
   }
 
-  .paginationContainer {
+  .pagination-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
   }
 
-  .arrowWrapper {
+  .arrow-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@ export const StyledPagination = styled.div`
     cursor: pointer;
   }
 
-  .dotWrapper {
+  .dot-wrapper {
     padding: 0.5rem 0.75rem;
     margin-left: 0;
     line-height: 1.25rem;
@@ -85,7 +85,7 @@ export const StyledPagination = styled.div`
     }
   }
 
-  .arrowRight {
+  .arrow-right {
     transform: rotate(180deg);
   }
 
@@ -94,7 +94,7 @@ export const StyledPagination = styled.div`
   }
 `;
 
-export const StyledPageNumber = styled.button<StyledPagiantionProps>`
+export const StyledPageNumber = styled.button<StyledPaginationProps>`
   color: ${(props) =>
     props.currentPage === props.index ? "#FFD5C6" : "#FF6112"};
   background-color: ${(props) =>

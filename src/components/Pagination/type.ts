@@ -5,18 +5,18 @@ export interface BasePaginationProps {
 }
 
 export interface PaginationProps extends BasePaginationProps {
-  onPageChange: (currentPage: number | string) => void;
+  onPageChange: (currentPage: number) => void;
   onPageSizeChange: (pageSize: number) => void;
 }
 
-export type BaseUsePaginationProps = {
+export type UsePaginationProps = {
   totalPage: number;
   pageSize: number;
   siblingCount: number;
   currentPage: number;
 };
 
-export type StyledPagiantionProps = {
-  index: number | string;
+export type StyledPaginationProps = {
+  index: number;
   currentPage: number;
 };
