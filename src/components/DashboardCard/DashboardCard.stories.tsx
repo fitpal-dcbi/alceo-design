@@ -5,7 +5,7 @@ import {
   CardDashboardProps,
   EditDashboardCard 
 } from "./index";
-import { Switch } from "../Forms/Switch/Switch.stories";
+import { Switch } from "../Forms/Switch";
 
 export default {
   title: "Components/DashboardCard",
