@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonProps, ButtonSize, ButtonTheme, ButtonWeight } from "./index";
+import { ButtonProps, ButtonSize, ButtonTheme, ButtonWeight } from "./type";
 
 const mapButtonSize = {
   sm: "0.5rem 0.75rem",

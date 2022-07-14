@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ButtonSize, ButtonTheme, ButtonWeight, mapIconSize,  } from "./index";
-
+import { ButtonTheme, ButtonSize, ButtonWeight } from "./type";
+import { mapIconSize } from "./style";
 
 type StyledButtonIconProps = {
   theme: ButtonTheme;
