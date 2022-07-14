@@ -1,8 +1,8 @@
 import React from "react";
 import { StyledCard } from "./index";
-import { displayNameUtils } from "../../../utils";
+import { displayNameUtils } from "../../utils";
 
-const Card = ({ children }: { children: any}) => {
+const DashboardCard = ({ children }: { children: any}) => {
   const header = displayNameUtils(children, "Header");
   const body = displayNameUtils(children, "Body");
 
@@ -16,10 +16,10 @@ const Card = ({ children }: { children: any}) => {
 
 const Header = ({ children }: { children: any}) => children;
 Header.displayName = "Header";
-Card.Header = Header;
+DashboardCard.Header = Header;
 
 const Body = ({ children }:{ children: any}) => children;
 Body.displayName = "Body";
-Card.Body = Body;
+DashboardCard.Body = Body;
 
-export default Card;
+export default DashboardCard;

@@ -1,15 +1,15 @@
 import React from "react";
-import { Card, StyledEditableCardHeader } from "./index";
-import { displayNameUtils } from "../../../utils";
-import { ReactComponent as PencilOrange } from "../../../assets/pencil-orange.svg";
+import { DashboardCard, StyledEditableCardHeader } from "./index";
+import { displayNameUtils } from "../../utils";
+import { ReactComponent as PencilOrange } from "../../assets/pencil-orange.svg";
 
-const EditCard = ({children, isEditing, setIsEditing} : {children: any, isEditing: boolean, setIsEditing: any}) => {
+const EditDashboardCard = ({children, isEditing, setIsEditing} : {children: any, isEditing: boolean, setIsEditing: any}) => {
   const header = displayNameUtils(children, "Header");
   const body = displayNameUtils(children, "Body");
 
   return (
-    <Card>
-      <Card.Header>
+    <DashboardCard>
+      <DashboardCard.Header>
         <StyledEditableCardHeader>
         <div>{header}</div>
 
@@ -22,18 +22,18 @@ const EditCard = ({children, isEditing, setIsEditing} : {children: any, isEditin
             </button>
           )}
         </StyledEditableCardHeader>
-      </Card.Header>
-      <Card.Body>{body}</Card.Body>
-    </Card>
+      </DashboardCard.Header>
+      <DashboardCard.Body>{body}</DashboardCard.Body>
+    </DashboardCard>
   );
 };
 
 const Header = ({ children }: { children: any }) => children;
 Header.displayName = "Header";
-EditCard.Header = Header;
+EditDashboardCard.Header = Header;
 
 const Body = ({ children } : { children: any }) => children;
 Body.displayName = "Body";
-EditCard.Body = Body;
+EditDashboardCard.Body = Body;
 
-export default EditCard;
+export default EditDashboardCard;

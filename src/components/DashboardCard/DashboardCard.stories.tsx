@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Meta, Story } from "@storybook/react";
 import { 
-  Card, 
+  DashboardCard, 
   CardDashboardProps,
-  EditCard 
+  EditDashboardCard 
 } from "./index";
-import { Switch } from "../Switch/Switch.stories";
+import { Switch } from "../Forms/Switch/Switch.stories";
 
 export default {
-  title: "Components/Form/Card",
-  component: Card,
+  title: "Components/DashboardCard",
+  component: DashboardCard,
   argTypes: {
     header: {
       defaultValue: "Profil Coach",
@@ -27,10 +27,10 @@ export const Uneditable: Story<CardDashboardProps> = ({
   body
 }) => {
   return (
-    <Card>
-      <Card.Header>{header}</Card.Header>
-      <Card.Body>{body}</Card.Body>
-    </Card>
+    <DashboardCard>
+      <DashboardCard.Header>{header}</DashboardCard.Header>
+      <DashboardCard.Body>{body}</DashboardCard.Body>
+    </DashboardCard>
   );
 };
 
@@ -40,12 +40,12 @@ export const Editable: Story<CardDashboardProps> = ({
   const [isEditing, setIsEditing] = useState(true);
 
   return (
-    <EditCard
+    <EditDashboardCard
       isEditing={isEditing}
       setIsEditing={setIsEditing}
     >
-      <EditCard.Header>{header}</EditCard.Header>
-      <EditCard.Body>
+      <EditDashboardCard.Header>{header}</EditDashboardCard.Header>
+      <EditDashboardCard.Body>
         <Switch disabled={isEditing}/>
         {!isEditing && (
           <div>
@@ -57,7 +57,7 @@ export const Editable: Story<CardDashboardProps> = ({
             </button>
           </div>
         )}
-      </EditCard.Body>
-    </EditCard>
+      </EditDashboardCard.Body>
+    </EditDashboardCard>
   )
 };  
