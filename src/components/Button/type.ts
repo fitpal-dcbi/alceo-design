@@ -5,7 +5,7 @@ export type ButtonSize = "sm" | "md" | "lg";
 export type ButtonWeight = "solid" | "outline" | "inline";
 export type ButtonSuffixDirection = "none" | "right" | "left" | "both";
 
-interface BaseButtonProps {
+type BaseButtonProps = {
   children?: React.ReactNode;
   weight?: ButtonWeight;
   theme?: ButtonTheme;
@@ -15,21 +15,20 @@ interface BaseButtonProps {
   suffixDirection?: ButtonSuffixDirection;
 };
 
-interface BaseButtonLinkProps {
-  href?: string;
-  target?: string;
+type BaseButtonIconProps = {
   suffix?: React.ReactNode;
+  prefix?: React.ReactNode;
 };
-
-interface BaseButtonIconProps {
-  suffix?: React.ReactNode;
-}
 
 type HTMLButtonProps = {
   onClick?: MouseEventHandler<any>;
   type?: "button" | "submit" | "reset";
 } & BaseButtonProps;
 
-export type ButtonProps = BaseButtonProps & HTMLButtonProps & BaseButtonIconProps;
-export type ButtonLinkProps = ButtonProps & BaseButtonLinkProps;
-export type ButtonIconProps = ButtonProps & BaseButtonIconProps;
+type BaseButtonLinkProps = {
+  href?: string;
+  target?: string;
+} & HTMLButtonProps & BaseButtonIconProps;
+
+export type ButtonProps = HTMLButtonProps & BaseButtonIconProps;
+export type ButtonLinkProps = BaseButtonLinkProps;

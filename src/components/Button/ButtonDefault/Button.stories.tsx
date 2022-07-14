@@ -71,6 +71,11 @@ export default {
         disable: true
       },
     },
+    prefix: {
+      table: {
+        disable: true
+      },
+    },
   }
 } as Meta;
 
@@ -90,7 +95,8 @@ Primary.args = {
   disabled: false,
   type:"button",
   suffixDirection: "none",
-  suffix: <SquareOrange/>
+  suffix: <SquareOrange/>,
+  prefix: <SquareOrange/>
 };
 
 export const PrimaryIcon = TemplateIcon.bind({});

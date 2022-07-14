@@ -1,25 +1,31 @@
-import React, { FC } from "react";
-import { ButtonIconProps, StyledButtonIcon } from "../index";
+import React from "react";
+import { ButtonProps } from "../type";
+import { StyledButtonIcon } from "../style-icon";
 
-const ButtonIcon: FC<ButtonIconProps> = (props) => {
-  const { 
-    theme= 'primary', 
-    weight= 'solid',
-    size= 'md', 
-    disabled= false,
-    fullWidth = false,
-    suffix,
-  } = props;
-
-  return (
-    <StyledButtonIcon 
-      weight={weight} theme={theme} 
-      size={size} fullWidth={fullWidth}
-      disabled={disabled}
-    >
-      {suffix}
-    </StyledButtonIcon>
-  );
-};
+const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
+    const { 
+      theme= 'primary', 
+      weight= 'solid',
+      size= 'md', 
+      disabled= false,
+      fullWidth = false,
+      prefix,
+    } = props;
+  
+    return (
+      <StyledButtonIcon 
+        weight={weight} 
+        theme={theme} 
+        size={size} 
+        fullWidth={fullWidth}
+        disabled={disabled}
+        ref={ref}
+      >
+        {prefix}
+      </StyledButtonIcon>
+    );
+  }
+);
 
 export default ButtonIcon;

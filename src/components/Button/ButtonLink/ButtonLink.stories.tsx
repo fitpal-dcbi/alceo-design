@@ -1,6 +1,11 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import {ButtonIconProps, ButtonIconLink, ButtonLinkProps, ButtonLink} from "../index";
+import { 
+  ButtonIconLink, 
+  ButtonLinkProps, 
+  ButtonLink, 
+  ButtonProps
+} from "../index";
 import { ReactComponent as SquareOrange } from "../../../assets/square.svg";
 
 export default {
@@ -70,12 +75,17 @@ export default {
         disable: true
       },
     },
+    prefix: {
+      table: {
+        disable: true
+      },
+    },
   }
 } as Meta;
 
 // Create a master template for mapping args to render the Button component
 const Template: Story<ButtonLinkProps> = (args) => <ButtonLink {...args} />;
-const TemplateIcon: Story<ButtonIconProps> = (args) => <ButtonIconLink {...args} />;
+const TemplateIcon: Story<ButtonProps> = (args) => <ButtonIconLink {...args} />;
 
 // Reuse that template for creating different stories
 export const LinkPrimary = Template.bind({});
@@ -90,7 +100,8 @@ LinkPrimary.args = {
   href: "https://www.sirka.io/",
   target: "_blank",
   suffixDirection: "none",
-  suffix: <SquareOrange/>
+  suffix: <SquareOrange/>,
+  prefix: <SquareOrange/>
 };
 
 export const LinkSecondary = Template.bind({});
