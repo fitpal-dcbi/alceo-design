@@ -7,6 +7,7 @@ export type ButtonSuffixDirection = "none" | "right" | "left" | "both";
 
 type BaseButtonProps = {
   children?: React.ReactNode;
+  weight?: ButtonWeight;
   theme?: ButtonTheme;
   size?: ButtonSize;
   disabled?: boolean;
