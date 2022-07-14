@@ -1,4 +1,7 @@
-import { ReactNode } from "react";
+interface BaseAccortionDataType {
+  title: string;
+  body: string;
+}
 
 interface BaseAccordionProps {
   children: any;
@@ -14,10 +17,4 @@ export type StyledAccordionProps = {
 
 export type AccordionProps = BaseAccordionProps;
 export type AccordionSubComponentProps = BaseAccordionSubComponentProps;
-
-export type AccordionType = {
-  accordionData: {
-    title: string;
-    body: string;
-  }[];
-};
+export type AccordionDataProps = { accordionData: BaseAccortionDataType[] };

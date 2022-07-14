@@ -13,16 +13,16 @@ const Accordion = ({ children }: AccordionProps) => {
   const body = getChildrenOnDisplayName(children, "Body");
   return (
     <StyledAccordion isOpen={isOpen}>
-      <div className="accordion-container">
+      <div className="accordion__container">
         <div
-          className="accordion-title-wrapper"
+          className="accordion__title-wrapper"
           onClick={() => setIsOpen(!isOpen)}
         >
           <p>{title}</p>
           {isOpen ? <AccordionMinus /> : <AccordionPlus />}
         </div>
 
-        <div className="accordion-body-wrapper">
+        <div className="accordion__body-wrapper">
           <p>{body}</p>
         </div>
       </div>

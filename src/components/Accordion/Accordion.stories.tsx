@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Meta, Story } from "@storybook/react";
 
 import { Accordion as AccordionComponent } from "./index";
+import { AccordionDataProps } from "./type";
 
 export default {
   title: "Components/Accordion",
   component: AccordionComponent,
 } as Meta;
 
-export const Accordion: Story<{
-  accordionData: Array<{ title: string; body: string }>;
-}> = (args) => {
+const Accordion: Story<AccordionDataProps> = (args) => {
   const { accordionData } = args;
 
   return (

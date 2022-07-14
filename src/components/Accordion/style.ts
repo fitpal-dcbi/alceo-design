@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { StyledAccordionProps } from "./type";
 
 export const StyledAccordion = styled.div<StyledAccordionProps>`
-  .accordion-container {
+  .accordion__container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -11,7 +11,7 @@ export const StyledAccordion = styled.div<StyledAccordionProps>`
     border-bottom: 1px solid #e9e9e9;
   }
 
-  .accordion-title-wrapper {
+  .accordion__title-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -40,7 +40,7 @@ export const StyledAccordion = styled.div<StyledAccordionProps>`
     }
   }
 
-  .accordion-body-wrapper {
+  .accordion__body-wrapper {
     margin-top: ${(props) => (props.isOpen ? "1rem" : "0")};
     opacity: ${(props) => (props.isOpen ? "1" : "0")};
     height: ${(props) => (props.isOpen ? "auto" : "0")};
