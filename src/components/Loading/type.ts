@@ -9,3 +9,8 @@ export interface LoadingProps {
   positionX?: LoadingPositionX;
   positionY?: LoadingPositionY;
 }
+
+export interface LoadingSkeletonProps {
+  width?: string;
+  height?: string;
+}

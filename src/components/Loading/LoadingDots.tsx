@@ -4,8 +4,8 @@ import { LoadingProps } from "./type";
 
 const LoadingDots: FC<LoadingProps> = (props) => {
   const { children, 
-    colorCircle, 
-    width,
+    colorCircle="#BAC7D5", 
+    width="3.125rem",
     positionX="right", 
     positionY="top"
   } = props;
