@@ -14,12 +14,13 @@ const Dialog = ({ children, ...other }: DialogProps) => {
   const title = getChildrenOnDisplayName(children, "Title");
   const body = getChildrenOnDisplayName(children, "Body");
   const footer = getChildrenOnDisplayName(children, "Footer");
+
   return (
     <StyledDialog>
-      <OrbitModal {...other}>
-        {title}
-        {body}
-        {footer}
+      <OrbitModal mobileHeader={false} {...other}>
+        {title[0]?.props?.children !== undefined && title}
+        {body[0]?.props?.children !== undefined && body}
+        {footer[0]?.props?.children !== undefined && footer}
       </OrbitModal>
     </StyledDialog>
   );
