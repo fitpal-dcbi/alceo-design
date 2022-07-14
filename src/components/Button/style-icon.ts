@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ButtonSize, ButtonTheme, ButtonWeight } from "./type";
-
+import { ButtonTheme, ButtonSize, ButtonWeight } from "./type";
+import { mapIconSize } from "./style";
 
 type StyledButtonIconProps = {
   theme: ButtonTheme;
@@ -33,12 +33,12 @@ const mapButtonWidth = {
 }
 
 export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
-  background: ${(props) => props.weight === 'solid' ? mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor] : '#FFFFFF'};
-  border: ${(props) => props.weight === 'outline' ? `1px solid ${mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]}` : 'none'};
-  color: ${(props) => props.weight === 'solid' ? '#FFFFFF' : mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]};
-  width: ${(props) => props.weight === 'inline' ? 'fit-content' : mapButtonWidth[props.size]};
-  height: ${(props) => props.weight === 'inline' ? 'fit-content' : mapButtonWidth[props.size]};
-  padding: ${(props) =>  props.weight === 'inline' ? '0' : mapButtonSize[props.size]};
+  background: ${(props) => props.weight === 'solid' ? mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor] : 'transparent'};
+  border: ${(props) => props.weight === 'outline' ? `1px solid ${mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]}` : 'transparent'};
+  color: ${(props) => props.weight === 'solid' ? 'transparent' : mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]};
+  width: ${(props) =>  mapButtonWidth[props.size]};
+  height: ${(props) =>  mapButtonWidth[props.size]};
+  padding: ${(props) =>  mapButtonSize[props.size]};
   border-radius: 6.25rem;
   cursor: pointer;
   display: flex;
@@ -61,11 +61,31 @@ export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
     color: ${(props) => props.weight != 'inline' ? '#ffffff' : mapButtonColorDisabled[props.theme as keyof typeof mapButtonColorDisabled]};
     border: none;
     cursor: not-allowed;
-  }
+  };
 
   ${(props) =>  props.weight === 'inline' && 
   `  path {
       fill: #FF6112 !important;
     }`
-  }
+  };
+
+svg {
+    width: 100%;
+    height: 100%;
+    max-width: ${(props) => mapIconSize[props.size]};
+    max-height: ${(props) => mapIconSize[props.size]};
+  };
+
+  svg > rect {
+    width: 100%;
+    height: 100%;
+    x: 0;
+    y: 0;
+    ${(props: any) => props.weight != 'solid' && 
+      `
+        opacity: 20%;
+        fill: #FF6112;  
+      `  
+    };
+  };
 `;

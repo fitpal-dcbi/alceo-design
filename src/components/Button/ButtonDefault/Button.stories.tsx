@@ -1,9 +1,13 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import Button from "./Button";
-import { ButtonIconProps, ButtonProps } from "../type";
-import ButtonIcon from "./ButtonIcon";
-import CheckWhite from "../../../assets/check_icon.svg";
+import {
+  Button, 
+  ButtonIconProps, 
+  ButtonIcon, 
+  ButtonProps
+} from "../index";
+import { ReactComponent as SquareOrange } from "../../../assets/square.svg";
+import { ReactComponent as SquareSecondary } from "../../../assets/square-secondary.svg";
 
 export default {
   title: "Components/Button",
@@ -55,18 +59,26 @@ export default {
         category: 'State',
       },
     },
-    // style: {                             
-    //   control: { type: "object" },
-    //   table: {
-    //     category: 'Appearance',
-    //   },
-    // }
+    suffixDirection: {
+      options: ["none", "right", "left", "both"],
+      control: { type: "inline-radio" },
+      table: {
+        category: 'Appearance Icon - suffix',
+      },
+    },
+    suffix: {
+      table: {
+        disable: true
+      },
+    },
+    prefix: {
+      table: {
+        disable: true
+      },
+    },
   }
 } as Meta;
 
-// const onClicked = (value: any) => {
-//   console.log('amel value', value)
-// }
 // Create a master template for mapping args to render the Button component
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 const TemplateIcon: Story<ButtonIconProps> = (args) => <ButtonIcon {...args} />;
@@ -82,15 +94,22 @@ Primary.args = {
   fullWidth: false,
   disabled: false,
   type:"button",
-  // style:{},
+  suffixDirection: "none",
+  suffix: <SquareOrange/>,
+  prefix: <SquareOrange/>
 };
 
 export const PrimaryIcon = TemplateIcon.bind({});
-PrimaryIcon.args = { ...Primary.args, suffix: <CheckWhite/>, size:'sm'};
+PrimaryIcon.args = { ...Primary.args, size:'sm'};
 
 export const Secondary = Template.bind({});
-Secondary.args = { ...Primary.args, theme: "secondary"};
-
+Secondary.args = { ...Primary.args, theme: "secondary", suffix: <SquareSecondary/>};
 
 export const SecondaryIcon = TemplateIcon.bind({});
-SecondaryIcon.args = { ...Primary.args, suffix: <CheckWhite/>, theme: "secondary", size:'sm'};
+SecondaryIcon.args = { ...Secondary.args, size:'sm'};
+
+export const PrimaryIconText = Template.bind({});
+PrimaryIconText.args = { ...Primary.args, suffixDirection: "right" };
+
+export const SecondaryIconText = Template.bind({});
+SecondaryIconText.args = { ...Secondary.args, suffixDirection: "right" };
