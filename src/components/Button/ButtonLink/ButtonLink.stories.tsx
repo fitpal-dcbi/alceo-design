@@ -1,9 +1,12 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import ButtonLink from "./ButtonLink";
-import { ButtonIconProps, ButtonLinkProps } from "../type";
-import ButtonIconLink from "./ButtonIconLink";
-import CheckWhite from "../../../assets/check_icon.svg";
+import { 
+  ButtonIconLink, 
+  ButtonLinkProps, 
+  ButtonLink, 
+  ButtonProps
+} from "../index";
+import { ReactComponent as SquareOrange } from "../../../assets/square.svg";
 
 export default {
   title: "Components/Button",
@@ -67,15 +70,22 @@ export default {
         category: 'Link',
       }
     },
+    suffix: {
+      table: {
+        disable: true
+      },
+    },
+    prefix: {
+      table: {
+        disable: true
+      },
+    },
   }
 } as Meta;
 
-// const onClicked = (value: any) => {
-//   console.log('amel value', value)
-// }
 // Create a master template for mapping args to render the Button component
 const Template: Story<ButtonLinkProps> = (args) => <ButtonLink {...args} />;
-const TemplateIcon: Story<ButtonIconProps> = (args) => <ButtonIconLink {...args} />;
+const TemplateIcon: Story<ButtonProps> = (args) => <ButtonIconLink {...args} />;
 
 // Reuse that template for creating different stories
 export const LinkPrimary = Template.bind({});
@@ -89,12 +99,17 @@ LinkPrimary.args = {
   type:"button",
   href: "https://www.sirka.io/",
   target: "_blank",
+  suffixDirection: "none",
+  suffix: <SquareOrange/>,
+  prefix: <SquareOrange/>
 };
 
 export const LinkSecondary = Template.bind({});
 LinkSecondary.args = { ...LinkPrimary.args, theme: 'secondary' };
 
 export const LinkIcon = TemplateIcon.bind({});
-LinkIcon.args = { ...LinkPrimary.args, suffix: 'SquareOrange'};
+LinkIcon.args = { ...LinkPrimary.args};
 
+export const LinkIconText = Template.bind({});
+LinkIconText.args = { ...LinkPrimary.args};
 
