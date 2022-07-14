@@ -7,42 +7,38 @@ import OrbitModal, {
 import { Props as OrbitModalProps } from "@kiwicom/orbit-components/lib/Modal";
 
 import { getChildrenOnDisplayName } from "../../utils";
+import { StyledDialog } from "./style";
 import { DialogProps } from "./type";
 
-// MS: Either to be deleted or will be used by WA. Demonstrating orbit-kiwi usage
 const Dialog = ({ children, ...other }: DialogProps) => {
   const title = getChildrenOnDisplayName(children, "Title");
   const body = getChildrenOnDisplayName(children, "Body");
   const footer = getChildrenOnDisplayName(children, "Footer");
   return (
-    <OrbitModal {...other}>
-      {title}
-      {body}
-      {footer}
-    </OrbitModal>
+    <StyledDialog>
+      <OrbitModal {...other}>
+        {title}
+        {body}
+        {footer}
+      </OrbitModal>
+    </StyledDialog>
   );
 };
 
 const Title = ({ children, ...other }: DialogProps) => (
-  <OrbitModalHeader {...other}>
-    <div>Title: {children}</div>
-  </OrbitModalHeader>
+  <OrbitModalHeader {...other}>{children}</OrbitModalHeader>
 );
 Title.displayName = "Title";
 Dialog.Title = Title;
 
 const Body = ({ children, ...other }: DialogProps) => (
-  <OrbitModalSection {...other}>
-    <div>Body: {children}</div>
-  </OrbitModalSection>
+  <OrbitModalSection {...other}>{children}</OrbitModalSection>
 );
 Body.displayName = "Body";
 Dialog.Body = Body;
 
 const Footer = ({ children, ...other }: DialogProps) => (
-  <OrbitModalFooter {...other}>
-    <div>Footer: {children}</div>
-  </OrbitModalFooter>
+  <OrbitModalFooter {...other}>{children}</OrbitModalFooter>
 );
 Footer.displayName = "Footer";
 Dialog.Footer = Footer;
