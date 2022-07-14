@@ -74,6 +74,7 @@ export const generateStyledInputContainer: (
   label ? "label" : "div"
 )`
   span.input-label {
+    display: block;
     color: #262626;
     font-size: 0.75rem;
     font-weight: 500;
