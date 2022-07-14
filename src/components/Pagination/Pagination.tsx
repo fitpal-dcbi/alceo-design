@@ -36,7 +36,7 @@ const Pagination: FC<PaginationProps> = (props) => {
   return (
     <StyledPagination>
       <div className="pagination-container">
-        <div className="pageSize-controller">
+        <div className="page-size-controller">
           <p className="page-size-text">Row per page</p>
           <div className="number-input-wrapper">
             <input
