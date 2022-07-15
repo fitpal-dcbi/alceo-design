@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { useController } from "react-hook-form";
-import { CheckboxProps, CheckboxOption } from "./index";
 import { ConnectForm } from "../../../utils/index";
+import CheckboxOption from "./CheckboxOption";
+import { CheckboxProps } from "./type";
 
 const ControlledCheckbox: FC<CheckboxProps> = (props) => {
   const {

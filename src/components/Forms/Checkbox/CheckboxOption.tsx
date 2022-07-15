@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Checkbox from "@kiwicom/orbit-components/lib/Checkbox";
-import { BaseCheckboxProps, StyledCheckboxContainer } from "./index";
+import { BaseCheckboxProps } from "./type";
+import { StyledCheckboxContainer } from "./style";
 
 const CheckboxOption= React.forwardRef<HTMLInputElement, BaseCheckboxProps>(
   (props, ref) => {

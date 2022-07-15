@@ -6,24 +6,25 @@ Pick<BaseCheckboxProps, "disabled" | "hasError">>`
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 
   .gjqXHB,
-  .cpCxwI .Checkbox__IconContainer-sc-1xqef2c-0,
-  .edWdNF,
-  .czPEzn:active .Checkbox__IconContainer-sc-1xqef2c-0 {
+  .czPEzn:active .Checkbox__IconContainer-sc-1xqef2c-0,
+  .bBxUxW, .iZGxCF, .edWdNF {
     border-radius: .8125rem;
     border: 1px solid;
     border-color: #BAC7D5;
   }
 
-  .czPEzn:hover .Checkbox__IconContainer-sc-1xqef2c-0,
-  .ifCgVL:hover .Checkbox__IconContainer-sc-1xqef2c-0
+  .RyIjk:hover .Checkbox__IconContainer-sc-1xqef2c-0,
+  .iJkZfb:hover .Checkbox__IconContainer-sc-1xqef2c-0,
+  .RyIjk:active .Checkbox__IconContainer-sc-1xqef2c-0,
+  .iJkZfb:active .Checkbox__IconContainer-sc-1xqef2c-0
   {
     border-color: ${(props) => props.disabled ? 'none' : '#5CA898'};
     box-shadow: ${(props) => props.disabled ? 'none' : '0px 0px 0px 2px rgba(220, 241, 237, 1)'};
   }
 
-  .ifCgVL .Checkbox__IconContainer-sc-1xqef2c-0 {
-    border-color: #EE3633;
-    box-shadow: 0px 0px 0px 2px rgba(255, 227, 226, 1);
+  .OvNsw .Checkbox__IconContainer-sc-1xqef2c-0 {
+    border-color: #EE3633 !important;
+    box-shadow: 0px 0px 0px 2px rgba(255, 227, 226, 1) !important;
   }
 
   .edWdNF, 
@@ -32,7 +33,8 @@ Pick<BaseCheckboxProps, "disabled" | "hasError">>`
     border: 1px solid #DCDCDC;
   }
 
-  .cpCxwI .Checkbox__IconContainer-sc-1xqef2c-0 {
+  .cpCxwI .Checkbox__IconContainer-sc-1xqef2c-0,
+  .bBxUxW {
     background-color: #5CA898;
     border-color: #5CA898;
   }
