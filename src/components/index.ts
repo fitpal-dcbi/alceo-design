@@ -4,4 +4,5 @@ export * from "./Modal";
 export * from "./Forms";
 export * from "./Pagination";
 export * from "./Loading";
+export * from "./Alert";
 
