@@ -25,7 +25,7 @@ export const StyledInput = styled.input`
   }
 
   &:disabled {
-    background-color: "#F0F0F0";
+    background-color: #f0f0f0;
     cursor: not-allowed;
   }
 `;
@@ -35,7 +35,7 @@ export const StyledInputWrapper = styled.div<
 >`
   display: flex;
   width: 100%;
-  height: 44px;
+  height: 2.75rem;
   padding: 0 0.875rem;
   border: 1px solid
     ${(props) => {
