@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const StyledDialog = styled.div`
+  max-width: 20.5rem !important;
+
+  @media (min-width: 414px) {
+    max-width: 24.5rem !important;
+  }
+
   .hFPfDp {
     display: flex;
     justify-content: center;
