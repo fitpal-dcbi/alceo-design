@@ -77,9 +77,17 @@ export default {
   },
 } as Meta;
 
-export const ControlledCheckbox: Story<CheckboxProps> = ({
-  name, disabled, id, value, label, description, hasError
-}) => {
+export const ControlledCheckbox: Story<CheckboxProps> = (props) => { 
+  const { 
+    name, 
+    disabled, 
+    id, 
+    value, 
+    label, 
+    hasError, 
+    description
+  } = props;
+
   const method = useForm();
   const { handleSubmit, control } = method;
 
@@ -108,5 +116,5 @@ export const ControlledCheckbox: Story<CheckboxProps> = ({
       </FormProvider>
       <div className="label-checkout-selected">Item selected : {Object.values(itemSelected).toString()}</div>
     </StyledCheckboxWrapper>
-  )
-}
+  );
+};

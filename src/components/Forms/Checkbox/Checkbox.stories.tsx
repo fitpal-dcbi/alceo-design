@@ -80,9 +80,18 @@ export default {
   },
 } as Meta;
 
-export const Checbox: Story<BaseCheckboxProps> = ({
-  name, disabled, id, value, label, hasError, description, checked
-}) => {
+export const Checbox: Story<BaseCheckboxProps> = (props) => { 
+  const { 
+    name, 
+    disabled, 
+    id, 
+    value, 
+    label, 
+    hasError, 
+    description, 
+    checked
+  } = props;
+
   const [checkbox, setCheckbox] = useState<boolean>(false);
 
   return (
