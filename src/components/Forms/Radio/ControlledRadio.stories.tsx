@@ -6,7 +6,7 @@ import { ControlledRadio as ControlledRadioComponent,
   RadioProps, 
   StyledRadioButton 
 } from "./index";
-import {Button} from "../../Button/index";
+import {Button} from "../../Button";
 
 export default {
   title: "Components/Form/Radio",
@@ -116,7 +116,7 @@ export const ControlledRadio: Story<RadioProps> = ({
             hasError={hasError}
             description={description}
           />
-          <Button type="submit" size="sm">Submit</Button>
+          <Button type="submit" size="sm" disabled={disabled}>Submit</Button>
         </form>
       </FormProvider>
       <div className="labelRadioSelected">Item selected : {itemChecked}</div>

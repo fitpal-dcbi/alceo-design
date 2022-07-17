@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import Radio from "@kiwicom/orbit-components/lib/Radio";
-import { BaseRadioProps, StyledRadioWrapper } from "./index";
+import { BaseRadioProps } from "./type";
+import { StyledRadioWrapper } from "./style";
 
 const RadioButton: FC<BaseRadioProps> = (props) => {
   const {

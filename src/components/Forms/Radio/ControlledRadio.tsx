@@ -1,7 +1,8 @@
 import React, { FC, useState } from "react";
 import { useController } from "react-hook-form";
 import Radio from "@kiwicom/orbit-components/lib/Radio";
-import { RadioProps, StyledRadioWrapper } from "./index";
+import { RadioProps } from "./type";
+import { StyledRadioWrapper } from "./style";
 import { ConnectForm } from "../../../utils/index";
 
 const ControlledRadio : FC<RadioProps> = (props) => {

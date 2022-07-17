@@ -1,50 +1,55 @@
 import styled from "styled-components";
-import { BaseRadioProps } from "./index";
+import { BaseRadioProps } from "./type";
 
-type RadioProps = {
-  disabled?: boolean,
-};
+export const StyledRadioWrapper = styled.div<
+Pick<BaseRadioProps, "disabled">>`
+  color: #000000;
 
-export const StyledRadioWrapper = styled.div<RadioProps>`
   label{
+    width: fit-content;
+    opacity: unset;
     cursor: ${(props) => props.disabled ? 'not-allowed' : 'pointer'};
-  }
+  };
 
   .labelRadioSelected {
     margin-top: 1rem;
-  }
+  };
 
-  .bRCIiE:focus + .Radio__IconContainer-sc-crlwn1-1,
-  .egCExO .Radio__IconContainer-sc-crlwn1-1 {
-    border: none;
-    box-shadow: none;
-    background-color: #FF6112;
-  }
+  label div:first-of-type {
+    border: 1px solid;
+    border-color: #DCDCDC;
+    background-color: ${(props) => props.disabled ? '#F0F0F0' : 'unset'};
+  };
+
+  label:hover div:first-of-type,
+  label:active div:first-of-type {
+    border-color: ${(props) => props.disabled ? '#DCDCDC' : '#FF6112'};
+    box-shadow: ${(props) => props.disabled ? 'none' : '0px 0px 0px 2px rgba(255, 231, 218, 1)'};
+  };
+
+  label > input:checked + div {
+    background-color: ${(props) => props.disabled ? '#E6E6E6' : '#FF6112'};
+  };
+
+  label > input[data-state='error']:checked + div {
+    background-color: ${(props) => props.disabled ? '#E6E6E6' : '#B22421'};
+    box-shadow: ${(props) => props.disabled ? 'unset' : '0px 0px 0px 2px rgba(255, 227, 226, 1)'};
+  };
+
+  input:focus + div {
+    border: 1px solid ${(props) => props.disabled ? 'none' : '#FF6112'} !important;
+    box-shadow: ${(props) => props.disabled ? 'none' : '0px 0px 0px 2px rgba(255, 231, 218, 1)'} !important;
+  };
+
+  label > input[data-state='error'] + div {
+    border-color: ${(props) => props.disabled ? 'none' : '#EE3633'};
+    box-shadow: ${(props) => props.disabled ? 'none' : '0px 0px 0px 2px rgba(255, 175, 173, 1)'};
+  };
 
   span {
     font-weight: 400 !important;
-  }
-
-  .pQAxi:hover .Radio__IconContainer-sc-crlwn1-1,
-  .jsYamK:hover .Radio__IconContainer-sc-crlwn1-1,
-  .pQAxi:active .Radio__IconContainer-sc-crlwn1-1 {
-    border: 1px solid #FF6112;
-    box-shadow: 0px 0px 0px 2px rgb(255 231 218);
-  }
-
-  /* Error radio button */
-  .jsYamK .Radio__IconContainer-sc-crlwn1-1 {
-    box-shadow: 0px 0px 0px 2px rgba(255, 175, 173, 1);
-  }
-
-  input:disabled, .dfQpEZ {
-    background-color: #F0F0F0;
-  }
-`
-
-export const StyledRadio = styled.input<BaseRadioProps>`
-  margin-right: .625rem;
-  cursor: ${(props) => props.disabled ? 'not-allowed' : 'pointer'};
+    background-color: ${(props) => props.disabled ? '#FAFAFA' : '#FFFFFF'};
+  };
 `;
 
 export const StyledRadioButton = styled.div`
@@ -52,30 +57,7 @@ export const StyledRadioButton = styled.div`
     margin-top: 1rem;
   };
 
-  .bRCIiE:focus + .Radio__IconContainer-sc-crlwn1-1,
-  .egCExO .Radio__IconContainer-sc-crlwn1-1 {
-    border: none;
-    box-shadow: none;
-    background-color: #FF6112;
-  }
-
   span {
     font-weight: 400 !important;
-  }
-
-  .pQAxi:hover .Radio__IconContainer-sc-crlwn1-1,
-  .jsYamK:hover .Radio__IconContainer-sc-crlwn1-1,
-  .pQAxi:active .Radio__IconContainer-sc-crlwn1-1 {
-    border: 1px solid #FF6112;
-    box-shadow: 0px 0px 0px 2px rgb(255 231 218);
-  }
-
-  /* Error radio button */
-  .jsYamK .Radio__IconContainer-sc-crlwn1-1 {
-    box-shadow: 0px 0px 0px 2px rgba(255, 175, 173, 1);
-  }
-
-  input:disabled, .dfQpEZ {
-    background-color: #F0F0F0;
-  }
+  };
 `;
