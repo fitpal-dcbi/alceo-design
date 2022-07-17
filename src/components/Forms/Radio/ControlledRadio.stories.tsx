@@ -84,16 +84,18 @@ export default {
   },
 } as Meta;
 
-export const ControlledRadio: Story<RadioProps> = ({
-  disabled,
-  name,
-  rules,
-  children,
-  id,
-  value,
-  hasError,
-  description
-}) => {
+export const ControlledRadio: Story<RadioProps> = (props) => {
+  const {
+    disabled,
+    name,
+    rules,
+    children,
+    id,
+    value,
+    hasError,
+    description
+  } = props;
+
   const method = useForm();
   const {handleSubmit, control} = method;
   const [itemChecked, setItemChecked] = useState<string>('')
@@ -122,4 +124,4 @@ export const ControlledRadio: Story<RadioProps> = ({
       <div className="labelRadioSelected">Item selected : {itemChecked}</div>
     </StyledRadioButton>
   );
-};
+}; 

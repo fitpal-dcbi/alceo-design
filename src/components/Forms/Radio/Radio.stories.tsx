@@ -57,11 +57,16 @@ export default {
   },
 } as Meta;
 
-export const RadioButton: Story<BaseRadioProps> = ({
-  disabled, name,
-  children, id,
-  value, description, hasError
-}) => {
+export const RadioButton: Story<BaseRadioProps> = (props) => {
+  const {
+    disabled, 
+    name,
+    children,
+    id,
+    value, 
+    description, 
+    hasError
+  } = props;
 
   return (
     <StyledRadioWrapper disabled={disabled}>
@@ -75,5 +80,5 @@ export const RadioButton: Story<BaseRadioProps> = ({
          hasError={hasError}
       />
     </StyledRadioWrapper>
-  )
-}
+  );
+};
