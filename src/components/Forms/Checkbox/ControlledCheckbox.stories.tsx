@@ -5,7 +5,7 @@ import {
   ControlledCheckbox as ControlledCheckboxComponent,
   CheckboxProps, StyledCheckboxWrapper
 } from "./index"
-import { Button } from "../../Button/index";
+import { Button } from "../../Button";
 
 export default {
   title: "Components/Form/Checkbox",
