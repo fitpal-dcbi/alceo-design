@@ -16,11 +16,13 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonLinkProps>(
       suffix,
       prefix,
       suffixDirection="none",
+      id
     } = props;
 
     return (
       <StyledHref href={href} target={target}>
         <StyledButton 
+          id={id}
           weight={weight} 
           theme={theme} 
           size={size} 

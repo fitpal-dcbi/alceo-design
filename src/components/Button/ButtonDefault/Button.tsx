@@ -14,6 +14,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       suffixDirection="none",
       suffix,
       prefix,
+      id,
       onClick,
     } = props;
   
@@ -24,6 +25,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         size={size} 
         fullWidth={fullWidth}
         disabled={disabled} 
+        id={id}
         ref={ref}
         onClick={(val) => {if(val) onClick?.(val)}}
       >

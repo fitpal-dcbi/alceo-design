@@ -27,6 +27,19 @@ export default {
         disable: true
       },
     },
+    showPrefix: {
+      control: { type: "boolean"},
+    },
+    showPrimaryButton: {
+      control: { type: "boolean"},
+    },
+    showSecondaryButton: {
+      control: { type: "boolean"},
+    },
+    directionButton: {
+      options: ["beside", "below"],
+      control: { type: "inline-radio" },
+    }
   }
 } as Meta;
 
@@ -38,4 +51,8 @@ Default.args = {
   description: "Description – make it as clear as possible.",
   variant: "infoPrimary",
   closable: true,
+  showPrefix: true,
+  showPrimaryButton: false,
+  showSecondaryButton: false,
+  directionButton: "beside",
 }

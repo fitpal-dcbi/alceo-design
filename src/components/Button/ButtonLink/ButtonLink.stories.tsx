@@ -25,6 +25,12 @@ export default {
         category: 'State',
       },
     },
+    id: {
+      control: { type: "text" },
+      table: {
+        category: 'State',
+      },
+    },
     size: {
       options: ["sm", "md", "lg"],
       control: { type: "radio" },
@@ -101,7 +107,8 @@ LinkPrimary.args = {
   target: "_blank",
   suffixDirection: "none",
   suffix: <SquareOrange/>,
-  prefix: <SquareOrange/>
+  prefix: <SquareOrange/>,
+  id:"linkPrimary"
 };
 
 export const LinkSecondary = Template.bind({});
