@@ -6,4 +6,4 @@ services:
     ports:
       - "80:8080"
     env_file:
-      - /opt/alceo-design
+      - /opt/alceo-design.env
