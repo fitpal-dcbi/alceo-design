@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 
 import {
   StyledInput,
@@ -7,10 +7,10 @@ import {
 } from "./style";
 import { InputProps } from "./type";
 
-import { ReactComponent as IconError } from "../../assets/Input/icon-error.svg";
-import { ReactComponent as IconHelp } from "../../assets/Input/icon-help.svg";
+import { ReactComponent as IconError } from "../../../assets/Input/icon-error.svg";
+import { ReactComponent as IconHelp } from "../../../assets/Input/icon-help.svg";
 
-const Input: FC<InputProps> = (props) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     error,
     help,
@@ -37,7 +37,12 @@ const Input: FC<InputProps> = (props) => {
         {label && inlineLabel && (
           <span className="input-label inline-label">{label}</span>
         )}
-        <StyledInput className="input-field" disabled={disabled} {...other} />
+        <StyledInput
+          ref={ref}
+          className="input-field"
+          disabled={disabled}
+          {...other}
+        />
         {suffix && <div className="suffix-container">{suffix}</div>}
       </StyledInputWrapper>
       {error && (
@@ -54,6 +59,6 @@ const Input: FC<InputProps> = (props) => {
       )}
     </StyledInputContainer>
   );
-};
+});
 
 export default Input;
