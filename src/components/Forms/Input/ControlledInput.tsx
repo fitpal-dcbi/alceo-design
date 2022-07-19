@@ -17,7 +17,7 @@ const Controlledinput: FC<ControlledInputProps> = (props) => {
     ...other
   } = props;
   const {
-    field: { onChange: fieldOnChange, name: fieldName, value, ref },
+    field: { onChange: fieldOnChange, onBlur, name: fieldName, value, ref },
   } = useController({
     name,
     control,
@@ -31,6 +31,7 @@ const Controlledinput: FC<ControlledInputProps> = (props) => {
             fieldOnChange(value);
             if (typeof onChange === "function") onChange(value);
           }}
+          onBlur={onBlur}
           value={value}
           name={fieldName}
           ref={ref}
