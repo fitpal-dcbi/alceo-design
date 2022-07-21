@@ -6,7 +6,7 @@ import { StyledEmptyState } from "./style";
 import { Button } from "../Button";
 
 const EmptyState: React.FC<EmptyStateProps> = (props) => {
-  const { image, title, desc, button } = props;
+  const { image, title, description, button } = props;
 
   return (
     <StyledEmptyState>
@@ -17,7 +17,7 @@ const EmptyState: React.FC<EmptyStateProps> = (props) => {
             Sorry, we couldn't find that connection.
           </h2>
         )}
-        {desc && (
+        {description && (
           <p className="empty-state__description">
             Try changing up your search a bit. We'll try harder next time.{" "}
           </p>

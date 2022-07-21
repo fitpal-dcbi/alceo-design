@@ -25,7 +25,7 @@ export const StyledEmptyState = styled.div`
   .empty-state__description {
     margin: 0;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.25rem;
     line-height: 1.75rem;
     color: #555555;
     text-align: center;

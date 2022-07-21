@@ -1,7 +1,7 @@
 interface BaseEmptyStateProps {
   image?: React.ReactNode;
   title?: string;
-  desc?: string;
+  description?: string;
   button?: React.ReactNode;
 }
 

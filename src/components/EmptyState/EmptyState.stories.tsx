@@ -12,29 +12,30 @@ export default {
 } as Meta;
 
 const title = "Sorry, we couldn't find that connection.";
-const desc = "Try changing up your search a bit. We'll try harder next time. ";
+const description =
+  "Try changing up your search a bit. We'll try harder next time. ";
 const image = <EmptyStateIcon />;
 const button = <Button>Advance search</Button>;
 const buttonV2 = <Button weight="outline">Advance search</Button>;
 
 const EmptyState: Story = (args: EmptyStateProps) => {
-  const { image, title, desc, button } = args;
+  const { image, title, description, button } = args;
 
   return (
     <EmptyStateComponent
       title={title}
       image={image}
-      desc={desc}
+      description={description}
       button={button}
     />
   );
 };
 
 export const EmptyStateFullVersion = EmptyState.bind({});
-EmptyStateFullVersion.args = { title, desc, image, button };
+EmptyStateFullVersion.args = { title, description, image, button };
 
 export const EmptyStateFullVersion2 = EmptyState.bind({});
-EmptyStateFullVersion2.args = { title, desc, image, button: buttonV2 };
+EmptyStateFullVersion2.args = { title, description, image, button: buttonV2 };
 
 export const EmptyStateTitleOnly = EmptyState.bind({});
 EmptyStateTitleOnly.args = { title, image };
