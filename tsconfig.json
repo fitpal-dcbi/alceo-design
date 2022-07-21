@@ -20,6 +20,6 @@
     "jsx": "react"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "lib", "playground"],
+  "exclude": ["node_modules", "lib", "playground", "**/*.stories.tsx"],
   "files": ["declarations.d.ts"]
 }
