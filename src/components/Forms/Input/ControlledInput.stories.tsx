@@ -52,6 +52,9 @@ DefaultControlledInput.args = {
   prefix: <ArrowLeft />,
   suffix: "really long text",
   disabled: false,
+  rules: {
+    required: true,
+  },
 } as ControlledInputProps;
 
 DefaultControlledInput.parameters = {
