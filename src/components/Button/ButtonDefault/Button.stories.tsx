@@ -2,7 +2,6 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 import {
   Button, 
-  ButtonIconProps, 
   ButtonIcon, 
   ButtonProps
 } from "../index";
@@ -22,6 +21,12 @@ export default {
     },
     disabled: {
       control: { type: "boolean" },
+      table: {
+        category: 'State',
+      },
+    },
+    id: {
+      control: { type: "text" },
       table: {
         category: 'State',
       },
@@ -81,7 +86,7 @@ export default {
 
 // Create a master template for mapping args to render the Button component
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
-const TemplateIcon: Story<ButtonIconProps> = (args) => <ButtonIcon {...args} />;
+const TemplateIcon: Story<ButtonProps> = (args) => <ButtonIcon {...args} />;
 
 
 // Reuse that template for creating different stories
@@ -96,7 +101,8 @@ Primary.args = {
   type:"button",
   suffixDirection: "none",
   suffix: <SquareOrange/>,
-  prefix: <SquareOrange/>
+  prefix: <SquareOrange/>,
+  id:"default"
 };
 
 export const PrimaryIcon = TemplateIcon.bind({});

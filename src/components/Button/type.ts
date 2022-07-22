@@ -23,6 +23,7 @@ type BaseButtonIconProps = {
 type HTMLButtonProps = {
   onClick?: MouseEventHandler<any>;
   type?: "button" | "submit" | "reset";
+  id?: string;
 } & BaseButtonProps;
 
 type BaseButtonLinkProps = {

@@ -11,10 +11,12 @@ const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled= false,
       fullWidth = false,
       prefix,
+      id,
     } = props;
   
     return (
       <StyledButtonIcon 
+        id={id}
         weight={weight} 
         theme={theme} 
         size={size} 

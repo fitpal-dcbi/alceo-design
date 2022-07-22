@@ -13,12 +13,14 @@ const ButtonIconLink = React.forwardRef<HTMLButtonElement, ButtonLinkProps>(
       fullWidth = false,
       href='https://www.sirka.io/',
       target='_blank',
-      prefix
+      prefix,
+      id,
     } = props;
 
     return (
       <StyledHref href={href} target={target}>
         <StyledButtonIcon
+          id={id}
           weight={weight} 
           theme={theme} 
           size={size} 
