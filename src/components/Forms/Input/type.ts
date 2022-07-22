@@ -1,6 +1,7 @@
 import React from "react";
+import { BaseControlledInputProps } from "../type";
 
-interface BaseInputProps {
+export interface BaseInputProps {
   error?: string;
   help?: string;
   inlineLabel?: boolean;
@@ -11,3 +12,5 @@ interface BaseInputProps {
 
 export type InputProps = BaseInputProps &
   React.InputHTMLAttributes<HTMLInputElement>;
+
+export type ControlledInputProps = InputProps & BaseControlledInputProps;

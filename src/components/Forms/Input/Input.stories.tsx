@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import Input from "./Input";
 import { InputProps } from "./type";
 
-import { ReactComponent as ArrowLeft } from "../../assets/arrow.svg";
+import { ReactComponent as ArrowLeft } from "../../../assets/arrow.svg";
 
 export default {
   title: "Components/Input",
