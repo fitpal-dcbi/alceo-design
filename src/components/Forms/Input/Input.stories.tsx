@@ -23,4 +23,5 @@ DefaultInput.args = {
   prefix: <ArrowLeft />,
   suffix: "really long text",
   disabled: false,
+  readOnly: false,
 } as InputProps;
