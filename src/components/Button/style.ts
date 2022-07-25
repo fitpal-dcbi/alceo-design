@@ -110,7 +110,7 @@ export const StyledHref = styled.a`
   text-decoration: unset;
 `;
 
-export const StyledChildrenButton = styled.div<Pick<ButtonProps, "suffixDirection">>`
-  margin: ${(props) => mapMarginChildren[props.suffixDirection ?? 'none']};
+export const StyledChildrenButton = styled.div<Pick<ButtonProps, "iconDirection">>`
+  margin: ${(props) => mapMarginChildren[props.iconDirection ?? 'none']};
   white-space: nowrap;
 `;

@@ -2,7 +2,6 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 import {
   Button, 
-  ButtonIconProps, 
   ButtonIcon, 
   ButtonProps
 } from "../index";
@@ -59,11 +58,11 @@ export default {
         category: 'State',
       },
     },
-    suffixDirection: {
+    iconDirection: {
       options: ["none", "right", "left", "both"],
       control: { type: "inline-radio" },
       table: {
-        category: 'Appearance Icon - suffix',
+        category: 'Appearance Icon',
       },
     },
     suffix: {
@@ -81,7 +80,7 @@ export default {
 
 // Create a master template for mapping args to render the Button component
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
-const TemplateIcon: Story<ButtonIconProps> = (args) => <ButtonIcon {...args} />;
+const TemplateIcon: Story<ButtonProps> = (args) => <ButtonIcon {...args} />;
 
 
 // Reuse that template for creating different stories
@@ -94,7 +93,7 @@ Primary.args = {
   fullWidth: false,
   disabled: false,
   type:"button",
-  suffixDirection: "none",
+  iconDirection: "none",
   suffix: <SquareOrange/>,
   prefix: <SquareOrange/>
 };
@@ -109,7 +108,7 @@ export const SecondaryIcon = TemplateIcon.bind({});
 SecondaryIcon.args = { ...Secondary.args, size:'sm'};
 
 export const PrimaryIconText = Template.bind({});
-PrimaryIconText.args = { ...Primary.args, suffixDirection: "right" };
+PrimaryIconText.args = { ...Primary.args, iconDirection: "right" };
 
 export const SecondaryIconText = Template.bind({});
-SecondaryIconText.args = { ...Secondary.args, suffixDirection: "right" };
+SecondaryIconText.args = { ...Secondary.args, iconDirection: "right" };
