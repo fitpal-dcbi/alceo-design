@@ -27,9 +27,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         onClick={(val) => {if(val) onClick?.(val)}}
       >
-        {(suffixDirection === 'right' || suffixDirection === 'both') && prefix} 
+        {(suffixDirection === 'left' || suffixDirection === 'both') && prefix} 
           <StyledChildrenButton suffixDirection={suffixDirection}>{children}</StyledChildrenButton>
-        {(suffixDirection === 'left' || suffixDirection === 'both') && suffix}
+        {(suffixDirection === 'right' || suffixDirection === 'both') && suffix}
         
       </StyledButton>
     );
