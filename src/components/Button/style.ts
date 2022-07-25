@@ -37,8 +37,8 @@ export const mapIconSize = {
 
 const mapMarginChildren = {
   none: "0",
-  left: "0 .625rem 0 0",
-  right: "0 0 0 .625rem",
+  right: "0 .625rem 0 0",
+  left: "0 0 0 .625rem",
   both: "0 .625rem"
 };
 
@@ -62,17 +62,20 @@ export const StyledButton = styled.button<StyledButtonProps>`
   font-weight: 500;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  transition: all 250ms ease; 
   align-items: center;
 
   ${(props) => !props.disabled &&
     `&:hover {
       filter: ${(props: any) => props.weight != 'inline' ? 'brightness(0.9) contrast(1.2)' : 'none'};
       transform: scale(1.03);
+      transition: all 250ms ease; 
       &:before {
         bottom: 3px;
         filter: blur(6px) brightness(1);
-      }
+        transition: all 250ms ease; 
+      };
     };`
   };
 

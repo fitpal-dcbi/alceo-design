@@ -44,14 +44,17 @@ export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 250ms ease; 
 
   ${(props) => !props.disabled &&
     `&:hover {
       filter: brightness(0.9) contrast(1.2);
       transform: scale(1.03);
+      transition: all 250ms ease; 
       &:before {
         bottom: 3px;
         filter: blur(6px) brightness(1);
+        transition: all 250ms ease; 
       }
     };`
   };
