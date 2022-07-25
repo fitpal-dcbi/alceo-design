@@ -19,6 +19,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     prefix,
     suffix,
     disabled = false,
+    readOnly = false,
     ...other
   } = props;
   const StyledInputContainer = generateStyledInputContainer(!!label);
@@ -41,6 +42,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           ref={ref}
           className="input-field"
           disabled={disabled}
+          readOnly={readOnly}
           {...other}
         />
         {suffix && <div className="suffix-container">{suffix}</div>}

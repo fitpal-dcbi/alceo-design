@@ -52,6 +52,7 @@ DefaultControlledInput.args = {
   prefix: <ArrowLeft />,
   suffix: "really long text",
   disabled: false,
+  readOnly: false,
   rules: {
     required: true,
   },
