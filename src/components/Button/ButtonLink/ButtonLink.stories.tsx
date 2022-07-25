@@ -99,7 +99,7 @@ LinkPrimary.args = {
   type:"button",
   href: "https://www.sirka.io/",
   target: "_blank",
-  suffixDirection: "none",
+  iconDirection: "none",
   suffix: <SquareOrange/>,
   prefix: <SquareOrange/>
 };
