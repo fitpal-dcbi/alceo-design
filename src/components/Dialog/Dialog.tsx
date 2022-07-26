@@ -18,28 +18,36 @@ const Dialog = ({ children, ...other }: DialogProps) => {
   return (
     <StyledDialog>
       <OrbitModal mobileHeader={false} {...other}>
-        {title[0]?.props?.children !== undefined && title}
-        {body[0]?.props?.children !== undefined && body}
-        {footer[0]?.props?.children !== undefined && footer}
+        <div className="modal__container">
+          {title[0]?.props?.children !== undefined && title}
+          {body[0]?.props?.children !== undefined && body}
+          {footer[0]?.props?.children !== undefined && footer}
+        </div>
       </OrbitModal>
     </StyledDialog>
   );
 };
 
 const Title = ({ children, ...other }: DialogProps) => (
-  <OrbitModalHeader {...other}>{children}</OrbitModalHeader>
+  <OrbitModalHeader {...other}>
+    <div className="modal__header-wrapper">{children}</div>
+  </OrbitModalHeader>
 );
 Title.displayName = "Title";
 Dialog.Title = Title;
 
 const Body = ({ children, ...other }: DialogProps) => (
-  <OrbitModalSection {...other}>{children}</OrbitModalSection>
+  <OrbitModalSection {...other}>
+    <div className="modal__body-wrapper">{children}</div>
+  </OrbitModalSection>
 );
 Body.displayName = "Body";
 Dialog.Body = Body;
 
 const Footer = ({ children, ...other }: DialogProps) => (
-  <OrbitModalFooter {...other}>{children}</OrbitModalFooter>
+  <OrbitModalFooter {...other}>
+    <div className="modal__footer-wrapper">{children}</div>
+  </OrbitModalFooter>
 );
 Footer.displayName = "Footer";
 Dialog.Footer = Footer;

@@ -1,55 +1,49 @@
 import styled from "styled-components";
 
 export const StyledDialog = styled.div`
-  max-width: 20.5rem !important;
-
-  @media (min-width: 414px) {
-    max-width: 24.5rem !important;
-  }
-
-  .hFPfDp {
+  [role="dialog"] {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
-  .ipxMNJ {
+  div > div {
     max-width: 20.5rem !important;
-    top: -5rem !important;
-
+    bottom: 9rem;
     @media (min-width: 414px) {
       max-width: 24.5rem !important;
-      top: -20rem !important;
     }
 
     @media (min-width: 768px) {
       max-width: 24.5rem !important;
       top: 0 !important;
+      bottom: 0;
     }
   }
 
-  .bVlrWV,
-  .gjhdJZ,
-  .eOQnLR,
-  .vEyOF,
-  .lmyzkN {
-    box-shadow: 0px 0px 0px 1px rgba(28, 59, 84, 0.05),
-      0px 2px 6px -2px rgba(28, 59, 84, 0.06),
-      0px 8px 12px -3px rgba(28, 59, 84, 0.1) !important;
-    border-radius: 12px !important;
-  }
-
-  // WA: override orbit kiwi css class on title component
-  .jiKDht {
-    padding: 1.5rem 1rem 0rem 1rem !important;
+  .modal__container {
+    max-width: 20.5rem !important;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+
+    padding: 1.5rem 1rem 1rem 1rem !important;
+
+    @media (min-width: 414px) {
+      max-width: 24.5rem !important;
+    }
   }
 
-  .iaeqcN {
+  .modal__container > div,
+  .modal__container > div > div {
+    padding: 0 !important;
     margin-top: 0 !important;
+  }
+
+  .modal__header-wrapper {
+    margin-top: 0 !important;
+    padding: 0 !important;
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 700;
@@ -65,11 +59,34 @@ export const StyledDialog = styled.div`
     }
   }
 
-  // WA: override orbit kiwi css class on body component
+  .modal__header-wrapper > div > p {
+    margin-top: 1rem !important;
 
-  .jCBKRJ {
-    padding: 0.5rem 1rem !important;
+    @media (min-width: 768px) {
+      margin-top: 1.5rem !important;
+    }
+  }
 
+  section {
+    padding: 0.5rem 0 1rem 0 !important;
+
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    text-align: center;
+    color: #262626;
+
+    @media (min-width: 768px) {
+      padding: 0.5rem 0 1.5rem 0 !important;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.625rem;
+    }
+  }
+
+  .modal__body-wrapper {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 300;
@@ -85,16 +102,7 @@ export const StyledDialog = styled.div`
     }
   }
 
-  //WA: override orbit kiri css clas on footer component
-
-  .LrIRm {
-    padding: 1rem !important;
-  }
-
-  .hlbvGo {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .modal__container .modal__footer-wrapper {
+    width: 100%;
   }
 `;
