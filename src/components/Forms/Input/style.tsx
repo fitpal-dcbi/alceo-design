@@ -73,6 +73,7 @@ export const generateStyledInputContainer: (
 ) => StyledComponent<"div" | "label", any, {}, never> = (label) => styled(
   label ? "label" : "div"
 )`
+  background-color: #ffffff;
   span.input-label {
     display: block;
     color: #262626;
