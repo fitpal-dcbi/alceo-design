@@ -11,7 +11,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "md",
       disabled = false,
       fullWidth = false,
-      suffixDirection = "none",
+      iconDirection = "none",
       suffix,
       prefix,
       onClick,
@@ -24,17 +24,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         size={size}
         fullWidth={fullWidth}
         disabled={disabled}
-        suffixDirection={suffixDirection}
         ref={ref}
         onClick={(val) => {
           if (val) onClick?.(val);
         }}
       >
-        {(suffixDirection === "right" || suffixDirection === "both") && prefix}
-        <StyledChildrenButton suffixDirection={suffixDirection}>
+        {(iconDirection === "left" || iconDirection === "both") && prefix}
+        <StyledChildrenButton iconDirection={iconDirection}>
           {children}
         </StyledChildrenButton>
-        {(suffixDirection === "left" || suffixDirection === "both") && suffix}
+        {(iconDirection === "right" || iconDirection === "both") && suffix}
       </StyledButton>
     );
   }

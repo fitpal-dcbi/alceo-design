@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import {
-  ButtonProps,
-  ButtonSize,
-  ButtonSuffixDirection,
-  ButtonTheme,
-  ButtonWeight,
-} from "./type";
+import { ButtonProps, ButtonSize, ButtonTheme, ButtonWeight } from "./type";
 
 const mapButtonSize = {
   sm: "0.5rem 0.75rem",
@@ -43,8 +37,8 @@ export const mapIconSize = {
 
 const mapMarginChildren = {
   none: "0",
-  left: "0 .625rem 0 0",
-  right: "0 0 0 .625rem",
+  right: "0 .625rem 0 0",
+  left: "0 0 0 .625rem",
   both: "0 .625rem",
 };
 
@@ -54,7 +48,6 @@ type StyledButtonProps = {
   size: ButtonSize;
   disabled: boolean;
   fullWidth: boolean;
-  suffixDirection?: ButtonSuffixDirection;
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`
@@ -81,8 +74,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   font-weight: 500;
   cursor: pointer;
   display: flex;
-  justify-content: ${(props) =>
-    props.suffixDirection === "none" ? "center" : "space-between"};
+  justify-content: center;
+  transition: all 250ms ease;
   align-items: center;
 
   ${(props) =>
@@ -91,10 +84,12 @@ export const StyledButton = styled.button<StyledButtonProps>`
       filter: ${(props: any) =>
         props.weight != "inline" ? "brightness(0.9) contrast(1.2)" : "none"};
       transform: scale(1.03);
+      transition: all 250ms ease; 
       &:before {
         bottom: 3px;
         filter: blur(6px) brightness(1);
-      }
+        transition: all 250ms ease; 
+      };
     };`};
 
   &:disabled {
@@ -138,8 +133,8 @@ export const StyledHref = styled.a`
 `;
 
 export const StyledChildrenButton = styled.div<
-  Pick<ButtonProps, "suffixDirection">
+  Pick<ButtonProps, "iconDirection">
 >`
-  margin: ${(props) => mapMarginChildren[props.suffixDirection ?? "none"]};
+  margin: ${(props) => mapMarginChildren[props.iconDirection ?? "none"]};
   white-space: nowrap;
 `;

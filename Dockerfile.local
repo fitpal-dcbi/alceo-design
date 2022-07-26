@@ -1,0 +1,19 @@
+FROM public.ecr.aws/y2g0l9x0/node:14-alpine
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+ADD --chown=1000:1000 . /usr/src/app
+
+RUN if [ ! -d "./node_modules" ] ; then yarn install; fi
+RUN if [ ! -d "./.next" ] ; then yarn run build; fi
+
+
+FROM public.ecr.aws/y2g0l9x0/nginx:alpine
+
+WORKDIR /app
+
+COPY --from=build /usr/src/app  /app
+
+COPY --from=build ./nginx.conf /etc/nginx/nginx.conf

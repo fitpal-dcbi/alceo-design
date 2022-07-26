@@ -15,7 +15,7 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonLinkProps>(
       target='_blank',
       suffix,
       prefix,
-      suffixDirection="none",
+      iconDirection="none",
     } = props;
 
     return (
@@ -28,9 +28,9 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonLinkProps>(
           disabled={disabled} 
           ref={ref}
         >
-          {(suffixDirection === 'right' || suffixDirection === 'both') && prefix} 
-            <StyledChildrenButton suffixDirection={suffixDirection}>{children}</StyledChildrenButton>
-          {(suffixDirection === 'left' || suffixDirection === 'both') && suffix}
+          {(iconDirection === 'right' || iconDirection === 'both') && prefix} 
+            <StyledChildrenButton iconDirection={iconDirection}>{children}</StyledChildrenButton>
+          {(iconDirection === 'left' || iconDirection === 'both') && suffix}
         </StyledButton>
       </StyledHref>
     );
