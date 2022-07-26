@@ -87,7 +87,6 @@ export const generateStyledInputContainer: (
   .error-container,
   .help-container {
     display: flex;
-    align-items: center;
     justify-content: flex-start;
     margin-top: 0.25rem;
   }
@@ -95,6 +94,11 @@ export const generateStyledInputContainer: (
   .error-icon,
   .help-icon {
     margin-right: 0.25rem;
+    margin-top: 0.125rem;
+    min-width: 1rem;
+    min-height: 1rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .error-text,
