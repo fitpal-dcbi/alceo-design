@@ -73,11 +73,10 @@ export const StyledBadge = styled.div<
     align-items: center;
     justify-content: center;
 
-    width: min-content;
     min-width: 2rem;
-    height: 1.5rem;
-    max-height: 1.5rem;
     min-height: 1.5rem;
+    height: 1.5rem;
+    width: max-content;
 
     padding: 0.25rem 0.5rem;
     border-radius: 15px;
