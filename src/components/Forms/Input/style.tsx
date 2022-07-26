@@ -43,7 +43,7 @@ export const StyledInputWrapper = styled.div<
       else if (props.help) return "#FF6112";
       else return "#E6E6E6";
     }};
-  background-color: ${(props) => (props.disabled ? "#F0F0F0" : "unset")};
+  background-color: ${(props) => (props.disabled ? "#F0F0F0" : "#FFFFFF")};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "auto")};
   border-radius: 1.25rem;
 
@@ -73,7 +73,6 @@ export const generateStyledInputContainer: (
 ) => StyledComponent<"div" | "label", any, {}, never> = (label) => styled(
   label ? "label" : "div"
 )`
-  background-color: #ffffff;
   span.input-label {
     display: block;
     color: #262626;
