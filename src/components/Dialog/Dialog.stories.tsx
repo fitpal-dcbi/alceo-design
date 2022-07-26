@@ -19,16 +19,18 @@ const Dialog: Story<DialogProps> = (args) => {
     <div>
       <Button onClick={() => setIsOpen(true)}>Open</Button>
 
-      <DialogComponent
-        onClose={() => setIsOpen(false)}
-        disableAnimation={false}
-        hasCloseButton={false}
-        {...others}
-      >
-        <DialogComponent.Title>{title}</DialogComponent.Title>
-        <DialogComponent.Body>{body}</DialogComponent.Body>
-        <DialogComponent.Footer>{footer}</DialogComponent.Footer>
-      </DialogComponent>
+      {isOpen && (
+        <DialogComponent
+          onClose={() => setIsOpen(false)}
+          disableAnimation={false}
+          hasCloseButton={false}
+          {...others}
+        >
+          <DialogComponent.Title>{title}</DialogComponent.Title>
+          <DialogComponent.Body>{body}</DialogComponent.Body>
+          <DialogComponent.Footer>{footer}</DialogComponent.Footer>
+        </DialogComponent>
+      )}
     </div>
   );
 };

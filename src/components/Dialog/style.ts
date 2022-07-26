@@ -60,15 +60,15 @@ export const StyledDialog = styled.div`
   }
 
   .modal__header-wrapper > div > p {
-    margin-top: 1rem !important;
+    margin: 1rem 0 0.5rem 0 !important;
 
     @media (min-width: 768px) {
-      margin-top: 1.5rem !important;
+      margin-top: 1.5rem 0 0.5rem 0 !important;
     }
   }
 
   section {
-    padding: 0.5rem 0 1rem 0 !important;
+    padding: 0 0 1rem 0 !important;
 
     font-family: "Montserrat";
     font-style: normal;
@@ -79,7 +79,7 @@ export const StyledDialog = styled.div`
     color: #262626;
 
     @media (min-width: 768px) {
-      padding: 0.5rem 0 1.5rem 0 !important;
+      padding: 0 0 1.5rem 0 !important;
       font-weight: 400;
       font-size: 1rem;
       line-height: 1.625rem;
@@ -103,6 +103,10 @@ export const StyledDialog = styled.div`
   }
 
   .modal__container .modal__footer-wrapper {
+    margin-top: 1rem;
     width: 100%;
+    @media (min-width: 768px) {
+      margin-top: 1.5rem;
+    }
   }
 `;
