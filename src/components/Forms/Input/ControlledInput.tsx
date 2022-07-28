@@ -14,6 +14,7 @@ const Controlledinput: FC<ControlledInputProps> = (props) => {
     onChange,
     control,
     rules = {},
+    defaultValue,
     ...other
   } = props;
   const {
@@ -22,6 +23,7 @@ const Controlledinput: FC<ControlledInputProps> = (props) => {
     name,
     control,
     rules,
+    defaultValue,
   });
   return (
     <ConnectForm>
@@ -35,7 +37,7 @@ const Controlledinput: FC<ControlledInputProps> = (props) => {
           value={value}
           name={fieldName}
           ref={ref}
-          disabled={disabled}
+          disabled={disabled || readOnly}
           readOnly={readOnly}
           type={type}
           {...other}
