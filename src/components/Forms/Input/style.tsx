@@ -10,7 +10,7 @@ export const StyledInput = styled.input`
   width: 100%;
   height: 100%;
 
-  color: #262626;
+  color: #555555;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25rem;
@@ -18,10 +18,13 @@ export const StyledInput = styled.input`
   &:focus {
     outline: none;
   }
+  &:read-only,
+  &::placeholder {
+    font-weight: 500;
+  }
 
   &::placeholder {
     color: #abaeb8;
-    font-weight: 500;
   }
 
   &:disabled {
@@ -57,6 +60,8 @@ export const StyledInputWrapper = styled.div<
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 
   .prefix-container {
@@ -68,10 +73,27 @@ export const StyledInputWrapper = styled.div<
   }
 `;
 
-export const generateStyledInputContainer: (
-  label: boolean
-) => StyledComponent<"div" | "label", any, {}, never> = (label) => styled(
-  label ? "label" : "div"
+export const Field: any = styled(
+  React.forwardRef<any, any>(
+    (
+      {
+        component: Component,
+        className,
+        children,
+        spaceAfter,
+        theme,
+        $width,
+        ...props
+      },
+      ref
+    ) => {
+      return (
+        <Component className={className} ref={ref} {...props}>
+          {children}
+        </Component>
+      );
+    }
+  )
 )`
   span.input-label {
     display: block;

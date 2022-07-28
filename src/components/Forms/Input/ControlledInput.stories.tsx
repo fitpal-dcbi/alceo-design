@@ -56,6 +56,7 @@ DefaultControlledInput.args = {
   rules: {
     required: true,
   },
+  defaultValue: "Hello",
 } as ControlledInputProps;
 
 DefaultControlledInput.parameters = {

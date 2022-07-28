@@ -1,10 +1,7 @@
 import React from "react";
+import styled, { css } from "styled-components";
 
-import {
-  StyledInput,
-  StyledInputWrapper,
-  generateStyledInputContainer,
-} from "./style";
+import { StyledInput, StyledInputWrapper, Field } from "./style";
 import { InputProps } from "./type";
 
 import { ReactComponent as IconError } from "../../../assets/Input/icon-error.svg";
@@ -22,9 +19,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     readOnly = false,
     ...other
   } = props;
-  const StyledInputContainer = generateStyledInputContainer(!!label);
   return (
-    <StyledInputContainer className="input-container">
+    <Field className="input-container" component={!!label ? "label" : "div"}>
       {label && !inlineLabel && (
         <span className="input-label non-inline-label">{label}</span>
       )}
@@ -59,7 +55,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           <span className="help-text">{help}</span>
         </div>
       )}
-    </StyledInputContainer>
+    </Field>
   );
 });
 

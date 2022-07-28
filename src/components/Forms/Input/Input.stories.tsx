@@ -24,4 +24,5 @@ DefaultInput.args = {
   suffix: "really long text",
   disabled: false,
   readOnly: false,
+  defaultValue: "Hello",
 } as InputProps;
