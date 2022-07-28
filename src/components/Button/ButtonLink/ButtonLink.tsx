@@ -4,33 +4,37 @@ import { StyledButton, StyledChildrenButton, StyledHref } from "../style";
 
 const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonLinkProps>(
   (props, ref) => {
-    const { 
-      children, 
-      theme= 'primary', 
-      weight= 'solid',
-      size= 'md', 
-      disabled= false,
+    const {
+      children,
+      theme = "primary",
+      weight = "solid",
+      size = "md",
+      disabled = false,
       fullWidth = false,
-      href='https://www.sirka.io/',
-      target='_blank',
+      href = "https://www.sirka.io/",
+      target = "_blank",
       suffix,
       prefix,
-      iconDirection="none",
+      iconDirection = "none",
+      type,
     } = props;
 
     return (
       <StyledHref href={href} target={target}>
-        <StyledButton 
-          weight={weight} 
-          theme={theme} 
-          size={size} 
+        <StyledButton
+          weight={weight}
+          theme={theme}
+          size={size}
           fullWidth={fullWidth}
-          disabled={disabled} 
+          disabled={disabled}
+          type={type}
           ref={ref}
         >
-          {(iconDirection === 'right' || iconDirection === 'both') && prefix} 
-            <StyledChildrenButton iconDirection={iconDirection}>{children}</StyledChildrenButton>
-          {(iconDirection === 'left' || iconDirection === 'both') && suffix}
+          {(iconDirection === "right" || iconDirection === "both") && prefix}
+          <StyledChildrenButton iconDirection={iconDirection}>
+            {children}
+          </StyledChildrenButton>
+          {(iconDirection === "left" || iconDirection === "both") && suffix}
         </StyledButton>
       </StyledHref>
     );
