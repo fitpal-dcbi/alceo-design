@@ -37,7 +37,7 @@ const Controlledinput: FC<ControlledInputProps> = (props) => {
           value={value}
           name={fieldName}
           ref={ref}
-          disabled={disabled || readOnly}
+          disabled={disabled}
           readOnly={readOnly}
           type={type}
           {...other}
