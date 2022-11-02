@@ -61,8 +61,9 @@ job "alceo-design" {
 
     task "apps" {
       resources {
-        memory = 256
-        cpu = 1000
+        memory = 64
+        cpu = 250
+        memory_max = 256
       }
       logs {
         max_files     = 3
