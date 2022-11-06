@@ -5,7 +5,7 @@ export interface BaseInputProps {
   error?: string;
   help?: string;
   inlineLabel?: boolean;
-  label?: string;
+  label?: React.ReactNode;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
 }
