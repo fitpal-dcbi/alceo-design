@@ -1,5 +1,5 @@
 const typography = {
-  fontFamily: `"Montserrat", sans-serif`,
+  fontFamily: `"Maax", sans-serif`,
 };
 
 export default typography;

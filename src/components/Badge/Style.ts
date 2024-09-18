@@ -100,7 +100,7 @@ export const StyledBadge = styled.div<
   }
 
   .badge-label {
-    font-family: "Montserrat";
+    font-family: "Maax";
     font-style: normal;
     font-weight: 500;
     font-size: 0.75rem;
@@ -115,7 +115,7 @@ export const StyledBadge = styled.div<
   }
 
   .prefix-badge {
-    font-family: "Montserrat";
+    font-family: "Maax";
     font-style: normal;
     font-weight: 500;
     font-size: 0.75rem;

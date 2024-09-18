@@ -17,14 +17,14 @@ const mapButtonSize = {
 };
 
 const mapButtonBgColor = {
-  primary: "#FF6112",
-  secondary: "#5CA898",
+  primary: "#FA7E4B",
+  secondary: "#FCFBE6",
 };
 
 const mapButtonColorDisabled = {
   primary: "#FFC6A7",
-  secondary: "#B6DAD3",
-}
+  secondary: "",
+};
 
 const mapButtonWidth = {
   sm: "2rem",

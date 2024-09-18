@@ -25,7 +25,7 @@ export const StyledAccordion = styled.div<StyledAccordionProps>`
       }
     }
     p {
-      font-family: "Montserrat";
+      font-family: "Maax";
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
@@ -47,7 +47,7 @@ export const StyledAccordion = styled.div<StyledAccordionProps>`
     transition: margin-top 0.4s ease-in-out, height 1s ease-in-out;
 
     p {
-      font-family: "Montserrat";
+      font-family: "Maax";
       font-style: normal;
       font-weight: 300;
       font-size: 14px;

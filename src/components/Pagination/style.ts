@@ -11,12 +11,12 @@ export const StyledPagination = styled.div`
       margin-right: 1.25rem;
 
       .page-size-text {
-        font-family: "Montserrat";
+        font-family: "Maax";
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 20px;
-        color: #000000;
+        color: #4D4744;
         margin-right: 1rem;
       }
 
@@ -60,12 +60,14 @@ export const StyledPagination = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
+    border: 1px solid #FEE5DB;
+    border-radius: 0.125rem;
     width: 1.875rem;
     height: 1.875rem;
-    background-color: #fff8f4;
+    background-color: #FEFEF8;
     margin: 0 0.25rem;
     cursor: pointer;
+    box-sizing: border-box;
   }
 
   .dot-wrapper {
@@ -77,7 +79,7 @@ export const StyledPagination = styled.div`
 
     font-size: 0.625rem;
     font-weight: 600;
-    color: #ff6112;
+    color: #FA7E4B;
     background-color: #ffffff;
 
     @media and (min-width: 768px) {
@@ -96,9 +98,9 @@ export const StyledPagination = styled.div`
 
 export const StyledPageNumber = styled.button<StyledPaginationProps>`
   color: ${(props) =>
-    props.currentPage === props.index ? "#FFD5C6" : "#FF6112"};
+    props.currentPage === props.index ? "#FDF2ED" : "#FA7E4B"};
   background-color: ${(props) =>
-    props.currentPage === props.index ? "#FF6112" : "#FFFFFF"};
+    props.currentPage === props.index ? "#FA7E4B" : "#FFFFFF"};
 
   width: 2rem;
   height: 1.875rem;
@@ -106,13 +108,13 @@ export const StyledPageNumber = styled.button<StyledPaginationProps>`
   border-radius: 0.125rem;
 
   line-height: 1.25rem;
-  font-weight: 600;
+  font-weight: normal;
   font-size: 0.875rem;
   border: none;
   cursor: pointer;
 
   :hover {
-    background-color: #ff6112;
-    color: #ffd5c6;
+    background-color: #FA7E4B;
+    color: #FDF2ED;
   }
 `;

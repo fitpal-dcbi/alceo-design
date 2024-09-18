@@ -44,7 +44,7 @@ export const StyledDialog = styled.div`
   .modal__header-wrapper {
     margin-top: 0 !important;
     padding: 0 !important;
-    font-family: "Montserrat";
+    font-family: "Maax";
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
@@ -70,7 +70,7 @@ export const StyledDialog = styled.div`
   section {
     padding: 0 0 1rem 0 !important;
 
-    font-family: "Montserrat";
+    font-family: "Maax";
     font-style: normal;
     font-weight: 300;
     font-size: 0.75rem;
@@ -87,7 +87,7 @@ export const StyledDialog = styled.div`
   }
 
   .modal__body-wrapper {
-    font-family: "Montserrat";
+    font-family: "Maax";
     font-style: normal;
     font-weight: 300;
     font-size: 0.75rem;

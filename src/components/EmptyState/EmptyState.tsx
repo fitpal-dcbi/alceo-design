@@ -3,8 +3,6 @@ import { EmptyStateProps } from "./type";
 
 import { StyledEmptyState } from "./style";
 
-import { Button } from "../Button";
-
 const EmptyState: React.FC<EmptyStateProps> = (props) => {
   const { image, title, description, button } = props;
 
@@ -14,18 +12,25 @@ const EmptyState: React.FC<EmptyStateProps> = (props) => {
         {image}
         {title && (
           <h2 className="empty-state__title">
-            Sorry, we couldn't find that connection.
+            {title}
           </h2>
         )}
         {description && (
           <p className="empty-state__description">
-            Try changing up your search a bit. We'll try harder next time.{" "}
+            {description}
           </p>
         )}
         {button && <div className="empty-state__button-wrapper">{button}</div>}
       </div>
     </StyledEmptyState>
   );
+};
+
+EmptyState.defaultProps = {
+  image: null,
+  title: "",
+  description: "",
+  button: null,
 };
 
 export default EmptyState;
