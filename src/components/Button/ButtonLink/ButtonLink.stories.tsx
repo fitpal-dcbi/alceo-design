@@ -13,7 +13,7 @@ export default {
   component: ButtonLink,
   argTypes: {
     theme: {
-      options: ["primary", "secondary"],
+      options: ["primary"],
       control: { type: "radio" },
       table: {
         category: 'Appearance',
@@ -104,8 +104,8 @@ LinkPrimary.args = {
   prefix: <SquareOrange/>
 };
 
-export const LinkSecondary = Template.bind({});
-LinkSecondary.args = { ...LinkPrimary.args, theme: 'secondary' };
+// export const LinkSecondary = Template.bind({});
+// LinkSecondary.args = { ...LinkPrimary.args, theme: 'secondary' };
 
 export const LinkIcon = TemplateIcon.bind({});
 LinkIcon.args = { ...LinkPrimary.args};

@@ -22,16 +22,19 @@ const mapButtonHeight = {
 const mapButtonBgColor = {
   primary: "#FA7E4B",
   secondary: "#FCFBE6",
+  invert: "#FFFFFF"
 };
 
 const mapButtonFontColor = {
   primary: "#FCFBE6",
-  secondary: "#FA7E4B"
+  secondary: "#FA7E4B",
+  invert: "#FA7E4B"
 }
 
 const mapButtonColorDisabled = {
   primary: "#FFC6A7",
   secondary: "",
+  invert: ""
 };
 
 export const mapIconSize = {
@@ -59,8 +62,12 @@ export const StyledButton = styled.button<StyledButtonProps>`
   background: ${(props) =>
     props.weight === "solid"
       ? mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]
-      : "#FFFFFF"};
+      : "transparent"};
   border: ${(props) =>
+    props.weight === "solid" && props.theme === "invert" ? 
+    `1px solid ${
+      mapButtonFontColor[props.theme as keyof typeof mapButtonFontColor]
+    }` :
     props.weight === "outline"
       ? `1px solid ${
           mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]

@@ -10,19 +10,19 @@ export default {
   component: Input,
 } as Meta;
 
-// Create a master template for mapping args to render the Button component
+// Create a master template for mapping args to render the Input component
 const Template: Story<InputProps> = (args) => <Input {...args} />;
 
 // Reuse that template for creating different stories
 export const DefaultInput = Template.bind({});
 DefaultInput.args = {
-  error: "tes",
-  help: "tes",
+  error: "",
+  help: "",
   label: "Field label",
-  placeholder: "tes",
+  placeholder: "Placeholder",
   prefix: <ArrowLeft />,
   suffix: "really long text",
   disabled: false,
   readOnly: false,
-  defaultValue: "Hello",
+  defaultValue: "",
 } as InputProps;

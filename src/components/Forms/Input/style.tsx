@@ -43,7 +43,7 @@ export const StyledInputWrapper = styled.div<
   border: 1px solid
     ${(props) => {
       if (props.error) return "#D21C1C";
-      else if (props.help) return "#FF6112";
+      else if (props.help) return "#FA7E4B";
       else return "#E6E6E6";
     }};
   background-color: ${(props) => (props.disabled ? "#F0F0F0" : "#FFFFFF")};
@@ -135,6 +135,6 @@ export const Field: any = styled(
   }
 
   .help-text {
-    color: #ff6112;
+    color: #FA7E4B;
   }
 `;

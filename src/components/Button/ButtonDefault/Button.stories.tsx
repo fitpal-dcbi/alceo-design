@@ -13,7 +13,7 @@ export default {
   component: Button,
   argTypes: {
     theme: {
-      options: ["primary", "secondary"],
+      options: ["primary", "invert"],
       control: { type: "radio" },
       table: {
         category: 'Appearance',
@@ -101,14 +101,14 @@ Primary.args = {
 export const PrimaryIcon = TemplateIcon.bind({});
 PrimaryIcon.args = { ...Primary.args, size:'sm'};
 
-export const Secondary = Template.bind({});
-Secondary.args = { ...Primary.args, theme: "secondary", suffix: <SquareSecondary/>};
+// export const Secondary = Template.bind({});
+// Secondary.args = { ...Primary.args, theme: "secondary", suffix: <SquareSecondary/>};
 
-export const SecondaryIcon = TemplateIcon.bind({});
-SecondaryIcon.args = { ...Secondary.args, size:'sm'};
+// export const SecondaryIcon = TemplateIcon.bind({});
+// SecondaryIcon.args = { ...Secondary.args, size:'sm'};
 
 export const PrimaryIconText = Template.bind({});
 PrimaryIconText.args = { ...Primary.args, iconDirection: "right" };
 
-export const SecondaryIconText = Template.bind({});
-SecondaryIconText.args = { ...Secondary.args, iconDirection: "right" };
+// export const SecondaryIconText = Template.bind({});
+// SecondaryIconText.args = { ...Secondary.args, iconDirection: "right" };
