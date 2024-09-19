@@ -50,6 +50,30 @@ const mapMarginChildren = {
   both: "0 .625rem",
 };
 
+const getBackgroundColor = (theme: ButtonTheme, weight: ButtonWeight) => {
+  if (theme === "invert") {
+    return weight === "solid" ? "#FFFFFF" : "transparent";
+  }
+  return weight === "solid" ? mapButtonBgColor[theme] : "transparent";
+};
+
+const getBorderColor = (theme: ButtonTheme, weight: ButtonWeight) => {
+  if (theme === "invert" && weight !== "inline") {
+    return `1px solid ${mapButtonFontColor[theme]}`;
+  }
+  if (weight === "outline") {
+    return `1px solid ${mapButtonBgColor[theme]}`;
+  }
+  return "none";
+};
+
+const getFontColor = (theme: ButtonTheme, weight: ButtonWeight) => {
+  if (weight === "solid" || theme === "invert") {
+    return mapButtonFontColor[theme];
+  }
+  return mapButtonBgColor[theme];
+};
+
 type StyledButtonProps = {
   theme: ButtonTheme;
   weight: ButtonWeight;
@@ -59,24 +83,9 @@ type StyledButtonProps = {
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`
-  background: ${(props) =>
-    props.weight === "solid"
-      ? mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]
-      : "transparent"};
-  border: ${(props) =>
-    props.weight === "solid" && props.theme === "invert" ? 
-    `1px solid ${
-      mapButtonFontColor[props.theme as keyof typeof mapButtonFontColor]
-    }` :
-    props.weight === "outline"
-      ? `1px solid ${
-          mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]
-        }`
-      : "none"};
-  color: ${(props) =>
-    props.weight === "solid"
-      ? mapButtonFontColor[props.theme as keyof typeof mapButtonBgColor]
-      : mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]};
+  background: ${(props) => getBackgroundColor(props.theme, props.weight)};
+  border: ${(props) => getBorderColor(props.theme, props.weight)};
+  color: ${(props) => getFontColor(props.theme, props.weight)};
   width: ${(props) => (props.fullWidth ? "100%" : "fit-content")};
   padding: ${(props) =>
     props.weight === "inline" ? "0" : mapButtonSize[props.size]};

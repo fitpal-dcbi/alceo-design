@@ -13,7 +13,7 @@ export default {
   component: ButtonLink,
   argTypes: {
     theme: {
-      options: ["primary"],
+      options: ["primary", "invert"],
       control: { type: "radio" },
       table: {
         category: 'Appearance',
