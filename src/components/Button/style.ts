@@ -25,7 +25,7 @@ const mapButtonStyles = {
       background: "#FA7E4B",
       font: "#FCFBE6",
       border: "none",
-      disabled: "#CBC7C6"
+      disabled: "#CBC7C6" // background color
     },
     outline: {
       background: "transparent",
@@ -84,7 +84,7 @@ const getBackgroundColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: 
 };
 
 const getFontColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
-  return disabled ? getButtonStyles(theme, weight).disabled : getButtonStyles(theme, weight).font;
+  return disabled ? '#FFFFFF' : getButtonStyles(theme, weight).font;
 };
 
 const getBorderColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
