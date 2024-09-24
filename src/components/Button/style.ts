@@ -19,23 +19,48 @@ const mapButtonHeight = {
   lg: "3.25rem",
 };
 
-const mapButtonBgColor = {
-  primary: "#FA7E4B",
-  secondary: "#FCFBE6",
-  invert: "#FFFFFF"
-};
-
-const mapButtonFontColor = {
-  primary: "#FCFBE6",
-  secondary: "#FA7E4B",
-  invert: "#FA7E4B"
+const mapButtonStyles = {
+  primary: {
+    solid: {
+      background: "#FA7E4B",
+      font: "#FCFBE6",
+      border: "none",
+      disabled: "#CBC7C6"
+    },
+    outline: {
+      background: "transparent",
+      font: "#FA7E4B",
+      border: "1px solid #FA7E4B",
+      disabled: ""
+    },
+    inline: {
+      background: "transparent",
+      font: "#FA7E4B",
+      border: "none",
+      disabled: ""
+    },
+  },
+  invert: {
+    solid: {
+      background: "#FFFFFF",
+      font: "#FA7E4B",
+      border: "1px solid #FA7E4B",
+      disabled: "#CBC7C6"
+    },
+    outline: {
+      background: "transparent",
+      font: "#FFFFFF",
+      border: "1px solid #FFFFFF",
+      disabled: ""
+    },
+    inline: {
+      background: "transparent",
+      font: "#FFFFFF",
+      border: "none",
+      disabled: ""
+    },
+  },
 }
-
-const mapButtonColorDisabled = {
-  primary: "#FFC6A7",
-  secondary: "",
-  invert: ""
-};
 
 export const mapIconSize = {
   sm: ".75rem",
@@ -50,29 +75,21 @@ const mapMarginChildren = {
   both: "0 .625rem",
 };
 
-const getBackgroundColor = (theme: ButtonTheme, weight: ButtonWeight) => {
-  if (theme === "invert") {
-    return weight === "solid" ? "#FFFFFF" : "transparent";
-  }
-  return weight === "solid" ? mapButtonBgColor[theme] : "transparent";
+const getButtonStyles = (theme: ButtonTheme, weight: ButtonWeight) => {
+  return mapButtonStyles[theme][weight];
 };
 
-const getBorderColor = (theme: ButtonTheme, weight: ButtonWeight) => {
-  if (theme === "invert" && weight !== "inline") {
-    return `1px solid ${mapButtonFontColor[theme]}`;
-  }
-  if (weight === "outline") {
-    return `1px solid ${mapButtonBgColor[theme]}`;
-  }
-  return "none";
+const getBackgroundColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
+  return disabled ? getButtonStyles(theme, weight).disabled : getButtonStyles(theme, weight).background;
 };
 
-const getFontColor = (theme: ButtonTheme, weight: ButtonWeight) => {
-  if (weight === "solid" || theme === "invert") {
-    return mapButtonFontColor[theme];
-  }
-  return mapButtonBgColor[theme];
+const getFontColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
+  return disabled ? getButtonStyles(theme, weight).disabled : getButtonStyles(theme, weight).font;
 };
+
+const getBorderColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
+  return disabled ? "none" : getButtonStyles(theme, weight).border;
+}
 
 type StyledButtonProps = {
   theme: ButtonTheme;
@@ -115,17 +132,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
     };`};
 
   &:disabled {
-    background: ${(props) =>
-      props.weight != "inline" &&
-      mapButtonColorDisabled[
-        props.theme as keyof typeof mapButtonColorDisabled
-      ]};
-    color: ${(props) =>
-      props.weight != "inline"
-        ? "#ffffff"
-        : mapButtonColorDisabled[
-            props.theme as keyof typeof mapButtonColorDisabled
-          ]};
+    background: ${(props) => getBackgroundColor(props.theme, props.weight, true)};
+    color: ${(props) => getFontColor(props.theme, props.weight, true)};
     border: none;
     cursor: not-allowed;
   }
