@@ -25,19 +25,19 @@ const mapButtonStyles = {
       background: "#FA7E4B",
       font: "#FCFBE6",
       border: "none",
-      disabled: "#CBC7C6" // background color
+      disabled: "#CBC7C6"
     },
     outline: {
       background: "transparent",
       font: "#FA7E4B",
       border: "1px solid #FA7E4B",
-      disabled: ""
+      disabled: "#CBC7C6"
     },
     inline: {
       background: "transparent",
       font: "#FA7E4B",
       border: "none",
-      disabled: ""
+      disabled: "transparent" 
     },
   },
   invert: {
@@ -51,16 +51,16 @@ const mapButtonStyles = {
       background: "transparent",
       font: "#FFFFFF",
       border: "1px solid #FFFFFF",
-      disabled: ""
+      disabled: "#CBC7C6"
     },
     inline: {
       background: "transparent",
       font: "#FFFFFF",
       border: "none",
-      disabled: ""
+      disabled: "transparent"
     },
   },
-}
+};
 
 export const mapIconSize = {
   sm: ".75rem",
@@ -89,7 +89,7 @@ const getFontColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolea
 
 const getBorderColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
   return disabled ? "none" : getButtonStyles(theme, weight).border;
-}
+};
 
 type StyledButtonProps = {
   theme: ButtonTheme;
@@ -101,9 +101,9 @@ type StyledButtonProps = {
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`
-  background: ${(props) => getBackgroundColor(props.theme, props.weight)};
-  border: ${(props) => getBorderColor(props.theme, props.weight)};
-  color: ${(props) => getFontColor(props.theme, props.weight)};
+  background: ${(props) => getBackgroundColor(props.theme, props.weight, props.disabled)};
+  border: ${(props) => getBorderColor(props.theme, props.weight, props.disabled)};
+  color: ${(props) => getFontColor(props.theme, props.weight, props.disabled)};
   width: ${(props) => (props.fullWidth ? "100%" : "fit-content")};
   padding: ${(props) =>
     props.weight === "inline" ? "0" : mapButtonSize[props.size]};
@@ -121,7 +121,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     !props.disabled &&
     `&:hover {
       filter: ${(props: any) =>
-        props.weight != "inline" ? "brightness(0.9) contrast(1.2)" : "none"};
+        props.weight !== "inline" ? "brightness(0.9) contrast(1.2)" : "none"};
       transform: scale(1.03);
       transition: all 250ms ease; 
       &:before {
@@ -150,7 +150,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     x: 0;
     y: 0;
     ${(props: any) =>
-      props.weight != "solid" &&
+      props.weight !== "solid" &&
       `
         opacity: 20%;
         fill: #FF6112;  
