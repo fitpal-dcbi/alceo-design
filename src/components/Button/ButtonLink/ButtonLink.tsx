@@ -17,6 +17,7 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonLinkProps>(
       prefix,
       iconDirection = "none",
       type,
+      fontSize = ""
     } = props;
 
     return (
@@ -26,6 +27,7 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonLinkProps>(
           theme={theme}
           size={size}
           fullWidth={fullWidth}
+          fontSize={fontSize}
           disabled={disabled}
           type={type}
           ref={ref}
