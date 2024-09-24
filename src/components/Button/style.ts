@@ -80,6 +80,7 @@ type StyledButtonProps = {
   size: ButtonSize;
   disabled: boolean;
   fullWidth: boolean;
+  fontSize: string;
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`
@@ -90,7 +91,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   padding: ${(props) =>
     props.weight === "inline" ? "0" : mapButtonSize[props.size]};
   height: ${(props) => mapButtonHeight[props.size]};
-  font-size: ${(props) => mapButtonFontSize[props.size]};
+  font-size: ${(props) => props.fontSize || mapButtonFontSize[props.size]};
   border-radius: 6.25rem;
   font-weight: 500;
   cursor: pointer;

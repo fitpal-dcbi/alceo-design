@@ -45,6 +45,12 @@ export default {
         category: 'Appearance',
       },
     },
+    fontSize: {
+      control: { type: "text" },
+      table: {
+        category: 'Appearance',
+      },
+    },
     onClick: {
       action: { argTypesRegex: '^on.*' },
       table: {

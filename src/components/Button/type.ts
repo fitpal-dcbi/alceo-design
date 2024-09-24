@@ -13,6 +13,7 @@ type BaseButtonProps = {
   disabled?: boolean;
   fullWidth?: boolean;
   iconDirection?: ButtonIconDirection;
+  fontSize?: string
 };
 
 type BaseButtonIconProps = {
