@@ -1,67 +1,25 @@
 import styled from "styled-components";
 import { BaseBadgeProps } from "./type";
 
-const mapBadgeBorderColor = {
-  light: "#F0F0F0",
-  neutral: "#E6E6E6",
-  info: "#BADAEE",
-  success: "#D7EAD9",
-  warning: "#FAE2C7",
-  critical: "#F4D2D2",
-};
-
-const mapBadgeBackgroundColor = {
-  light: "#FFFFFF",
-  neutral: "#FAFAFA",
-  info: "#DEF3FF",
-  success: "#EBF4EC",
-  warning: "#FDF2BA",
-  critical: "#FAEAEA",
-};
-
-const mapInvertedBadgeBackgroundColor = {
-  light: "#262626",
-  neutral: "#FAFAFA",
-  info: "#89BEDC",
-  success: "#28A138",
-  warning: "#FFC01E",
-  critical: "#D21C1C",
-};
-
-const mapBadgeIconBackgroundColor = {
-  light: "#262626",
-  neutral: "#262626",
-  info: "#2B6789",
-  success: "#2D7738",
-  warning: "#AE5700",
-  critical: "#970C0C",
-};
-
-const mapInvertedBadgeIconBackgroundColor = {
-  light: "#FFFFFF",
-  neutral: "#262626",
-  info: "#FFFFFF",
-  success: "#FFFFFF",
-  warning: "#FFFFFF",
-  critical: "#FFFFFF",
-};
-
-const mapBadgeFontColor = {
-  light: "#262626",
-  neutral: "#262626",
-  info: "#2B6789",
-  success: "#2D7738",
-  warning: "#AE5700",
-  critical: "#970C0C",
-};
-
-const mapInvertedBadgeFontColor = {
-  light: "#FFFFFF",
-  neutral: "#262626",
-  info: "#FFFFFF",
-  success: "#FFFFFF",
-  warning: "#FFFFFF",
-  critical: "#FFFFFF",
+const badgeStyles = {
+  primary: {
+    bgColor: "#FA7E4B",
+    borderColor: "#FA7E4B",
+    fontColor: "#FFFFFF",
+    iconColor: "#FFFFFF",
+    invertedBgColor: "#FFFFFF",
+    invertedFontColor: "#FA7E4B",
+    invertedIconColor: "#FA7E4B",
+  },
+  success: {
+    bgColor: "#B4B47B",
+    borderColor: "#B4B47B",
+    fontColor: "#FFFFFF",
+    iconColor: "#FFFFFF",
+    invertedBgColor: "#FFFFFF",
+    invertedFontColor: "#B4B47B",
+    invertedIconColor: "#B4B47B",
+  },
 };
 
 export const StyledBadge = styled.div<
@@ -79,45 +37,27 @@ export const StyledBadge = styled.div<
     width: max-content;
 
     padding: 0.25rem 0.5rem;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: ${(props) =>
       props.inverted
-        ? mapInvertedBadgeBackgroundColor[
-            props.variant as keyof typeof mapBadgeBackgroundColor
-          ]
-        : mapBadgeBackgroundColor[
-            props.variant as keyof typeof mapInvertedBadgeBackgroundColor
-          ]};
+        ? badgeStyles[props.variant as keyof typeof badgeStyles].invertedBgColor
+        : badgeStyles[props.variant as keyof typeof badgeStyles].bgColor};
 
-    border: ${(props) =>
-      props.inverted
-        ? "none"
-        : `1px solid ${
-            mapBadgeBorderColor[
-              props.variant as keyof typeof mapBadgeBorderColor
-            ]
-          }`};
+    border: 1px solid ${(props) => badgeStyles[props.variant as keyof typeof badgeStyles].borderColor};
   }
 
   .badge-label {
-    font-family: "Maax";
-    font-style: normal;
-    font-weight: 500;
     font-size: 0.75rem;
     color: ${(props) =>
       props.inverted
-        ? mapInvertedBadgeFontColor[
-            props.variant as keyof typeof mapInvertedBadgeFontColor
-          ]
-        : mapBadgeFontColor[props.variant as keyof typeof mapBadgeFontColor]};
+        ? badgeStyles[props.variant as keyof typeof badgeStyles]
+            .invertedFontColor
+        : badgeStyles[props.variant as keyof typeof badgeStyles].fontColor};
     line-height: 1rem;
     margin-right: 0.375rem;
   }
 
   .prefix-badge {
-    font-family: "Maax";
-    font-style: normal;
-    font-weight: 500;
     font-size: 0.75rem;
     margin-right: 0.375rem;
     line-height: 1rem;
@@ -126,11 +66,8 @@ export const StyledBadge = styled.div<
   svg > path {
     fill: ${(props) =>
       props.inverted
-        ? mapInvertedBadgeIconBackgroundColor[
-            props.variant as keyof typeof mapInvertedBadgeIconBackgroundColor
-          ]
-        : mapBadgeIconBackgroundColor[
-            props.variant as keyof typeof mapBadgeIconBackgroundColor
-          ]};
+        ? badgeStyles[props.variant as keyof typeof badgeStyles]
+            .invertedIconColor
+        : badgeStyles[props.variant as keyof typeof badgeStyles].iconColor};
   }
 `;

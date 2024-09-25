@@ -7,7 +7,7 @@ import { ReactComponent as IconIcWhite } from "../../assets/icon-ic-white.svg";
 
 const Badge: FC<BaseBadgeProps> = (props) => {
   const {
-    variant = "light",
+    variant = "primary",
     inverted = false,
     hasInfoIcon = false,
     prefix,
@@ -20,7 +20,7 @@ const Badge: FC<BaseBadgeProps> = (props) => {
       <div className="badge-wrapper">
         {!iconOnly ? (
           <>
-            <div className="prefix-badge">{prefix}</div>
+            {prefix && <div className="prefix-badge">{prefix}</div>}
             <p className="badge-label">{children}</p>
             <>{hasInfoIcon && (inverted ? <IconIcWhite /> : <IconIc />)}</>
           </>
