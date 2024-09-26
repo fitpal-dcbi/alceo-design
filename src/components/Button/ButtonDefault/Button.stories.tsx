@@ -1,12 +1,22 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { Story, Meta, StoryFn } from "@storybook/react";
 import {
   Button, 
-  ButtonIcon, 
   ButtonProps
 } from "../index";
 import { ReactComponent as SquareOrange } from "../../../assets/square.svg";
-import { ReactComponent as SquareSecondary } from "../../../assets/square-secondary.svg";
+
+const withDynamicBackground = (StoryFn: StoryFn, context: any) => {
+  const { theme } = context.args;
+
+  const backgroundColor = theme === "invert" ? "#FA7E4B" : "#FFF"; 
+
+  return (
+    <div style={{ backgroundColor, padding: '20px', borderRadius: '16px', minHeight: '100vh' }}>
+      <StoryFn />
+    </div>
+  );
+};
 
 export default {
   title: "Components/Button",
@@ -81,7 +91,8 @@ export default {
         disable: true
       },
     },
-  }
+  },
+  decorators: [withDynamicBackground], 
 } as Meta;
 
 // Create a master template for mapping args to render the Button component
