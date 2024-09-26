@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { 
-  ButtonIconLink, 
+  // ButtonIconLink, 
   ButtonLinkProps, 
   ButtonLink, 
-  ButtonProps
+  // ButtonProps
 } from "../index";
 import { ReactComponent as SquareOrange } from "../../../assets/square.svg";
 
@@ -13,7 +13,7 @@ export default {
   component: ButtonLink,
   argTypes: {
     theme: {
-      options: ["primary", "secondary"],
+      options: ["primary", "invert"],
       control: { type: "radio" },
       table: {
         category: 'Appearance',
@@ -41,6 +41,12 @@ export default {
     },
     fullWidth: {
       control: { type: "boolean" },
+      table: {
+        category: 'Appearance',
+      },
+    },
+    fontSize: {
+      control: { type: "text" },
       table: {
         category: 'Appearance',
       },
@@ -85,7 +91,7 @@ export default {
 
 // Create a master template for mapping args to render the Button component
 const Template: Story<ButtonLinkProps> = (args) => <ButtonLink {...args} />;
-const TemplateIcon: Story<ButtonProps> = (args) => <ButtonIconLink {...args} />;
+// const TemplateIcon: Story<ButtonProps> = (args) => <ButtonIconLink {...args} />;
 
 // Reuse that template for creating different stories
 export const LinkPrimary = Template.bind({});
@@ -104,11 +110,11 @@ LinkPrimary.args = {
   prefix: <SquareOrange/>
 };
 
-export const LinkSecondary = Template.bind({});
-LinkSecondary.args = { ...LinkPrimary.args, theme: 'secondary' };
+// export const LinkSecondary = Template.bind({});
+// LinkSecondary.args = { ...LinkPrimary.args, theme: 'secondary' };
 
-export const LinkIcon = TemplateIcon.bind({});
-LinkIcon.args = { ...LinkPrimary.args};
+export const LinkIcon = Template.bind({});
+LinkIcon.args = { ...LinkPrimary.args, iconDirection: "right"};
 
 export const LinkIconText = Template.bind({});
 LinkIconText.args = { ...LinkPrimary.args};

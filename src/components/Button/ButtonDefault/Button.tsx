@@ -16,6 +16,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       prefix,
       onClick,
       type,
+      fontSize = ""
     } = props;
 
     return (
@@ -24,6 +25,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         theme={theme}
         size={size}
         fullWidth={fullWidth}
+        fontSize={fontSize}
         disabled={disabled}
         ref={ref}
         type={type}

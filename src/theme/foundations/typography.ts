@@ -81,8 +81,8 @@ const typography = {
     black: 900,
   },
   fonts: {
-    heading: `"Montserrat", sans-serif`,
-    body: `"Montserrat", sans-serif`,
+    heading: `"Maax", sans-serif`,
+    body: `"Maax", sans-serif`,
   },
 };
 

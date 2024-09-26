@@ -10,7 +10,7 @@ export default {
   component: BadgeComponent,
   argTypes: {
     variant: {
-      options: ["light", "neutral", "info", "success", "warning", "critical"],
+      options: ["primary", "success"],
       control: { type: "radio" },
     },
     inverted: {
@@ -36,7 +36,7 @@ export const Badge: Story<BaseBadgeProps> = ({
   hasInfoIcon,
   prefix,
   iconOnly,
-  children = "label",
+  children = "badge",
 }) => {
   return (
     <div>

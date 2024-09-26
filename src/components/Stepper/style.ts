@@ -25,7 +25,7 @@ export const StyledStepper = styled.div`
   }
 
   .textWrapper {
-    color: #555555;
+    color: #4D4744;
     font-weight: 700;
     font-size: 0.875rem;
     margin: 0 0.75rem;

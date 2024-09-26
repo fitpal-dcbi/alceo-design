@@ -19,14 +19,47 @@ const mapButtonHeight = {
   lg: "3.25rem",
 };
 
-const mapButtonBgColor = {
-  primary: "#FF6112",
-  secondary: "#5CA898",
-};
-
-const mapButtonColorDisabled = {
-  primary: "#FFC6A7",
-  secondary: "#B6DAD3",
+const mapButtonStyles = {
+  primary: {
+    solid: {
+      background: "#FA7E4B",
+      font: "#FCFBE6",
+      border: "none",
+      disabled: "#CBC7C6"
+    },
+    outline: {
+      background: "transparent",
+      font: "#FA7E4B",
+      border: "1px solid #FA7E4B",
+      disabled: "#CBC7C6"
+    },
+    inline: {
+      background: "transparent",
+      font: "#FA7E4B",
+      border: "none",
+      disabled: "transparent" 
+    },
+  },
+  invert: {
+    solid: {
+      background: "#FFFFFF",
+      font: "#FA7E4B",
+      border: "1px solid #FA7E4B",
+      disabled: "#CBC7C6"
+    },
+    outline: {
+      background: "transparent",
+      font: "#FFFFFF",
+      border: "1px solid #FFFFFF",
+      disabled: "#CBC7C6"
+    },
+    inline: {
+      background: "transparent",
+      font: "#FFFFFF",
+      border: "none",
+      disabled: "transparent"
+    },
+  },
 };
 
 export const mapIconSize = {
@@ -42,34 +75,40 @@ const mapMarginChildren = {
   both: "0 .625rem",
 };
 
+const getButtonStyles = (theme: ButtonTheme, weight: ButtonWeight) => {
+  return mapButtonStyles[theme][weight];
+};
+
+const getBackgroundColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
+  return disabled ? getButtonStyles(theme, weight).disabled : getButtonStyles(theme, weight).background;
+};
+
+const getFontColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
+  return disabled ? '#FFFFFF' : getButtonStyles(theme, weight).font;
+};
+
+const getBorderColor = (theme: ButtonTheme, weight: ButtonWeight, disabled: boolean) => {
+  return disabled ? "none" : getButtonStyles(theme, weight).border;
+};
+
 type StyledButtonProps = {
   theme: ButtonTheme;
   weight: ButtonWeight;
   size: ButtonSize;
   disabled: boolean;
   fullWidth: boolean;
+  fontSize: string;
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`
-  background: ${(props) =>
-    props.weight === "solid"
-      ? mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]
-      : "#FFFFFF"};
-  border: ${(props) =>
-    props.weight === "outline"
-      ? `1px solid ${
-          mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]
-        }`
-      : "none"};
-  color: ${(props) =>
-    props.weight === "solid"
-      ? "#FFFFFF"
-      : mapButtonBgColor[props.theme as keyof typeof mapButtonBgColor]};
+  background: ${(props) => getBackgroundColor(props.theme, props.weight, props.disabled)};
+  border: ${(props) => getBorderColor(props.theme, props.weight, props.disabled)};
+  color: ${(props) => getFontColor(props.theme, props.weight, props.disabled)};
   width: ${(props) => (props.fullWidth ? "100%" : "fit-content")};
   padding: ${(props) =>
     props.weight === "inline" ? "0" : mapButtonSize[props.size]};
   height: ${(props) => mapButtonHeight[props.size]};
-  font-size: ${(props) => mapButtonFontSize[props.size]};
+  font-size: ${(props) => props.fontSize || mapButtonFontSize[props.size]};
   border-radius: 6.25rem;
   font-weight: 500;
   cursor: pointer;
@@ -82,7 +121,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     !props.disabled &&
     `&:hover {
       filter: ${(props: any) =>
-        props.weight != "inline" ? "brightness(0.9) contrast(1.2)" : "none"};
+        props.weight !== "inline" ? "brightness(0.9) contrast(1.2)" : "none"};
       transform: scale(1.03);
       transition: all 250ms ease; 
       &:before {
@@ -93,17 +132,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
     };`};
 
   &:disabled {
-    background: ${(props) =>
-      props.weight != "inline" &&
-      mapButtonColorDisabled[
-        props.theme as keyof typeof mapButtonColorDisabled
-      ]};
-    color: ${(props) =>
-      props.weight != "inline"
-        ? "#ffffff"
-        : mapButtonColorDisabled[
-            props.theme as keyof typeof mapButtonColorDisabled
-          ]};
+    background: ${(props) => getBackgroundColor(props.theme, props.weight, true)};
+    color: ${(props) => getFontColor(props.theme, props.weight, true)};
     border: none;
     cursor: not-allowed;
   }
@@ -120,7 +150,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     x: 0;
     y: 0;
     ${(props: any) =>
-      props.weight != "solid" &&
+      props.weight !== "solid" &&
       `
         opacity: 20%;
         fill: #FF6112;  
