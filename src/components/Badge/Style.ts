@@ -54,12 +54,12 @@ export const StyledBadge = styled.div<
             .invertedFontColor
         : badgeStyles[props.variant as keyof typeof badgeStyles].fontColor};
     line-height: 1rem;
-    margin-right: 0.375rem;
+    margin-right: .375rem;
+    margin-left: .375rem;
   }
 
   .prefix-badge {
     font-size: 0.75rem;
-    margin-right: 0.375rem;
     line-height: 1rem;
   }
 
