@@ -70,8 +70,8 @@ export const mapIconSize = {
 
 const mapMarginChildren = {
   none: "0",
-  right: "0 .625rem 0 0",
-  left: "0 0 0 .625rem",
+  right: "0 0 0 .625rem",
+  left: "0 .625rem 0 0",
   both: "0 .625rem",
 };
 
@@ -150,10 +150,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
     x: 0;
     y: 0;
     ${(props: any) =>
-      props.weight !== "solid" &&
       `
         opacity: 20%;
-        fill: #FF6112;  
+        fill: ${getFontColor(props.theme, props.weight, props.disabled)}
       `};
   }
 `;
