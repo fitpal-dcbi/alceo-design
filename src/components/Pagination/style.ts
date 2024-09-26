@@ -11,7 +11,6 @@ export const StyledPagination = styled.div`
       margin-right: 1.25rem;
 
       .page-size-text {
-        font-family: "Maax";
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
