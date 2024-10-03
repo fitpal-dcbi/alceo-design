@@ -9,10 +9,10 @@ export const StyledInput = styled.input`
   padding: 0;
   width: 100%;
   height: 100%;
-
+  border-radius: 1.25rem;
+  padding: 0 0.875rem;
   color: #555555;
   font-size: 0.875rem;
-  font-weight: 600;
   line-height: 1.25rem;
 
   &:focus {
@@ -39,10 +39,9 @@ export const StyledInputWrapper = styled.div<
   display: flex;
   width: 100%;
   height: 2.75rem;
-  padding: 0 0.875rem;
   border: 1px solid
     ${(props) => {
-      if (props.error) return "#D21C1C";
+      if (props.error) return "#B65842";
       else if (props.help) return "#FA7E4B";
       else return "#E6E6E6";
     }};
@@ -97,7 +96,6 @@ export const Field: any = styled(
 )`
   span.input-label {
     display: block;
-    color: #262626;
     font-size: 0.75rem;
     font-weight: 500;
     line-height: 1.25rem;
@@ -131,7 +129,7 @@ export const Field: any = styled(
   }
 
   .error-text {
-    color: #d21c1c;
+    color: #B65842;
   }
 
   .help-text {

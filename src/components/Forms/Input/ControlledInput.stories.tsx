@@ -34,6 +34,7 @@ const Template: Story<Omit<ControlledInputProps, "control" | "name">> = (
             onChange={action("change")}
             {...args}
           />
+          <br />
           <button type="submit">Submit</button>
         </form>
       </FormProvider>
@@ -49,7 +50,7 @@ DefaultControlledInput.args = {
   help: "tes",
   label: "Field label",
   placeholder: "tes",
-  prefix: <ArrowLeft />,
+  // prefix: <ArrowLeft />,
   suffix: "really long text",
   disabled: false,
   readOnly: false,
