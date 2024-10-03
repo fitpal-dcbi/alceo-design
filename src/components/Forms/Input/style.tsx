@@ -110,6 +110,10 @@ export const Field: any = styled(
     &.non-inline-label {
       margin-bottom: 0.25rem;
     }
+
+    @media (min-width: 768px) {
+      font-size: 0.875rem;
+    }
   }
 
   .error-container,
