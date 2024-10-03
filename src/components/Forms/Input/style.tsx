@@ -64,11 +64,19 @@ export const StyledInputWrapper = styled.div<
   }
 
   .prefix-container {
-    padding-right: 0.5rem;
+    padding: 0 0.875rem;
   }
 
   .suffix-container {
-    padding-left: 0.5rem;
+    padding: 0 0.875rem;
+  }
+
+  .prefix-container + input {
+    padding-left: 0;
+  }
+
+  input + .suffix-container {
+    padding-left: 0;
   }
 `;
 
