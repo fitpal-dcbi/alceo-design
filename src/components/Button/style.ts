@@ -138,6 +138,10 @@ export const StyledButton = styled.button<StyledButtonProps>`
     cursor: not-allowed;
   }
 
+  &:focus-visible {
+    outline: none;
+  }
+
   svg {
     width: 100%;
     height: 100%;
