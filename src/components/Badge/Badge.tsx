@@ -22,7 +22,7 @@ const Badge: FC<BaseBadgeProps> = (props) => {
           <>
             {prefix && <div className="prefix-badge">{prefix}</div>}
             <p className="badge-label">{children}</p>
-            {hasInfoIcon && (<>{inverted ? <IconIcWhite /> : <IconIc />}</>)}
+            {hasInfoIcon && (<span className="badge-info">{inverted ? <IconIcWhite /> : <IconIc />}</span>)}
           </>
         ) : (
           children

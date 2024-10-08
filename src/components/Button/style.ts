@@ -8,9 +8,9 @@ const mapButtonSize = {
 };
 
 const mapButtonFontSize = {
-  sm: ".75rem",
-  md: ".875rem",
-  lg: "1rem",
+  sm: ".875rem",
+  md: "1rem",
+  lg: "1.125rem",
 };
 
 const mapButtonHeight = {
@@ -70,8 +70,8 @@ export const mapIconSize = {
 
 const mapMarginChildren = {
   none: "0",
-  right: "0 .625rem 0 0",
   left: "0 0 0 .625rem",
+  right: "0 .625rem 0 0",
   both: "0 .625rem",
 };
 
@@ -138,6 +138,10 @@ export const StyledButton = styled.button<StyledButtonProps>`
     cursor: not-allowed;
   }
 
+  &:focus-visible {
+    outline: none;
+  }
+
   svg {
     width: 100%;
     height: 100%;
@@ -150,10 +154,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
     x: 0;
     y: 0;
     ${(props: any) =>
-      props.weight !== "solid" &&
       `
         opacity: 20%;
-        fill: #FF6112;  
+        fill: ${getFontColor(props.theme, props.weight, props.disabled)}
       `};
   }
 `;

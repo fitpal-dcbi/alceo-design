@@ -16,7 +16,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       prefix,
       onClick,
       type,
-      fontSize = ""
+      fontSize = "",
+      className
     } = props;
 
     return (
@@ -29,6 +30,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled}
         ref={ref}
         type={type}
+        className={`button-wrapper${className ? ` ${className}` : ''}`}
         onClick={(val) => {
           if (val) onClick?.(val);
         }}

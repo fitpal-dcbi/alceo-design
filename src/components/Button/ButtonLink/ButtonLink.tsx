@@ -32,11 +32,11 @@ const ButtonLink = React.forwardRef<HTMLButtonElement, ButtonLinkProps>(
           type={type}
           ref={ref}
         >
-          {(iconDirection === "right" || iconDirection === "both") && prefix}
+          {(iconDirection === "left" || iconDirection === "both") && prefix}
           <StyledChildrenButton iconDirection={iconDirection}>
             {children}
           </StyledChildrenButton>
-          {(iconDirection === "left" || iconDirection === "both") && suffix}
+          {(iconDirection === "right" || iconDirection === "both") && suffix}
         </StyledButton>
       </StyledHref>
     );

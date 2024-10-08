@@ -3,6 +3,9 @@ import React, { ReactNode } from "react";
 type BadgeVariant =
   | "primary"
   | "success"
+  | "critical"
+  | "warning"
+  | "info"
 
 export interface BaseBadgeProps {
   variant?: BadgeVariant;
