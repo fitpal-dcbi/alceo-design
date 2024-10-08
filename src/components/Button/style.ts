@@ -8,9 +8,9 @@ const mapButtonSize = {
 };
 
 const mapButtonFontSize = {
-  sm: ".75rem",
-  md: ".875rem",
-  lg: "1rem",
+  sm: ".875rem",
+  md: "1rem",
+  lg: "1.125rem",
 };
 
 const mapButtonHeight = {

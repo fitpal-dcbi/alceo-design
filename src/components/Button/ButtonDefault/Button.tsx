@@ -30,7 +30,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled}
         ref={ref}
         type={type}
-        className={className}
+        className={`button-wrapper ${className}`}
         onClick={(val) => {
           if (val) onClick?.(val);
         }}

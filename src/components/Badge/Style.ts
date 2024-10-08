@@ -12,13 +12,40 @@ const badgeStyles = {
     invertedIconColor: "#FA7E4B",
   },
   success: {
-    bgColor: "#B4B47B",
-    borderColor: "#B4B47B",
+    bgColor: "#9E9E6C",
+    borderColor: "#9E9E6C",
     fontColor: "#FFFFFF",
     iconColor: "#FFFFFF",
-    invertedBgColor: "#FFFFFF",
-    invertedFontColor: "#B4B47B",
-    invertedIconColor: "#B4B47B",
+    invertedBgColor: "#F0EECB",
+    invertedFontColor: "#4D4744",
+    invertedIconColor: "#4D4744",
+  },
+  critical: {
+    bgColor: "#B65842",
+    borderColor: "#B65842",
+    fontColor: "#FFFFFF",
+    iconColor: "#FFFFFF",
+    invertedBgColor: "#F8DED3",
+    invertedFontColor: "#B65842",
+    invertedIconColor: "#B65842",
+  },
+  warning: {
+    bgColor: "#D0A75D",
+    borderColor: "#D0A75D",
+    fontColor: "#FFFFFF",
+    iconColor: "#FFFFFF",
+    invertedBgColor: "#FCFBE6",
+    invertedFontColor: "#C29248",
+    invertedIconColor: "#C29248",
+  },
+  info: {
+    bgColor: "#86A1AD",
+    borderColor: "#86A1AD",
+    fontColor: "#FFFFFF",
+    iconColor: "#FFFFFF",
+    invertedBgColor: "#F4F9FA",
+    invertedFontColor: "#6E868D",
+    invertedIconColor: "#7A949D",
   },
 };
 
@@ -56,6 +83,7 @@ export const StyledBadge = styled.div<
     line-height: 1rem;
     margin-right: .375rem;
     margin-left: .375rem;
+    font-weight: 600;
   }
 
   .prefix-badge {

@@ -10,7 +10,7 @@ export default {
   component: BadgeComponent,
   argTypes: {
     variant: {
-      options: ["primary", "success"],
+      options: ["primary", "success", "critical", "warning", "info"],
       control: { type: "radio" },
     },
     inverted: {
