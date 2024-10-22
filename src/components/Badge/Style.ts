@@ -75,7 +75,6 @@ export const StyledBadge = styled.div<
 
     min-width: 2rem;
     min-height: 1.5rem;
-    height: 1.5rem;
     width: max-content;
 
     padding:${(props) => getPaddingSize[props.size as keyof typeof getPaddingSize]};;
