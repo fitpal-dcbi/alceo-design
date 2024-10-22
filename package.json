@@ -1,6 +1,10 @@
 {
   "name": "alceo-design-v2",
+<<<<<<< HEAD
   "version": "0.4.23",
+=======
+  "version": "0.4.22",
+>>>>>>> a1aa21f84944169408db394ac56ffb9905357500
   "description": "Alceo Design System, from Sirka.io",
   "repository": "https://github.com/fitpal-dcbi/alceo-design.git",
   "author": "Sirka",
