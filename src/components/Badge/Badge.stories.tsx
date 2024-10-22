@@ -17,6 +17,14 @@ export default {
       options: [true, false],
       control: { type: "boolean" },
     },
+    size: {
+      options: ["sm", "md"],
+      control: { type: "radio" },
+    },
+    weight: {
+      options: ["bold", "light"],
+      control: { type: "radio" },
+    },
     hasInfoIcon: {
       options: [true, false],
       control: { type: "boolean" },
@@ -37,6 +45,8 @@ export const Badge: Story<BaseBadgeProps> = ({
   prefix,
   iconOnly,
   children = "badge",
+  size,
+  weight
 }) => {
   return (
     <div>
@@ -47,6 +57,8 @@ export const Badge: Story<BaseBadgeProps> = ({
         prefix={prefix}
         iconOnly={iconOnly}
         children={iconOnly === true ? <ExampleIcon /> : children}
+        size={size}
+        weight={weight}
       />
       {iconOnly && (
         <p style={{ fontSize: "12px", fontWeight: "400" }}>

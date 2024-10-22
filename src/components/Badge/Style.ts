@@ -7,7 +7,7 @@ const badgeStyles = {
     borderColor: "#FA7E4B",
     fontColor: "#FFFFFF",
     iconColor: "#FFFFFF",
-    invertedBgColor: "#FFFFFF",
+    invertedBgColor: "#FFF2ED",
     invertedFontColor: "#FA7E4B",
     invertedIconColor: "#FA7E4B",
   },
@@ -49,8 +49,23 @@ const badgeStyles = {
   },
 };
 
+const getFontSize = {
+  'sm': '0.75rem',
+  'md': '1rem',
+}
+
+const getFontWeight = {
+  'bold': 600,
+  'light': 400
+}
+
+const getPaddingSize = {
+  'sm': '0.25rem 0.5rem',
+  'md': '0.25rem 0.75rem'
+}
+
 export const StyledBadge = styled.div<
-  Pick<BaseBadgeProps, "variant" | "inverted">
+  Pick<BaseBadgeProps, "variant" | "inverted" | "size" | "weight">
 >`
   .badge-wrapper {
     display: inline-flex;
@@ -63,7 +78,7 @@ export const StyledBadge = styled.div<
     height: 1.5rem;
     width: max-content;
 
-    padding: 0.25rem 0.5rem;
+    padding:${(props) => getPaddingSize[props.size as keyof typeof getPaddingSize]};;
     border-radius: 20px;
     background-color: ${(props) =>
       props.inverted
@@ -74,19 +89,19 @@ export const StyledBadge = styled.div<
   }
 
   .badge-label {
-    font-size: 0.75rem;
+    font-size: ${(props) => getFontSize[props.size as keyof typeof getFontSize]};
     color: ${(props) =>
       props.inverted
         ? badgeStyles[props.variant as keyof typeof badgeStyles]
             .invertedFontColor
         : badgeStyles[props.variant as keyof typeof badgeStyles].fontColor};
     line-height: 1rem;
-    font-weight: 600;
+    font-weight: ${(props) => getFontWeight[props.weight as keyof typeof getFontWeight]};
     margin: 0;
   }
 
   .prefix-badge {
-    font-size: 0.75rem;
+    font-size: ${(props) => getFontSize[props.size as keyof typeof getFontSize]};
     line-height: 1rem;
   }
 

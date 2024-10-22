@@ -14,4 +14,6 @@ export interface BaseBadgeProps {
   prefix?: React.ReactNode;
   iconOnly?: boolean;
   children?: ReactNode;
+  size?: string;
+  weight?: string;
 }

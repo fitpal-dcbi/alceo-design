@@ -13,10 +13,12 @@ const Badge: FC<BaseBadgeProps> = (props) => {
     prefix,
     iconOnly = false,
     children,
+    size = "sm",
+    weight = 'bold',
   } = props;
 
   return (
-    <StyledBadge variant={variant} inverted={inverted}>
+    <StyledBadge variant={variant} inverted={inverted} size={size} weight={weight}>
       <div className="badge-wrapper">
         {!iconOnly ? (
           <>
