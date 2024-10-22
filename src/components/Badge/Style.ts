@@ -7,7 +7,7 @@ const badgeStyles = {
     borderColor: "#FA7E4B",
     fontColor: "#FFFFFF",
     iconColor: "#FFFFFF",
-    invertedBgColor: "#FFFFFF",
+    invertedBgColor: "#FFF2ED",
     invertedFontColor: "#FA7E4B",
     invertedIconColor: "#FA7E4B",
   },
