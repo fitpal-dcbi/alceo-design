@@ -71,7 +71,8 @@ job "alceo-design" {
       }
       driver = "docker"
       config {
-        image = "218649523932.dkr.ecr.ap-southeast-1.amazonaws.com/alceo-design:${var.IMAGE_VERSION}"
+        #image = "218649523932.dkr.ecr.ap-southeast-1.amazonaws.com/alceo-design:${var.IMAGE_VERSION}"
+        image = "asia-southeast2-docker.pkg.dev/sirka-production/services/alceo-design:${var.IMAGE_VERSION}"
         ports = ["http"]
       }
 

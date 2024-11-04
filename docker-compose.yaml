@@ -2,7 +2,8 @@ version: "3.8"
 services:
   web:
     container_name: alceo-design
-    image: 218649523932.dkr.ecr.ap-southeast-1.amazonaws.com/alceo-design:${DOCKER_IMAGE_TAG}
+    # image: 218649523932.dkr.ecr.ap-southeast-1.amazonaws.com/alceo-design:${DOCKER_IMAGE_TAG}
+    image: asia-southeast2-docker.pkg.dev/sirka-production/services/alceo-design:${DOCKER_IMAGE_TAG}
     ports:
       - "80:8080"
     env_file:
