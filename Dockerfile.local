@@ -1,5 +1,4 @@
-FROM public.ecr.aws/y2g0l9x0/node:14-alpine
-
+FROM asia-southeast2-docker.pkg.dev/sirka-production/tools/nodejs:14-alpine
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
@@ -10,7 +9,7 @@ RUN if [ ! -d "./node_modules" ] ; then yarn install; fi
 RUN if [ ! -d "./.next" ] ; then yarn run build; fi
 
 
-FROM public.ecr.aws/y2g0l9x0/nginx:alpine
+FROM asia-southeast2-docker.pkg.dev/sirka-production/tools/nginx:xxx-alpine
 
 WORKDIR /app
 

@@ -1,4 +1,4 @@
-FROM public.ecr.aws/y2g0l9x0/nginx:alpine
+FROM asia-southeast2-docker.pkg.dev/sirka-production/tools/nginx:xxx-alpine
 WORKDIR /app
 
 COPY . .
